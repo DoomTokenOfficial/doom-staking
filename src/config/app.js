@@ -49,6 +49,7 @@ export const Tokens = {
         WRAITH: require("../config/abis/wraith-main.json"),
         DAPES: require("../config/abis/dapes-main.json"),
         ADREAM: require("../config/abis/adream-main.json"),
+        DO: require("../config/abis/do-test.json"),
     },
     address: {
         CFLT: "0x04305e84400F70B778868FD5226A6135D8Fe151D",
@@ -61,6 +62,7 @@ export const Tokens = {
         WRAITH: "0x8690cb98496ef0f8c6417d78b5e0e29907668808",
         DAPES: "0x1758ADe7ef6Ef753E6BfF91BaCeB06af4404014e",
         ADREAM: "0x45c4b4b718f7e2df5c22eff8a2bb79e9090a428d",
+        DO: "0x7792EC0c08DE9B581fb9dE6A2dbdc9c9a696f97a",
     },
 };
 
@@ -120,7 +122,7 @@ export const Vaults = [
     {
         id: "cflt_aer",
         tokenName: ["Coinflect", "Aerdrop"],
-        tokenId: ["CFLT", "AER"],
+        tokenId: ["DO", "AER"],
         status: true,
         chart: {
             id: ["AER2", "CFLT"],
@@ -129,8 +131,8 @@ export const Vaults = [
             nomicsUrl: "https://nomics.com/assets/aer2-aerdrop",
         },
         vault: {
-            address: "0xEd6989cE81C51Cb3f6bBd5fAb95D70017b738293",
-            abi: require("../config/abis/cflt-aer.json"),
+            address: "0x7792EC0c08DE9B581fb9dE6A2dbdc9c9a696f97a",
+            abi: require("../config/abis/do-lp.json"),
         },
         search: "Aerdrop",
     },
