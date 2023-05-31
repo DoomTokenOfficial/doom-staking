@@ -13,7 +13,7 @@ export const Currencys = [
     "VND",
 ];
 
-export const netId = 56;
+export const netId = 250;
 export const TotalPoolNum = 16;
 
 export const reward_test = {

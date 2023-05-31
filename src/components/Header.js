@@ -11,8 +11,8 @@ import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Cwallet from "./Cwallet";
-import DayLogo from "../assets/img/logo.png";
-import DarkLogo from "../assets/img/dark-logo.png";
+// import DayLogo from "../assets/img/logo.png";
+// import DarkLogo from "../assets/img/dark-logo.png";
 import { useWeb3React } from "@web3-react/core";
 import useStyles from "../assets/constants/styles";
 import { ConnectedWallet } from "../assets/constants/wallets";
@@ -59,14 +59,14 @@ const Header = () => {
                 params: [
                     {
                         chainId: `0x${netId.toString(16)}`,
-                        chainName: "Binance Smart Chain",
-                        rpcUrls: ["https://mainnet.infura.io/v3/"],
+                        chainName: "Fantom Opera",
+                        rpcUrls: ["https://rpcapi.fantom.network/"],
                         nativeCurrency: {
-                            name: "Ethereum",
-                            symbol: "ETH",
+                            name: "Fantom",
+                            symbol: "FTM",
                             decimals: 18,
                         },
-                        blockExplorerUrls: ["https://etherscan.io"],
+                        blockExplorerUrls: ["https://ftmscan.com/"],
                     },
                 ],
             });
@@ -117,9 +117,17 @@ const Header = () => {
                 {matches ? (
                     <Toolbar>
                         <Box sx={{ flexGrow: 1 }}>
-                            <Link underline="none" href="/" target="_blank">
+                            <Link
+                                underline="none"
+                                href="https://coinflect.com"
+                                target="_blank"
+                            >
                                 <img
-                                    src={mode === "light" ? DayLogo : DarkLogo}
+                                    src={
+                                        mode === "light"
+                                            ? "DayLogo"
+                                            : "DarkLogo"
+                                    }
                                     className="logo"
                                 />
                             </Link>
@@ -334,7 +342,11 @@ const Header = () => {
                                 target="_blank"
                             >
                                 <img
-                                    src={mode === "light" ? DayLogo : DarkLogo}
+                                    src={
+                                        mode === "light"
+                                            ? "DayLogo "
+                                            : "DarkLogo"
+                                    }
                                     className="logo"
                                 />
                             </Link>
