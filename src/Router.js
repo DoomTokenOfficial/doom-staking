@@ -7,7 +7,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 const Home = lazy(() => import("./pages/index"));
-const AnimationBG = lazy(() => import("./components/AnimationBackground"));
+// const AnimationBG = lazy(() => import("./components/AnimationBackground"));
 
 const history = createBrowserHistory({
     basename: "",
@@ -18,7 +18,7 @@ const AppRouter = () => {
     return (
         <Router history={history}>
             <Suspense fallback={<Spinner />}>
-                <AnimationBG />
+                {/* <AnimationBG /> */}
                 <Switch>
                     <Layout>
                         <Route path="/" exact component={Home} />
@@ -26,7 +26,7 @@ const AppRouter = () => {
                 </Switch>
             </Suspense>
         </Router>
-    )
-}
+    );
+};
 
 export default AppRouter;
