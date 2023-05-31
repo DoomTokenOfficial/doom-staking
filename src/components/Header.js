@@ -59,14 +59,14 @@ const Header = () => {
                 params: [
                     {
                         chainId: `0x${netId.toString(16)}`,
-                        chainName: "Fantom Opera",
-                        rpcUrls: ["https://rpcapi.fantom.network/"],
+                        chainName: "Fantom testnet",
+                        rpcUrls: ["https://rpc.testnet.fantom.network/"],
                         nativeCurrency: {
                             name: "Fantom",
                             symbol: "FTM",
                             decimals: 18,
                         },
-                        blockExplorerUrls: ["https://ftmscan.com/"],
+                        blockExplorerUrls: ["https://testnet.ftmscan.com/"],
                     },
                 ],
             });
