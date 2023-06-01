@@ -281,9 +281,9 @@ const Header = () => {
                             src={DayLogo}
                             style={{
                                 marginTop: "20px",
-                                width: "9%",
+                                width: "7%",
                                 position: "relative",
-                                top: "-6px",
+                                // top: "-6px",
                             }}
                         />
                     </Link>
