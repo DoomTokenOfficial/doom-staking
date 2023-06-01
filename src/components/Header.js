@@ -118,7 +118,6 @@ const Header = () => {
             <AppBar position="fixed" className={top ? "top header" : "header"}>
                 {matches ? (
                     <Toolbar>
-                     
                         <IconButton onClick={setMode} className="mode-btn">
                             {mode === "light" ? (
                                 <svg
@@ -273,6 +272,30 @@ const Header = () => {
                         )}
                     </Toolbar>
                 )}
+                <Box
+                    sx={{ flexGrow: 1 }}
+                    style={{ position: "absolute", zIndex: "-1000000" }}
+                >
+                    <Link underline="none" href="/" target="_blank">
+                        <img
+                            src={DayLogo}
+                            style={{
+                                marginTop: "20px",
+                                width: "9%",
+                                position: "relative",
+                                top: "-6px",
+                            }}
+                        />
+                    </Link>
+                    <img
+                        style={{
+                            width: "27.2%",
+                            position: "relative",
+                            top: "-54px",
+                        }}
+                        src={mode === "light" ? LogoTitle : LogoTitle}
+                    />
+                </Box>
             </AppBar>
             <Cwallet isOpen={isOpenDialog} setIsOpen={setIsOpenDialog} />
         </Box>

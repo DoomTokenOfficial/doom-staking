@@ -320,20 +320,6 @@ const Home = () => {
 
     return (
         <Box className={styles.Home}>
-            <Box sx={{ flexGrow: 1 }}>
-                <Link underline="none" href="/" target="_blank">
-                    <img
-                        src={DayLogo}
-                        style={{ marginTop: "20px", width: "14%" }}
-                    />
-                </Link>
-            
-            
-                <img
-                    src={mode === "light" ? LogoTitle : LogoTitle}
-                    className="logo"
-                />
-            </Box>
             {(() => {
                 if (!mobile && !tablet) {
                     return (
@@ -751,16 +737,22 @@ const Home = () => {
                             direction="row"
                             spacing={4}
                         >
-                            <Stack spacing={2} className="token-state">
+                            <Stack
+                                spacing={2}
+                                className="token-state first-box-style"
+                            >
                                 <Typography
+                                    className="first-box-style"
                                     variant="h6"
-                                    style={{ fontFamily: "EternalUi2Bold" }}
                                 >
                                     $ DOOM
                                 </Typography>
                                 <Stack direction="row">
                                     <Stack>
-                                        <Typography variant="h5">
+                                        <Typography
+                                            variant="h5"
+                                            className="first-box-style"
+                                        >
                                             {CurrencySymbol[currency]}{" "}
                                             {coinStatus.price
                                                 ? coinStatus.price
@@ -774,8 +766,8 @@ const Home = () => {
                                             variant="span"
                                             className={
                                                 coinStatus.status
-                                                    ? `state-percent ${coinStatus.status}`
-                                                    : "state-percent"
+                                                    ? `first-box-style state-percent ${coinStatus.status}`
+                                                    : "first-box-style state-percent"
                                             }
                                         >
                                             {coinStatus.priceptc
@@ -793,22 +785,34 @@ const Home = () => {
                                 </Stack>
                             </Stack>
                             <Stack spacing={2}>
-                                <Typography variant="h6">
+                                <Typography
+                                    variant="h6"
+                                    className="first-box-style"
+                                >
                                     {lang_texts[language][5]}
                                 </Typography>
                                 <Stack>
-                                    <Typography variant="h5">
+                                    <Typography
+                                        variant="h5"
+                                        className="first-box-style"
+                                    >
                                         {TotalPoolNum}
                                     </Typography>
                                 </Stack>
                             </Stack>
                             <Stack spacing={2}>
-                                <Typography variant="h6">
+                                <Typography
+                                    variant="h6"
+                                    className="first-box-style"
+                                >
                                     {lang_texts[language][6]}
                                 </Typography>
                                 {loading ? (
                                     <Stack>
-                                        <Typography variant="h5">
+                                        <Typography
+                                            variant="h5"
+                                            className="first-box-style"
+                                        >
                                             {CurrencySymbol[currency]}{" "}
                                             {numberWithCommas(
                                                 toDec(
@@ -827,12 +831,18 @@ const Home = () => {
                                 )}
                             </Stack>
                             <Stack spacing={2}>
-                                <Typography variant="h6">
+                                <Typography
+                                    variant="h6"
+                                    className="first-box-style"
+                                >
                                     {lang_texts[language][7]}
                                 </Typography>
                                 {loading ? (
                                     <Stack>
-                                        <Typography variant="h5">
+                                        <Typography
+                                            variant="h5"
+                                            className="first-box-style"
+                                        >
                                             {totalUser}
                                         </Typography>
                                     </Stack>
@@ -941,7 +951,7 @@ const Home = () => {
                     );
                 }
             })()}
-
+            
             <Container className="vault-lists">
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter

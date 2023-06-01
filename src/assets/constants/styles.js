@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => {
                     fontSize: 17,
                     fontWeight: 600,
                 },
+
                 "& .active-wallet-icon": {
                     width: "20px",
                     marginLeft: 10,
@@ -659,6 +660,11 @@ const useStyles = makeStyles((theme) => {
                         },
                     },
                 },
+            },
+            "& .first-box-style": {
+                fontFamily: "DoomFont",
+                fontSize: "18px !important",
+                color: "#af3030 !important",
             },
             "& .token-state": {
                 minWidth: "260px !important",
