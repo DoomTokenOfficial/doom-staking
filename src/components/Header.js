@@ -21,6 +21,8 @@ import { ThemeModeContext } from "../context/themmode";
 import { Currencys, netId } from "../config/app";
 import Link from "@mui/material/Link";
 import { Languages, lang_texts } from "../assets/constants/language";
+// import { Languages, lang_texts } from "../assets/constants/language";
+
 import { injected } from "../assets/constants/connectors";
 
 const Header = () => {
