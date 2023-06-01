@@ -668,7 +668,7 @@ const Home = () => {
                     );
                 }
             })()}
-            ;
+
             <Container className="vault-lists">
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter
