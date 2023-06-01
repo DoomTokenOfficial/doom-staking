@@ -118,20 +118,7 @@ const Header = () => {
             <AppBar position="fixed" className={top ? "top header" : "header"}>
                 {matches ? (
                     <Toolbar>
-                        <Box sx={{ flexGrow: 1 }}>
-                            <Link
-                                underline="none"
-                                href="https://coinflect.com"
-                                target="_blank"
-                            >
-                                <img
-                                    src={
-                                        mode === "light" ? LogoTitle : LogoTitle
-                                    }
-                                    className="logo"
-                                />
-                            </Link>
-                        </Box>
+                     
                         <IconButton onClick={setMode} className="mode-btn">
                             {mode === "light" ? (
                                 <svg

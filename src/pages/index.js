@@ -13,8 +13,11 @@ import useTheme from "@mui/material/styles/useTheme";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+import Link from "@mui/material/Link";
+import DarkLogo from "../assets/img/dark-logo.png";
+import LogoTitle from "../assets/img/logo-title.png";
 import Web3 from "web3";
+import DayLogo from "../assets/img/logo.png";
 
 import useStyles from "../assets/constants/styles";
 import { Vaults, Currencys, TotalPoolNum } from "../config/app";
@@ -317,6 +320,20 @@ const Home = () => {
 
     return (
         <Box className={styles.Home}>
+            <Box sx={{ flexGrow: 1 }}>
+                <Link underline="none" href="/" target="_blank">
+                    <img
+                        src={DayLogo}
+                        style={{ marginTop: "20px", width: "14%" }}
+                    />
+                </Link>
+            
+            
+                <img
+                    src={mode === "light" ? LogoTitle : LogoTitle}
+                    className="logo"
+                />
+            </Box>
             {(() => {
                 if (!mobile && !tablet) {
                     return (
@@ -735,8 +752,11 @@ const Home = () => {
                             spacing={4}
                         >
                             <Stack spacing={2} className="token-state">
-                                <Typography variant="h6">
-                                    Coinflect (CFLT)
+                                <Typography
+                                    variant="h6"
+                                    style={{ fontFamily: "EternalUi2Bold" }}
+                                >
+                                    $ DOOM
                                 </Typography>
                                 <Stack direction="row">
                                     <Stack>

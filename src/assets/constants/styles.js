@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => {
     return {
         appbar: {
             "& .header": {
+                alignItems: "right",
                 backgroundColor: "transparent !important",
                 padding: theme.isMobile
                     ? `${theme.spacing(0.75, 2)}`
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => {
                 },
                 "& .MuiToolbar-root": {
                     padding: "0px !important",
+                    justifyContent: "right",
                 },
                 "& .MuiPaper-root": {
                     borderRadius: 6,
