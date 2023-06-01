@@ -22,7 +22,6 @@ import { useWeb3React } from "@web3-react/core";
 import { Link } from "@mui/material";
 import { ThemeModeContext } from "../context/themmode";
 import { netId, Tokens } from "../config/app";
-
 import {
     baseCurrency,
     CurrencySymbol,
@@ -134,8 +133,6 @@ const Pool = ({
         const BaseDecimal = await CT_base.methods.decimals().call();
         const RewardDecimal = await CT_vault.methods.decimals().call();
         const TokenTotalSupply = await CT_base.methods.totalSupply().call();
-
-
         let t_s = await Pool.methods.totalSupply().call();
         let rewardRate = await Pool.methods.rewardRate().call();
         rewardRate = rewardRate * 10 ** (18 - RewardDecimal);

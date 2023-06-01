@@ -59,14 +59,14 @@ const Header = () => {
                 params: [
                     {
                         chainId: `0x${netId.toString(16)}`,
-                        chainName: "Fantom testnet",
-                        rpcUrls: ["https://rpc.testnet.fantom.network/"],
+                        chainName: "Binance Smart Chain",
+                        rpcUrls: ["https://bsc-dataseed.binance.org/"],
                         nativeCurrency: {
-                            name: "Fantom",
-                            symbol: "FTM",
+                            name: "BNB",
+                            symbol: "BNB",
                             decimals: 18,
                         },
-                        blockExplorerUrls: ["https://testnet.ftmscan.com/"],
+                        blockExplorerUrls: ["https://bscscan.com"],
                     },
                 ],
             });
@@ -344,7 +344,7 @@ const Header = () => {
                                 <img
                                     src={
                                         mode === "light"
-                                            ? "DayLogo "
+                                            ? "DayLogo"
                                             : "DarkLogo"
                                     }
                                     className="logo"
