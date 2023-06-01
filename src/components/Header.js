@@ -9,7 +9,6 @@ import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
 import Cwallet from "./Cwallet";
 import DayLogo from "../assets/img/logo.png";
 import DarkLogo from "../assets/img/dark-logo.png";
@@ -211,7 +210,8 @@ const Header = () => {
                                     src={
                                         mode === "light" ? LogoTitle : LogoTitle
                                     }
-                                    className="logo"
+                                    width="100px"
+                                    // className="logo"
                                 />
                             </Link>
                         </Box>

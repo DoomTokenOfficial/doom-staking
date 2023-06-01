@@ -604,7 +604,7 @@ const Home = () => {
                     return (
                         <Stack className={styles.laptopControlBar}>
                             <Stack className="active-btn-box">
-                                <FormControlLabel
+                                {/* <FormControlLabel
                                     control={
                                         <Switch
                                             className="styled-switch"
@@ -617,13 +617,13 @@ const Home = () => {
                                             }
                                         />
                                     }
-                                    // label={lang_texts[language][2]}
-                                />
+                                    label={lang_texts[language][2]}
+                                /> */}
                             </Stack>
-                            {/* <Stack className="search-filter-box">
+                            <Stack className="search-filter-box">
                                 <Stack>
                                     <Stack className="search">
-                                        <svg
+                                        {/* <svg
                                             width="14"
                                             height="14"
                                             viewBox="0 0 12 12"
@@ -645,8 +645,8 @@ const Home = () => {
                                                         : "#66DC95"
                                                 }
                                             />
-                                        </svg>
-                                        <input
+                                        </svg> */}
+                                        {/* <input
                                             placeholder={
                                                 lang_texts[language][3]
                                             }
@@ -654,9 +654,9 @@ const Home = () => {
                                             onChange={(e) =>
                                                 setSearchKey(e.target.value)
                                             }
-                                        />
+                                        /> */}
                                     </Stack>
-                                    <Button
+                                    {/* <Button
                                         variant="text"
                                         endIcon={
                                             <svg
@@ -684,7 +684,7 @@ const Home = () => {
                                         onClick={_handleFilter}
                                     >
                                         {lang_texts[language][4]}
-                                    </Button>
+                                    </Button> */}
                                     <Menu
                                         elevation={0}
                                         anchorOrigin={{
@@ -721,7 +721,7 @@ const Home = () => {
                                         ))}
                                     </Menu>
                                 </Stack>
-                            </Stack> */}
+                            </Stack>
                         </Stack>
                     );
                 }
