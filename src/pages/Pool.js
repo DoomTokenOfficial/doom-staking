@@ -412,6 +412,8 @@ const Pool = ({
                                     style={{
                                         backgroundImage: `url(${StatusBar1})`,
                                         padding: "25.7px 40px",
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(6, 1fr)",
                                     }}
                                     className="item-box"
                                 >
@@ -452,43 +454,18 @@ const Pool = ({
                                         className="item-3"
                                         spacing={0.75}
                                     >
-                                        <Stack className="help" direction="row">
-                                            <Typography
-                                                variant="span"
-                                                className="title"
-                                            >
-                                                APR1
-                                            </Typography>
-                                            <BootstrapTooltip
-                                                title={lang_texts[language][28]}
-                                                placement="top"
-                                            >
-                                                <svg
-                                                    width="14"
-                                                    height="14"
-                                                    viewBox="0 0 10 10"
-                                                    fill="none"
-                                                >
-                                                    <path
-                                                        d="M4.79254 9.99999C2.14318 9.99999 -0.00012207 7.88843 -0.00012207 5.30008C-0.00012207 2.71173 2.14318 0.600174 4.79254 0.600174C7.4419 0.600174 9.5852 2.71173 9.5852 5.30008C9.5852 7.88843 7.43198 9.99999 4.79254 9.99999ZM4.79254 1.17428C2.47063 1.17428 0.59524 3.02311 0.59524 5.30008C0.59524 7.56732 2.48055 9.41615 4.79254 9.41615C7.10453 9.41615 8.98984 7.56732 8.98984 5.30008C8.98984 3.02311 7.10453 1.17428 4.79254 1.17428Z"
-                                                        fill={"white"}
-                                                    />
-                                                    <path
-                                                        d="M4.84213 2.79933C3.93916 2.79933 3.19495 3.5194 3.19495 4.41462C3.19495 4.56058 3.31402 4.67734 3.46286 4.67734C3.6117 4.67734 3.73078 4.56058 3.73078 4.41462C3.73078 3.81132 4.22692 3.32479 4.84213 3.32479C5.45735 3.32479 5.95349 3.81132 5.95349 4.41462C5.95349 5.01792 5.45735 5.50445 4.84213 5.50445C4.69329 5.50445 4.57422 5.62122 4.57422 5.76718V6.55536C4.57422 6.70132 4.69329 6.81808 4.84213 6.81808C4.99097 6.81808 5.11005 6.70132 5.11005 6.55536V6.00071C5.89395 5.87421 6.48932 5.21253 6.48932 4.40489C6.48932 3.5194 5.75503 2.79933 4.84213 2.79933Z"
-                                                        fill={"white"}
-                                                    />
-                                                    <path
-                                                        d="M4.84213 7.98575C5.05037 7.98575 5.21918 7.8202 5.21918 7.61599C5.21918 7.41178 5.05037 7.24623 4.84213 7.24623C4.6339 7.24623 4.46509 7.41178 4.46509 7.61599C4.46509 7.8202 4.6339 7.98575 4.84213 7.98575Z"
-                                                        fill={"white"}
-                                                    />
-                                                </svg>
-                                            </BootstrapTooltip>
-                                        </Stack>
                                         {loading ? (
                                             <Stack>
                                                 <Typography
                                                     variant="span"
                                                     className="value"
+                                                    style={{
+                                                        fontFamily: "StackFont",
+                                                        textShadow:
+                                                            "black -1px 2px 2px",
+                                                        fontSize: "30px",
+                                                        color: "red",
+                                                    }}
                                                 >
                                                     {APR
                                                         ? Number(APR) > 10000
@@ -504,6 +481,22 @@ const Pool = ({
                                                 animation="wave"
                                             />
                                         )}
+                                        <Stack spacing={1} direction="row">
+                                            <Typography
+                                                style={{
+                                                    fontFamily: "StackFont",
+                                                    textShadow:
+                                                        "black -1px 2px 2px",
+                                                    fontSize: "18px",
+                                                    color: "white",
+                                                    marginLeft: " 45px",
+                                                }}
+                                                variant="span"
+                                                className="sub-description"
+                                            >
+                                                APY
+                                            </Typography>
+                                        </Stack>
                                     </Stack>
                                     <Stack className="item-4" spacing={0.75}>
                                         <Stack
@@ -514,9 +507,17 @@ const Pool = ({
                                             <Typography
                                                 variant="span"
                                                 className="title"
+                                                style={{
+                                                    fontFamily: "StackFont",
+                                                    textShadow:
+                                                        "black -1px 2px 2px",
+                                                    fontSize: "20px",
+                                                    color: "red",
+                                                }}
                                             >
                                                 {lang_texts[language][10]}
                                             </Typography>
+
                                             <BootstrapTooltip
                                                 title={lang_texts[language][29]}
                                                 placement="top"
@@ -554,7 +555,7 @@ const Pool = ({
                                                     variant="span"
                                                     className="description"
                                                 >
-                                                    Days&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hrs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sec
+                                                    Days&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hrs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min
                                                 </Typography>
                                             </Stack>
                                         ) : (
@@ -653,7 +654,7 @@ const Pool = ({
                                         height={0}
                                         marginLeft={"-70px"}
                                     >
-                                        <Link
+                                        {/* <Link
                                             underline="none"
                                             target="_blank"
                                             href={item.chart.nomicsUrl}
@@ -663,7 +664,7 @@ const Pool = ({
                                                 id={item.chart.id[0]}
                                                 coin={Coin}
                                             />
-                                        </Link>
+                                        </Link> */}
                                     </Stack>
                                     <Stack className="item-7">
                                         <Button
@@ -1508,6 +1509,13 @@ const Pool = ({
                                         <Typography
                                             variant="span"
                                             className="title"
+                                            style={{
+                                                fontFamily: "StackFont",
+                                                textShadow:
+                                                    "black -1px 2px 2px",
+                                                fontSize: "20px",
+                                                color: "red",
+                                            }}
                                         >
                                             {lang_texts[language][10]}
                                         </Typography>
