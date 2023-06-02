@@ -907,6 +907,10 @@ const useStyles = makeStyles((theme) => {
                         },
                     },
                     "& .collapse": {
+                        "& .col-nun-padding": {
+                            padding: "0px !important",
+                            margin: "0px !important",
+                        },
                         "& .collapse-body": {
                             marginTop: 20,
                             borderTop: "1px solid #DADADA",

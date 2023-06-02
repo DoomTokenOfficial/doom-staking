@@ -15,8 +15,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import Web3 from "web3";
-import StatusBar1 from "../assets/img/StatusBar1.png";
-import StatusBar2 from "../assets/img/StatusBar2.png";
+
 import ShoresHell from "../assets/img/strife-small-the-shores-of-hell.png";
 import Inferno from "../assets/img/strife-small-inferno.png";
 
@@ -596,9 +595,7 @@ const Home = () => {
             })()}
 
             <Container className="vault-lists">
-                <img src={ShoresHell} style={{width:"29%"}} />
-                <img src={StatusBar1} />
-                <img src={StatusBar2} />
+                <img src={ShoresHell} style={{ width: "29%" }} />
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter
                         ? Number(userStaked[item.id]) > 0
