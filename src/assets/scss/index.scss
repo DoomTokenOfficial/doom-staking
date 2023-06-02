@@ -2,12 +2,17 @@ html,
 body,
 #root {
     height: 100%;
-    background-color: #09101c;
+    background-color: #10141b;
 }
 
 @font-face {
     font-family: "DoomFont";
     src: url("./fonts/EternalUi2Bold-ALOGM.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "StackFont";
+    src: url("./fonts/EternalUi2Regular-1Gvn2.ttf");
     font-weight: 500;
 }
 

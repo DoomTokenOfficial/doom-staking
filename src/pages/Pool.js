@@ -416,15 +416,15 @@ const Pool = ({
                                     className="item-box"
                                 >
                                     <Stack className="item-1">
-                                        <Typography
-                                            variant="span"
-                                            className="value"
-                                        >
-                                            {lang_texts[language][8]}{" "}
-                                            {item.tokenId[1]}
-                                        </Typography>
                                         <Stack spacing={1} direction="row">
                                             <Typography
+                                                style={{
+                                                    fontFamily: "StackFont",
+                                                    textShadow:
+                                                        "black -1px 2px 2px",
+                                                    fontSize: "20px",
+                                                    color: "red",
+                                                }}
                                                 variant="span"
                                                 className="sub-description"
                                             >
@@ -432,6 +432,20 @@ const Pool = ({
                                                 {item.tokenId[0]}
                                             </Typography>
                                         </Stack>
+                                        <Typography
+                                            variant="span"
+                                            className="value"
+                                            style={{
+                                                fontFamily: "StackFont",
+                                                textShadow:
+                                                    "black -1px 2px 2px",
+                                                fontSize: "20px",
+                                                color: "red",
+                                            }}
+                                        >
+                                            {lang_texts[language][8]}{" "}
+                                            {item.tokenId[1]}
+                                        </Typography>
                                     </Stack>
                                     <Stack
                                         justifyContent="center"
@@ -696,8 +710,7 @@ const Pool = ({
                                 >
                                     <Stack className="collapse-body col-nun-padding">
                                         <Stack className="collapse-1">
-                                            <div className="nomics-ticker-widget"></div>
-                                            <Stack className="sub-title">
+                                            <Stack className="sub-title pd-0">
                                                 <Stack
                                                     className="help"
                                                     direction="row"
@@ -783,8 +796,8 @@ const Pool = ({
                                             </Stack>
                                             <Stack
                                                 direction="row"
-                                                spacing={1.25}
-                                                mb={2}
+                                                spacing={0}
+                                                mb={0}
                                             >
                                                 <Stack className="col-row-1">
                                                     <OutlinedInput
@@ -895,7 +908,7 @@ const Pool = ({
                                                 <Stack
                                                     className="help"
                                                     direction="row"
-                                                    spacing={1}
+                                                    spacing={0}
                                                 >
                                                     <Typography
                                                         variant="span"
