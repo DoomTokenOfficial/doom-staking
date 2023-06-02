@@ -15,6 +15,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import Web3 from "web3";
+import StatusBar1 from "../assets/img/StatusBar1.png";
+import StatusBar2 from "../assets/img/StatusBar2.png";
+import ShoresHell from "../assets/img/strife-small-the-shores-of-hell.png";
+import Inferno from "../assets/img/strife-small-inferno.png";
 
 import useStyles from "../assets/constants/styles";
 import { Vaults, Currencys, TotalPoolNum } from "../config/app";
@@ -328,88 +332,10 @@ const Home = () => {
                 } else {
                     return (
                         <Stack className={styles.laptopControlBar}>
-                            <Stack className="active-btn-box">
-                                {/* <FormControlLabel
-                                    control={
-                                        <Switch
-                                            className="styled-switch"
-                                            focusVisibleClassName=".Mui-focusVisible"
-                                            disableRipple
-                                            sx={{ m: 1 }}
-                                            defaultChecked={false}
-                                            onChange={() =>
-                                                setStakedFilter(!stakedFilter)
-                                            }
-                                        />
-                                    }
-                                    label={lang_texts[language][2]}
-                                /> */}
-                            </Stack>
+                            <Stack className="active-btn-box"></Stack>
                             <Stack className="search-filter-box">
                                 <Stack>
-                                    <Stack className="search">
-                                        {/* <svg
-                                            width="14"
-                                            height="14"
-                                            viewBox="0 0 12 12"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M4.69435 2.59624C3.19893 2.66017 2.02759 3.90946 2.02759 5.44035C2.02759 5.54863 2.03365 5.65753 2.04552 5.76408C2.06164 5.9094 2.18211 6.01669 2.32185 6.01669C2.33239 6.01669 2.34306 6.01607 2.35372 6.01483C2.50655 5.99711 2.61635 5.85613 2.5989 5.69978C2.58945 5.61454 2.58472 5.52732 2.58472 5.44048C2.58472 4.21571 3.52155 3.21643 4.71762 3.16526C4.8713 3.1587 4.9908 3.02601 4.98437 2.86892C4.97783 2.7117 4.84573 2.58955 4.69435 2.59624Z"
-                                                fill={
-                                                    mode === "light"
-                                                        ? "#027AFF"
-                                                        : "#66DC95"
-                                                }
-                                            />
-                                            <path
-                                                d="M8.07614 2.06117C6.26838 0.21299 3.32635 0.212866 1.51835 2.06117C-0.289646 3.90934 -0.289646 6.91663 1.51835 8.76481C2.42223 9.68889 3.60971 10.151 4.79718 10.151C5.83935 10.151 6.88139 9.79494 7.73182 9.0832L10.2783 11.6862C10.3688 11.7788 10.4874 11.825 10.6061 11.825C10.7248 11.825 10.8434 11.7788 10.9341 11.6861C11.1152 11.501 11.1152 11.2008 10.9341 11.0157L8.38761 8.41271C9.87711 6.55264 9.77348 3.79611 8.07614 2.06117ZM7.42023 8.09432C5.97387 9.57256 3.62049 9.57281 2.17414 8.09432C0.727793 6.61583 0.727793 4.21015 2.17414 2.73153C2.89732 1.99241 3.84725 1.62272 4.79718 1.62272C5.74724 1.62272 6.69705 1.99241 7.42035 2.73153C8.86658 4.21015 8.86658 6.61583 7.42023 8.09432Z"
-                                                fill={
-                                                    mode === "light"
-                                                        ? "#027AFF"
-                                                        : "#66DC95"
-                                                }
-                                            />
-                                        </svg> */}
-                                        {/* <input
-                                            placeholder={
-                                                lang_texts[language][3]
-                                            }
-                                            value={searchKey}
-                                            onChange={(e) =>
-                                                setSearchKey(e.target.value)
-                                            }
-                                        /> */}
-                                    </Stack>
-                                    {/* <Button
-                                        variant="text"
-                                        endIcon={
-                                            <svg
-                                                width="12"
-                                                height="12"
-                                                viewBox="0 0 12 12"
-                                                fill="none"
-                                            >
-                                                <path
-                                                    d="M7.10487 5.45501L10.5493 1.28616H1.66624L5.14696 5.45501C5.21948 5.56283 5.25573 5.67064 5.25573 5.77846V9.51605L6.95984 10.3426V5.74252C6.95984 5.6347 7.03236 5.52689 7.10487 5.45501ZM11.8909 1.1424L7.90254 5.92221V11.0614C7.90254 11.4208 7.53996 11.6364 7.2499 11.4927L4.6031 10.2348C4.45807 10.1629 4.31304 10.0192 4.31304 9.80356V5.92221L0.324705 1.1424C0.0709019 0.854895 0.288447 0.387695 0.687281 0.387695H11.5283C11.9271 0.387695 12.1447 0.818956 11.8909 1.1424Z"
-                                                    fill={
-                                                        mode === "light"
-                                                            ? "#027AFF"
-                                                            : "#66DC95"
-                                                    }
-                                                />
-                                            </svg>
-                                        }
-                                        id="demo-customized-button"
-                                        aria-controls="demo-customized-menu"
-                                        aria-haspopup="true"
-                                        aria-expanded={
-                                            filtermenu ? "true" : undefined
-                                        }
-                                        onClick={_handleFilter}
-                                    >
-                                        {lang_texts[language][4]}
-                                    </Button> */}
+                                    <Stack className="search"></Stack>
                                     <Menu
                                         elevation={0}
                                         anchorOrigin={{
@@ -670,6 +596,9 @@ const Home = () => {
             })()}
 
             <Container className="vault-lists">
+                <img src={ShoresHell} style={{width:"29%"}} />
+                <img src={StatusBar1} />
+                <img src={StatusBar2} />
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter
                         ? Number(userStaked[item.id]) > 0
