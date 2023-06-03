@@ -616,7 +616,12 @@ const Home = () => {
             })()}
 
             <Container className="vault-lists">
-                <img src={ShoresHell} style={{ width: "29%" }} />
+                <img
+                    src={ShoresHell}
+                    style={{
+                        width: "29%",
+                    }}
+                />
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter
                         ? Number(userStaked[item.id]) > 0

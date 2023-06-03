@@ -18,7 +18,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Web3 from "web3";
 import { useWeb3React } from "@web3-react/core";
-
+import ShoresHell from "../assets/img/strife-small-the-shores-of-hell.png";
 import { Link } from "@mui/material";
 import { ThemeModeContext } from "../context/themmode";
 import { netId, Tokens, Vaults } from "../config/app";
