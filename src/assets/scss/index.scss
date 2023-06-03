@@ -16,6 +16,121 @@ body,
     font-weight: 500;
 }
 
+.block {
+    position: absolute;
+    border: 1px solid black;
+}
+
+#block1 {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 40%;
+}
+
+#block2 {
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 40%;
+}
+
+#block3 {
+    top: 40%;
+    left: 0;
+    width: 33.3333%;
+    height: 30%;
+}
+
+#block4 {
+    top: 40%;
+    right: 0;
+    width: 33.3333%;
+    height: 30%;
+}
+
+#block5 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    vertical-align: baseline;
+    text-align: left;
+    font-size: 10px;
+    -webkit-text-size-adjust: 100%;
+}
+form {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+.verdana100FFFFFFt {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    color: #000000;
+    text-decoration: none;
+}
+.verdana13C0FFFFFFt {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 17px;
+    color: #c00000;
+    text-decoration: none;
+}
+.verdana10FFFFFFFFFFFFt {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.arial12FFFFFFFFFFFFt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.arial14C0FFFFFFti {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    color: #c00000;
+    font-style: italic;
+    text-decoration: none;
+}
+.arial10FFFFFFFFFFFFt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.arial14FFFFFFFFFFFFt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.arial16C0FFFFFFt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    color: #c00000;
+    text-decoration: none;
+}
+.arial15E3FFFFFFFFFFt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #ffffe3;
+    text-decoration: none;
+}
+.symbol36C0FFFFFFt {
+    font-family: Symbol, sans-serif;
+    font-size: 48px;
+    color: #c00000;
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     font-family: DoomFont;
