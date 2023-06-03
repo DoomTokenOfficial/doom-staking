@@ -552,17 +552,18 @@ const Pool = ({
                                                 <Typography
                                                     variant="span"
                                                     className="description"
-                                                    // style={{
-                                                    //     letterSpacing: "38px",
-                                                    //     paddingLeft: "3px",
-                                                    //     paddingTop: "5px",
-                                                    //     fontFamily: "StackFont",
-                                                    //     fontSize: "16px",
-                                                    //     textShadow:
-                                                    //         "2px 3px 2px black",
-                                                    // }}
+                                                    style={{
+                                                        // letterSpacing: "38px",
+                                                        marginLeft: "21px",
+                                                        position: "relative",
+                                                        top: "19px",
+                                                        fontFamily: "StackFont",
+                                                        fontSize: "16px",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
+                                                    }}
                                                 >
-                                                    Days&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hrs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min
+                                                    D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
                                                 </Typography>
                                             </Stack>
                                         ) : (
@@ -1158,7 +1159,7 @@ const Pool = ({
                                                 </Button>
                                             }
                                         </Stack> */}
-                                        <Stack className="collapse-3">
+                                        {/* <Stack className="collapse-3">
                                             <Stack
                                                 className="help"
                                                 direction="row"
@@ -1282,7 +1283,7 @@ const Pool = ({
                                                 disabled={!poolState}
                                                 className="slider"
                                             />
-                                        </Stack>
+                                        </Stack> */}
                                         <Stack
                                             className="collapse-5"
                                             spacing={3}
