@@ -93,8 +93,8 @@ const useStyles = makeStyles((theme) => {
                 },
                 "& .wallet-btn": {
                     backgroundColor:
-                        theme.palette.mode === "light" ? "#4B8AEB" : "#66DC95",
-                    color: theme.palette.mode === "light" ? "white" : "black",
+                        theme.palette.mode === "light" ? "#182438" : "#182438",
+                    color: theme.palette.mode === "light" ? "white" : "white",
                     fontSize: theme.isMobile ? "12px" : theme.fontSize.md,
                     textTransform: "unset",
                     fontWeight: 500,
@@ -640,7 +640,7 @@ const useStyles = makeStyles((theme) => {
                     width: "100%",
                     "& > h6": {
                         fontSize: theme.fontSize.sm,
-                        color: "white",
+                        color: "#a61919",
                     },
                     "& span": {
                         color: "white",
@@ -664,7 +664,8 @@ const useStyles = makeStyles((theme) => {
             "& .first-box-style": {
                 fontFamily: "DoomFont",
                 fontSize: "18px !important",
-                color: "#af3030 !important",
+                color: "#a61919",
+                textShadow: "2px 3px 1px black;",
             },
             "& .token-state": {
                 minWidth: "260px !important",

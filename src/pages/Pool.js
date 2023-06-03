@@ -21,7 +21,7 @@ import { useWeb3React } from "@web3-react/core";
 
 import { Link } from "@mui/material";
 import { ThemeModeContext } from "../context/themmode";
-import { netId, Tokens } from "../config/app";
+import { netId, Tokens, Vaults } from "../config/app";
 import {
     baseCurrency,
     CurrencySymbol,
@@ -49,7 +49,7 @@ const Pool = ({
     updateTime,
     updateStaked,
     _web3,
-    loading,
+    loading = false,
     chartInfo,
 }) => {
     const theme = useTheme();
@@ -406,7 +406,7 @@ const Pool = ({
             >
                 <Stack
                     style={{
-                        backgroundImage: `url(${StatusBar1})`,
+                        backgroundImage: `url(${item.img_url})`,
                         padding: "20.7px 40px",
                         display: "grid",
                         gridTemplateColumns: "repeat(6, 1fr)",
@@ -425,16 +425,16 @@ const Pool = ({
                                     fontFamily: "StackFont",
                                     textShadow:
                                         "3px 2px 2px black, 3px 2px 2px black",
-                                    fontSize: "23px",
+                                    fontSize: "20px",
                                     color: "red",
-                                    letterSpacing: "4px",
+                                    letterSpacing: "1px",
                                     fontWeight: "bolder",
                                     fontPalette: "dark",
                                 }}
                                 variant="span"
                                 className="sub-description"
                             >
-                                {lang_texts[language][9]} {item.tokenId[0]}
+                                {lang_texts[language][9]} $ {item.stake_token}
                             </Typography>
                         </Stack>
                         <Typography
@@ -459,31 +459,31 @@ const Pool = ({
                         className="item-3"
                         spacing={0.75}
                     >
-                        {loading ? (
-                            <Stack>
-                                <Typography
-                                    variant="span"
-                                    className="value"
-                                    style={{
-                                        fontFamily: "StackFont",
-                                        textShadow:
-                                            "4px 3px 1px black, 6px 4px 1px black",
-                                        fontSize: "37px",
-                                        color: "red",
-                                        fontWeight: "bolder",
-                                    }}
-                                >
-                                    {APR
-                                        ? Number(APR) > 10000
-                                            ? "+10000"
-                                            : APR
-                                        : 0}
-                                    %
-                                </Typography>
-                            </Stack>
+                        <Stack>
+                            <Typography
+                                variant="span"
+                                className="value"
+                                style={{
+                                    fontFamily: "StackFont",
+                                    textShadow:
+                                        "4px 3px 1px black, 6px 4px 1px black",
+                                    fontSize: "37px",
+                                    color: "red",
+                                    fontWeight: "bolder",
+                                }}
+                            >
+                                {APR
+                                    ? Number(APR) > 10000
+                                        ? "+10000"
+                                        : APR
+                                    : 0}
+                                %
+                            </Typography>
+                        </Stack>
+                        {/* {loading ? (
                         ) : (
                             <Skeleton height={32} animation="wave" />
-                        )}
+                        )} */}
                         <Stack spacing={1} direction="row">
                             <Typography
                                 style={{
@@ -530,33 +530,33 @@ const Pool = ({
                                 {lang_texts[language][10]}
                             </Typography>
                         </Stack>
-                        {loading ? (
-                            <Stack>
-                                <LeftTime
-                                    timeLeft={timeblog}
-                                    device="laptop"
-                                    poolState={poolState}
-                                    loading={loading}
-                                />
-                                <Typography
-                                    variant="span"
-                                    className="description"
-                                    style={{
-                                        // letterSpacing: "38px",
-                                        marginLeft: "21px",
-                                        position: "relative",
-                                        top: "19px",
-                                        fontFamily: "StackFont",
-                                        fontSize: "16px",
-                                        textShadow: "2px 3px 2px black",
-                                    }}
-                                >
-                                    D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
-                                </Typography>
-                            </Stack>
+                        <Stack>
+                            <LeftTime
+                                timeLeft={timeblog}
+                                device="laptop"
+                                poolState={poolState}
+                                loading={loading}
+                            />
+                            <Typography
+                                variant="span"
+                                className="description"
+                                style={{
+                                    // letterSpacing: "38px",
+                                    marginLeft: "21px",
+                                    position: "relative",
+                                    top: "19px",
+                                    fontFamily: "StackFont",
+                                    fontSize: "16px",
+                                    textShadow: "2px 3px 2px black",
+                                }}
+                            >
+                                D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
+                            </Typography>
+                        </Stack>
+                        {/* {loading ? (
                         ) : (
                             <Skeleton height={32} animation="wave" />
-                        )}
+                        )} */}
                     </Stack>
                     <Stack
                         className="item-5"
@@ -579,62 +579,63 @@ const Pool = ({
                                         "4px 2px 1px black, 6px 5px 6px black",
                                     fontWeight: "bold",
                                     marginTop: "-15px",
+                                    textAlign: "center",
                                 }}
                             >
                                 {lang_texts[language][11]}
                             </Typography>
                         </Stack>
-                        {loading ? (
-                            <Stack>
-                                <Typography
-                                    variant="span"
-                                    className="sub-description"
-                                    style={{
-                                        textShadow: "1px 1px 1px black",
-                                        fontFamily: "StackFont",
-                                        fontSize: "14px",
-                                        marginLeft: "-10px",
-                                        letterSpacing: "2px",
-                                        textAlign: "center",
-                                    }}
-                                >
-                                    {totalSupply
-                                        ? numberWithCommas(totalSupply)
-                                        : 0}{" "}
-                                    {item.tokenId[0]}
-                                </Typography>
-                                <Typography
-                                    variant="span"
-                                    className="sub-description"
-                                    style={{
-                                        textShadow: "1px 1px 1px black",
-                                        fontFamily: "StackFont",
-                                        fontSize: "14px",
-                                        marginLeft: "-10px",
-                                        textAlign: "center",
-                                        letterSpacing: "2px",
-                                    }}
-                                >
-                                    {totalSupply
-                                        ? (
-                                              totalSupply *
-                                              (BaseCoin
-                                                  ? Number(BaseCoin.price) > 0
-                                                      ? BaseCoin.price
-                                                      : baseCurrency[
-                                                            item.tokenId[0]
-                                                        ][currency]
+                        <Stack>
+                            <Typography
+                                variant="span"
+                                className="sub-description"
+                                style={{
+                                    textShadow: "1px 1px 1px black",
+                                    fontFamily: "StackFont",
+                                    fontSize: "14px",
+                                    marginLeft: "-10px",
+                                    letterSpacing: "2px",
+                                    textAlign: "center",
+                                }}
+                            >
+                                {totalSupply
+                                    ? numberWithCommas(totalSupply)
+                                    : 0}{" "}
+                                {/* {item.tokenId[0]} */}
+                            </Typography>
+                            {/* <Typography
+                                variant="span"
+                                className="sub-description"
+                                style={{
+                                    textShadow: "1px 1px 1px black",
+                                    fontFamily: "StackFont",
+                                    fontSize: "14px",
+                                    marginLeft: "-10px",
+                                    textAlign: "center",
+                                    letterSpacing: "2px",
+                                }}
+                            >
+                                {totalSupply
+                                    ? (
+                                          totalSupply *
+                                          (BaseCoin
+                                              ? Number(BaseCoin.price) > 0
+                                                  ? BaseCoin.price
                                                   : baseCurrency[
                                                         item.tokenId[0]
-                                                    ][currency])
-                                          ).toFixed(2)
-                                        : 0}{" "}
-                                    {currency}
-                                </Typography>
-                            </Stack>
+                                                    ][currency]
+                                              : baseCurrency[item.tokenId[0]][
+                                                    currency
+                                                ])
+                                      ).toFixed(2)
+                                    : 0}{" "}
+                                {currency}
+                            </Typography> */}
+                        </Stack>
+                        {/* {loading ? (
                         ) : (
                             <Skeleton height={32} animation="wave" />
-                        )}
+                        )} */}
                     </Stack>
                     <Stack className="item-6" height={0} marginLeft={"-70px"}>
                         {/* <Link
@@ -741,7 +742,7 @@ const Pool = ({
                                                     ),
                                                     3
                                                 )
-                                            )} ${item.tokenId[0]}`;
+                                            )} ${item.stake_token}`;
                                         } else {
                                             return `0 ${item.tokenId[0]}`;
                                         }
@@ -818,7 +819,7 @@ const Pool = ({
                                             }
                                         >
                                             {lang_texts[language][18]}{" "}
-                                            {item.tokenId[0]}
+                                            {/* {item.tokenId[0]} */}
                                         </Button>
                                     )}
                                 </Stack>
@@ -902,7 +903,7 @@ const Pool = ({
                                             onClick={withdraw}
                                         >
                                             {lang_texts[language][19]}{" "}
-                                            {item.tokenId[0]}
+                                            {/* {item.tokenId[0]} */}
                                         </Button>
                                     )}
                                 </Stack>

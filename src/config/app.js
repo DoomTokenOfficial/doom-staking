@@ -1,3 +1,5 @@
+import StatusBar1 from "../assets/img/StatusBar1.png";
+import StatusBar2 from "../assets/img/StatusBar2.png";
 export const Currencys = [
     "USD",
     "CAD",
@@ -119,6 +121,8 @@ export const Pools_test = {
 export const Vaults = [
     {
         id: "cflt_aer",
+        img_url: StatusBar1,
+        stake_token: "DOOM",
         tokenName: ["Coinflect", "Aerdrop"],
         tokenId: ["CFLT", "AER"],
         status: true,
@@ -136,6 +140,8 @@ export const Vaults = [
     },
     {
         id: "aer_cflt",
+        img_url: StatusBar2,
+        stake_token: "LP",
         tokenName: ["Aerdrop", "Coinflect"],
         tokenId: ["AER", "CFLT"],
         status: true,

@@ -106,6 +106,8 @@ const Home = () => {
     };
 
     const _handleExpaned = (id, e, i) => {
+        _Expand(id);
+        console.log(id, e, i, "232323232323232");
         let initialTop = !mobile ? 40 : 110;
         if (!e) {
             _Expand(id);
@@ -396,6 +398,9 @@ const Home = () => {
                                         <Typography
                                             className="first-box-style"
                                             variant="h5"
+                                            style={{
+                                                color: "white !important;",
+                                            }}
                                         >
                                             {CurrencySymbol[currency]}{" "}
                                             {coinStatus.price
@@ -408,6 +413,9 @@ const Home = () => {
                                         </Typography>
                                         <Typography
                                             variant="span"
+                                            style={{
+                                                color: "#a61919 !important",
+                                            }}
                                             className={
                                                 coinStatus.status
                                                     ? `first-box-style state-percent ${coinStatus.status}`
@@ -420,12 +428,6 @@ const Home = () => {
                                             %
                                         </Typography>
                                     </Stack>
-                                    <ChartBox
-                                        AllData={chartInfo}
-                                        id="CFLT"
-                                        type="status"
-                                        coin={coinStatus}
-                                    />
                                 </Stack>
                             </Stack>
                             <Stack spacing={2}>
@@ -448,6 +450,9 @@ const Home = () => {
                                 <Typography
                                     variant="h6"
                                     className="first-box-style"
+                                    style={{
+                                        color: "#a61919 !important",
+                                    }}
                                 >
                                     {lang_texts[language][6]}
                                 </Typography>
@@ -478,6 +483,9 @@ const Home = () => {
                                 <Typography
                                     variant="h6"
                                     className="first-box-style"
+                                    style={{
+                                        color: "#a61919 !important",
+                                    }}
                                 >
                                     {lang_texts[language][7]}
                                 </Typography>
@@ -486,6 +494,9 @@ const Home = () => {
                                         <Typography
                                             variant="h5"
                                             className="first-box-style"
+                                            style={{
+                                                color: "white !important",
+                                            }}
                                         >
                                             {totalUser}
                                         </Typography>
@@ -509,7 +520,12 @@ const Home = () => {
                                 <Typography variant="h6">$ Doom</Typography>
                                 <Stack direction="row">
                                     <Stack>
-                                        <Typography variant="h5">
+                                        <Typography
+                                            variant="h5"
+                                            style={{
+                                                color: "white !important",
+                                            }}
+                                        >
                                             {CurrencySymbol[currency]}{" "}
                                             {coinStatus
                                                 ? coinStatus.price
@@ -581,7 +597,12 @@ const Home = () => {
                                 </Typography>
                                 {loading ? (
                                     <Stack>
-                                        <Typography variant="h5">
+                                        <Typography
+                                            variant="h5"
+                                            style={{
+                                                color: "white !important",
+                                            }}
+                                        >
                                             {totalUser}
                                         </Typography>
                                     </Stack>
