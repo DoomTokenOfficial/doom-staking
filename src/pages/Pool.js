@@ -744,7 +744,7 @@ const Pool = ({
                                                 )
                                             )} ${item.stake_token}`;
                                         } else {
-                                            return `0 ${item.tokenId[0]}`;
+                                            return `0 ${item.stake_token}`;
                                         }
                                     })()}
                                 </Typography>
@@ -854,7 +854,7 @@ const Pool = ({
                                             3
                                         )
                                     )}{" "}
-                                    {item.tokenId[0]}
+                                    {item.stake_token}
                                 </Typography>
                             </Stack>
                             <Stack direction="row" spacing={1.25}>
