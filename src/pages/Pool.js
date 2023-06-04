@@ -385,7 +385,7 @@ const Pool = ({
                 UpdateAllInfo(false);
             }, 60000);
             UnsetAllData();
-            console.clear();
+            // console.clear();
         }
         return () => {
             clearInterval(timer);
@@ -680,6 +680,7 @@ const Pool = ({
                                           fontFamily: "StackFont",
                                           fontSize: "18px",
                                           letterSpacing: "2px",
+                                          borderRadius: "unset !important",
                                       }
                             }
                         >
