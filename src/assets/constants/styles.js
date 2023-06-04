@@ -884,7 +884,7 @@ const useStyles = makeStyles((theme) => {
                                 theme.palette.mode === "light"
                                     ? "whtie"
                                     : "black",
-                            borderRadius: theme.custom.ButtonBorderRadius,
+                            // borderRadius: theme.custom.ButtonBorderRadius,
                             backgroundColor:
                                 theme.palette.mode === "light"
                                     ? "#4B8AEB"
@@ -933,7 +933,7 @@ const useStyles = makeStyles((theme) => {
                                         theme.palette.mode === "light"
                                             ? "#293142"
                                             : "white",
-                                    borderRadius: "20px",
+                                    // borderRadius: "20px",
                                     width: "fit-content",
                                     alignSelf: "center",
                                 },
@@ -953,19 +953,20 @@ const useStyles = makeStyles((theme) => {
 
                                 "& .deposit-btn": {
                                     color: "white !important",
-                                    position: "absolute",
-                                    background: "transparent",
-                                    border: "3px outset rgb(84, 84, 85)",
-                                    boxShadow: "grey 1px 1px 1px",
+                                    position: "relative",
+
+                                    // background: "transparent",
+                                    // border: "3px outset rgb(84, 84, 85)",
+                                    // boxShadow: "grey 1px 1px 1px",
                                     width: "138px",
                                     height: "30px",
                                     fontFamily: "StackFont",
                                     fontSize: "20px",
                                     letterSpacing: "2px",
-                                    backgroundColor: "unset !important",
+                                    // backgroundColor: "unset !important",
                                     marginTop: "-13px",
-                                    left: "35%",
-                                    borderRadius: "unset !important",
+                                    left: "35px",
+                                    // borderRadius: "unset !important",
                                 },
 
                                 "& .cal-in": {

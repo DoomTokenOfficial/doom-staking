@@ -22,6 +22,8 @@ import ShoresHell from "../assets/img/strife-small-the-shores-of-hell.png";
 import { Link } from "@mui/material";
 import { ThemeModeContext } from "../context/themmode";
 import { netId, Tokens, Vaults } from "../config/app";
+import claimOrStakeBtn from "../assets/img/StakeClaimButton.png";
+import depositWithdraw from "../assets/img/DepositWithdrawClaimButton.png";
 import {
     baseCurrency,
     CurrencySymbol,
@@ -671,12 +673,12 @@ const Pool = ({
                                           color: "white",
                                           position: "absolute",
 
-                                          background: "transparent",
-                                          border: "3px #545455",
-                                          borderStyle: "outset",
-                                          boxShadow: "1px 1px 1px grey",
-                                          width: "138px",
-                                          height: "50px",
+                                          background: `url(${claimOrStakeBtn})`,
+                                          //   border: "3px #545455",
+                                          //   borderStyle: "outset",
+                                          //   boxShadow: "1px 1px 1px grey",
+                                          width: "175px",
+                                          height: "64px",
                                           fontFamily: "StackFont",
                                           fontSize: "18px",
                                           letterSpacing: "2px",
@@ -684,9 +686,10 @@ const Pool = ({
                                       }
                             }
                         >
-                            {poolState
+                            STAKE/CLAIM
+                            {/* {poolState
                                 ? lang_texts[language][9]
-                                : lang_texts[language][24]}
+                                : lang_texts[language][24]} */}
                         </Button>
                     </Stack>
                 </Stack>
@@ -818,6 +821,11 @@ const Pool = ({
                                                     ? "deposit-btn"
                                                     : "disabled deposit-btn"
                                             }
+                                            style={{
+                                                background: `url(${depositWithdraw})`,
+                                                width: "132px",
+                                                height: "32px",
+                                            }}
                                         >
                                             {lang_texts[language][18]}{" "}
                                             {/* {item.tokenId[0]} */}
@@ -901,6 +909,13 @@ const Pool = ({
                                                     ? "deposit-btn"
                                                     : "disabled deposit-btn"
                                             }
+                                            style={{
+                                                background: `url(${depositWithdraw})`,
+                                                width: "132px",
+                                                height: "32px",
+                                                position: "relative",
+                                                left: "26px",
+                                            }}
                                             onClick={withdraw}
                                         >
                                             {lang_texts[language][19]}{" "}
@@ -920,7 +935,7 @@ const Pool = ({
                                         style={{
                                             marginLeft: "21px",
                                             position: "relative",
-                                            top: "-200%",
+                                            top: "-40%",
                                             fontFamily: "StackFont",
                                             fontSize: "16px",
                                             textShadow: "2px 3px 2px black",
@@ -942,7 +957,7 @@ const Pool = ({
                                             marginLeft: "21px",
                                             color: "red",
                                             position: "relative",
-                                            top: "-200%",
+                                            top: "-40%",
                                             fontFamily: "StackFont",
                                             fontSize: "16px",
                                             textShadow: "2px 3px 2px black",
@@ -955,22 +970,21 @@ const Pool = ({
                                 </Stack>
                                 <Stack className="">
                                     <Button
+                                        // className="depositWithdraw"
                                         variant="contained"
                                         style={{
                                             color: "white !important",
-                                            position: "absolute",
-                                            background: "transparent",
-                                            border: "3px outset rgb(84, 84, 85)",
-                                            boxShadow: "grey 1px 1px 1px",
-                                            width: "138px",
-                                            height: "30px",
+                                            position: "relative",
+                                            background: `url(${depositWithdraw})`,
+                                            width: "132px",
+                                            height: "32px",
                                             fontFamily: "StackFont",
                                             fontSize: "12px",
                                             letterSpacing: "2px",
-                                            backgroundColor: "unset !important",
-                                            marginTop: "-3px",
-                                            right: "21%",
-                                            borderRadius: "unset",
+                                            top: "65%",
+                                            right: "21px",
+                                            backgroundRadius:
+                                                "unset !important",
                                             // left: "35%",
                                         }}
                                     >
