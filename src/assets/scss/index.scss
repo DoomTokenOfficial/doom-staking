@@ -15,6 +15,16 @@ body,
     src: url("./fonts/EternalUi2Regular-1Gvn2.ttf");
     font-weight: 500;
 }
+@font-face {
+    font-family: "PublicFont";
+    src: url("./fonts/PublicPixel-z84yD.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "EternalLogo";
+    src: url("./fonts/EternalLogo-w1572.ttf");
+    font-weight: 300;
+}
 #depositWidthdraw {
     color: white !important;
     position: relative;

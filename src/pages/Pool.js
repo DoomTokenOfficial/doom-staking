@@ -443,14 +443,15 @@ const Pool = ({
                             variant="span"
                             className="value"
                             style={{
-                                fontFamily: "StackFont",
+                                fontFamily: "PublicFont",
                                 textShadow:
                                     "3px 2px 2px black, 3px 2px 2px black",
-                                fontSize: "23px",
+                                fontSize: "13px",
                                 color: "red",
-                                letterSpacing: "4px",
+                                letterSpacing: "2px",
                                 fontWeight: "bolder",
                                 fontPalette: "dark",
+                                paddingTop: "10px",
                             }}
                         >
                             {lang_texts[language][8]} {item.tokenId[1]}
@@ -466,12 +467,12 @@ const Pool = ({
                                 variant="span"
                                 className="value"
                                 style={{
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     textShadow:
                                         "4px 3px 1px black, 6px 4px 1px black",
-                                    fontSize: "37px",
+                                    fontSize: "27px",
                                     color: "red",
-                                    fontWeight: "bolder",
+                                    // fontWeight: "bolder",
                                 }}
                             >
                                 {APR
@@ -489,11 +490,12 @@ const Pool = ({
                         <Stack spacing={1} direction="row">
                             <Typography
                                 style={{
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     textShadow: "black -1px 2px 2px",
                                     fontSize: "18px",
                                     color: "white",
                                     marginLeft: " 45px",
+                                    marginTop: "10px",
                                 }}
                                 variant="span"
                                 className="sub-description"
@@ -513,20 +515,23 @@ const Pool = ({
                                     "4px 1px 1px black, 4px 2px 1px black",
                                 fontSize: "20px",
                                 color: "red",
-                                letterSpacing: "3px",
+                                // letterSpacing: "3px",
                                 fontWeight: "bolder",
                                 marginTop: "-17px",
-                                marginLeft: "10px",
+                                // marginLeft: "10px",
                             }}
                         >
                             <Typography
                                 variant="span"
                                 className="title"
                                 style={{
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     textShadow: "black -1px 2px 2px",
-                                    fontSize: "20px",
+                                    fontSize: "14px",
                                     color: "red",
+                                    letterSpacing: "1px",
+                                    marginTop: "10px",
+                                    marginLeft: "-9px",
                                 }}
                             >
                                 {lang_texts[language][10]}
@@ -544,12 +549,13 @@ const Pool = ({
                                 className="description"
                                 style={{
                                     // letterSpacing: "38px",
-                                    marginLeft: "21px",
+                                    marginLeft: "7px",
                                     position: "relative",
                                     top: "19px",
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     fontSize: "16px",
                                     textShadow: "2px 3px 2px black",
+                                    letterSpacing: "-9.9px",
                                 }}
                             >
                                 D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
@@ -573,14 +579,14 @@ const Pool = ({
                                 variant="span"
                                 className="title"
                                 style={{
-                                    fontFamily: "StackFont",
-                                    fontSize: "17px",
+                                    fontFamily: "PublicFont",
+                                    fontSize: "12px",
                                     letterSpacing: "3px",
                                     color: "red",
                                     textShadow:
                                         "4px 2px 1px black, 6px 5px 6px black",
                                     fontWeight: "bold",
-                                    marginTop: "-15px",
+                                    marginTop: "-3px",
                                     textAlign: "center",
                                 }}
                             >
@@ -593,7 +599,7 @@ const Pool = ({
                                 className="sub-description"
                                 style={{
                                     textShadow: "1px 1px 1px black",
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     fontSize: "14px",
                                     marginLeft: "-10px",
                                     letterSpacing: "2px",

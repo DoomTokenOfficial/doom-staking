@@ -662,8 +662,8 @@ const useStyles = makeStyles((theme) => {
                 },
             },
             "& .first-box-style": {
-                fontFamily: "DoomFont",
-                fontSize: "18px !important",
+                fontFamily: "EternalLogo",
+                fontSize: "14px !important",
                 color: "#a61919",
                 textShadow: "2px 3px 1px black;",
             },

@@ -29,13 +29,14 @@ const LeftTime = ({ timeLeft, device, poolState, loading }) => {
                         <Stack
                             direction="row"
                             style={{
-                                letterSpacing: "8px",
+                                letterSpacing: "3.9px",
                                 position: "relative",
                                 top: "9px",
+                                fontFamily: "StackFont",
                             }}
                         >
                             <Typography variant="span" className="value">
-                                {leftTime.days ? leftTime.days : "5"}
+                                {leftTime.days ? leftTime.days : "05"}
                             </Typography>
                             <Typography variant="span" className="value">
                                 &nbsp;&nbsp;
@@ -47,7 +48,7 @@ const LeftTime = ({ timeLeft, device, poolState, loading }) => {
                                 &nbsp;&nbsp;
                             </Typography>
                             <Typography variant="span" className="value">
-                                {leftTime.minutes ? leftTime.minutes : "9"}
+                                {leftTime.minutes ? leftTime.minutes : "09"}
                             </Typography>
                         </Stack>
                     );
