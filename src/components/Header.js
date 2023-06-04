@@ -117,31 +117,7 @@ const Header = () => {
         <Box sx={{ flexGrow: 1 }} className={styles.appbar}>
             <AppBar position="fixed" className={top ? "top header" : "header"}>
                 {matches ? (
-                    <Toolbar>
-                        {active ? (
-                            <Button
-                                variant="contained"
-                                className="wallet-btn"
-                                onClick={() => setIsOpenDialog(true)}
-                            >
-                                {account.substring(0, 8)} ...{" "}
-                                {account.substring(account.length - 4)}
-                                <img
-                                    className="active-wallet-icon"
-                                    src={cWallet.logo}
-                                    alt={cWallet.name}
-                                />
-                            </Button>
-                        ) : (
-                            <Button
-                                variant="contained"
-                                className="wallet-btn"
-                                onClick={() => setIsOpenDialog(true)}
-                            >
-                                {lang_texts[language][0]}
-                            </Button>
-                        )}
-                    </Toolbar>
+                    <></>
                 ) : (
                     <Toolbar>
                         <Box sx={{ flexGrow: 1 }}>

@@ -656,7 +656,7 @@ const Home = () => {
                             default:
                                 order.order = key;
                                 break;
-                        }
+                        }   
                     }
                     return (
                         <>
