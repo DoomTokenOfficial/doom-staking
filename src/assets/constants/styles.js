@@ -997,8 +997,7 @@ const useStyles = makeStyles((theme) => {
                                 "& .col-row-2": {
                                     width: "40%",
                                     "& button": {
-                                        borderRadius:
-                                            theme.custom.ButtonBorderRadius,
+                                        borderRadius: 0,
                                         width: "120PX",
                                         backgroundColor: "#66DC95",
                                         boxShadow:

@@ -102,7 +102,7 @@ const Pool = ({
             fontSize: 12,
             maxWidth: 250,
             padding: 12,
-            borderRadius: 6,
+            borderRadius: 0,
         },
     }));
 

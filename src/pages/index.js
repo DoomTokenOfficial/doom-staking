@@ -616,12 +616,6 @@ const Home = () => {
             })()}
 
             <Container className="vault-lists">
-                <img
-                    src={ShoresHell}
-                    style={{
-                        width: "29%",
-                    }}
-                />
                 {Vaults.map((item, key) => {
                     let dp = stakedFilter
                         ? Number(userStaked[item.id]) > 0
@@ -665,27 +659,35 @@ const Home = () => {
                         }
                     }
                     return (
-                        <Stack
-                            direction="row"
-                            key={key}
-                            display={dp}
-                            style={order}
-                        >
-                            <Pool
-                                item={item}
-                                index={key}
-                                handleExpand={_handleExpaned}
-                                loading={loading}
-                                _web3={web3}
-                                updateTime={updateEndTime}
-                                updateStaked={updateStakedState}
-                                expand={expanded}
-                                CoinInfo={CoinInfo}
-                                UpdatingTVL={UpdatingTotalSupply}
-                                updateAPRs={updateAPRs}
-                                chartInfo={chartInfo}
+                        <>
+                            <img
+                                src={!key ? ShoresHell : Inferno}
+                                style={{
+                                    width: !key ? "29%" : "12%",
+                                }}
                             />
-                        </Stack>
+                            <Stack
+                                direction="row"
+                                key={key}
+                                display={dp}
+                                style={order}
+                            >
+                                <Pool
+                                    item={item}
+                                    index={key}
+                                    handleExpand={_handleExpaned}
+                                    loading={loading}
+                                    _web3={web3}
+                                    updateTime={updateEndTime}
+                                    updateStaked={updateStakedState}
+                                    expand={expanded}
+                                    CoinInfo={CoinInfo}
+                                    UpdatingTVL={UpdatingTotalSupply}
+                                    updateAPRs={updateAPRs}
+                                    chartInfo={chartInfo}
+                                />
+                            </Stack>
+                        </>
                     );
                 })}
             </Container>
