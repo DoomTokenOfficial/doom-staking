@@ -52,10 +52,8 @@ const Pool = ({
     updateStaked,
     _web3,
     loading = false,
-    chartInfo,
 }) => {
-    const theme = useTheme();
-    const mode = theme.palette.mode;
+    console.log(item, "------------------------------");
     const Coin = CoinInfo.find((co) => co.id === item.chart.id[0]);
     const BaseCoin = CoinInfo.find((co) => co.id === item.chart.id[1]);
     const { currency, language } = useContext(ThemeModeContext);
@@ -79,32 +77,8 @@ const Pool = ({
     const [claimedAt, setClaimedAt] = useState(0);
     const [poolState, setPoolState] = useState(true);
     const [totalSupply, setTotalSupply] = useState();
-    const [rewardCycle, setRewardCycle] = useState(0);
     const [tokenTotalS, settokenTotalS] = useState(0);
     const [tokenDecimals, setTokenDecimals] = useState({});
-
-    const BootstrapTooltip = styled(({ className, ...props }) => (
-        <Tooltip
-            enterTouchDelay={30}
-            leaveTouchDelay={5000}
-            {...props}
-            arrow
-            classes={{ popper: className }}
-        />
-    ))(() => ({
-        [`& .${tooltipClasses.arrow}`]: {
-            color: mode === "light" ? "#181722" : "white",
-            fontSize: 25,
-        },
-        [`& .${tooltipClasses.tooltip}`]: {
-            backgroundColor: mode === "light" ? "#181722" : "white",
-            color: mode === "light" ? "white" : "black",
-            fontSize: 12,
-            maxWidth: 250,
-            padding: 12,
-            borderRadius: 0,
-        },
-    }));
 
     const toBN = useCallback((web3, val) => {
         if (val) {
@@ -137,6 +111,17 @@ const Pool = ({
         const BaseDecimal = await CT_base.methods.decimals().call();
         const RewardDecimal = await CT_vault.methods.decimals().call();
         const TokenTotalSupply = await CT_base.methods.totalSupply().call();
+
+        console.log(
+            "11111111111111111111111111111111111111111111111111111111111111",
+            item.tokenId[0],
+            BaseDecimal,
+            "BaseDecimal",
+            item.tokenId[1],
+            RewardDecimal,
+            "RewardDecimal",
+            "TokenTotalSup2p11ly"
+        );
         let t_s = await Pool.methods.totalSupply().call();
         let rewardRate = await Pool.methods.rewardRate().call();
         rewardRate = rewardRate * 10 ** (18 - RewardDecimal);
@@ -152,12 +137,21 @@ const Pool = ({
             const Reward_Balance = await CT_vault.methods
                 .balanceOf(account)
                 .call();
-            const stakedToken = await Pool.methods.userInfo(account).call();
-            const rewarded = await Pool.methods.claimable(account).call();
-            const userInfo = await Pool.methods.userInfo(account).call();
-            const rewardC = await Pool.methods.rewardCycle().call();
+            const stakedToken = { amount: 0 };
+            // const stakedToken = await Pool.methods.userInfo(account).call();
+            const rewarded = await Pool.methods.earned(account).call();
+            // const rewarded = await Pool.methods.claimable(account).call();
+            const userInfo = {
+                amount: 0,
+                rewardDebt: 0,
+                pedingRewards: 0,
+                depositedAt: 0,
+                claimedAt: 0,
+            };
+            // const userInfo = await Pool.methods.userInfo(account).call();
+            const rewardC = await Pool.methods.rewardRate().call();
 
-            const Endtime = await Pool.methods.endTime().call();
+            const Endtime = await Pool.methods.lastUpdateTime().call();
             Promise.resolve(Endtime).then((res) => {
                 const poolLifeCycle = res
                     ? toDec(Math.abs(res - new Date() / 1000), 0, 0)
@@ -182,11 +176,11 @@ const Pool = ({
                 toDec(rewarded, RewardDecimal, 2)
             );
             setClaimedAt(userInfo.claimedAt);
-            setRewardCycle(rewardC);
             settokenTotalS(toDec(TokenTotalSupply, BaseDecimal, 0));
         } else {
-            const Endtime = await Pool.methods.endTime().call();
+            const Endtime = await Pool.methods.lastUpdateTime().call();
             Promise.resolve(Endtime).then((res) => {
+                console.log(res, "res------------");
                 if (Number(res) - new Date() / 1000 < 0) {
                     setPoolState(false);
                 }
@@ -380,7 +374,7 @@ const Pool = ({
             timer = setInterval(() => {
                 UpdateAllInfo(true);
             }, 20000);
-            console.clear();
+            // console.clear();
         } else {
             clearInterval(timer);
             timer = setInterval(() => {
@@ -391,7 +385,7 @@ const Pool = ({
         }
         return () => {
             clearInterval(timer);
-            console.clear();
+            // console.clear();
         };
     }, [account, library, chainId]);
 
@@ -674,15 +668,23 @@ const Pool = ({
                             disableElevation
                             style={
                                 poolState
-                                    ? {}
+                                    ? {
+                                          color: "white",
+                                          position: "absolute",
+
+                                          background: `url(${claimOrStakeBtn})`,
+                                          width: "175px",
+                                          height: "64px",
+                                          fontFamily: "StackFont",
+                                          fontSize: "18px",
+                                          letterSpacing: "2px",
+                                          borderRadius: "unset !important",
+                                      }
                                     : {
                                           color: "white",
                                           position: "absolute",
 
                                           background: `url(${claimOrStakeBtn})`,
-                                          //   border: "3px #545455",
-                                          //   borderStyle: "outset",
-                                          //   boxShadow: "1px 1px 1px grey",
                                           width: "175px",
                                           height: "64px",
                                           fontFamily: "StackFont",

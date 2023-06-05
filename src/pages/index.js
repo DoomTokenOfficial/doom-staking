@@ -3,16 +3,12 @@ import React, { useEffect, useState, useContext } from "react";
 import Box from "@mui/material/Box";
 import Menu from "@mui/material/Menu";
 import Stack from "@mui/material/Stack";
-import Switch from "@mui/material/Switch";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
-import useTheme from "@mui/material/styles/useTheme";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import Web3 from "web3";
 
@@ -20,32 +16,23 @@ import ShoresHell from "../assets/img/strife-small-the-shores-of-hell.png";
 import Inferno from "../assets/img/strife-small-inferno.png";
 
 import useStyles from "../assets/constants/styles";
-import { Vaults, Currencys, TotalPoolNum } from "../config/app";
+import { Vaults, TotalPoolNum } from "../config/app";
 import axios from "axios";
 
 import Pool from "./Pool";
-import {
-    baseCurrency,
-    CurrencySymbol,
-    setInit,
-    tempChart,
-    toDec,
-} from "../config/config";
+import { baseCurrency, CurrencySymbol, setInit, toDec } from "../config/config";
 import { ThemeModeContext } from "../context/themmode";
-import { lang_texts, Filters, Languages } from "../assets/constants/language";
+import { lang_texts, Filters } from "../assets/constants/language";
 import ChartBox from "./chart";
 
 const web3 = new Web3(
-    new Web3.providers.HttpProvider("https://bsc-dataseed.binance.org/")
+    new Web3.providers.HttpProvider("https://rpc.testnet.fantom.network/")
 );
 let countable = 0;
 
 const Home = () => {
     const styles = useStyles();
-    const theme = useTheme();
-    const mode = theme.palette.mode;
-    const { currency, setCurrency, setLanguage, language } =
-        useContext(ThemeModeContext);
+    const { currency, language } = useContext(ThemeModeContext);
 
     const tablet = useMediaQuery("(min-width:1200px)");
     const mobile = useMediaQuery("(min-width:800px)");
@@ -69,29 +56,12 @@ const Home = () => {
     const [currentFilter, setCurrentFilter] = React.useState("");
 
     const filtermenu = Boolean(filter);
-    const currencymenu = Boolean(cy);
-    const languagemenu = Boolean(lg);
-
-    const _handleFilter = (event) => {
-        setFilter(event.currentTarget);
-    };
 
     const _handleCloseFilter = (e, s) => {
         if (s === true) {
             setCurrentFilter(e);
         }
         setFilter(null);
-    };
-
-    const _handleLanguage = (event) => {
-        setLG(event.currentTarget);
-    };
-
-    const _handleCloseLanguage = (e, s) => {
-        if (s === true) {
-            setLanguage(e);
-        }
-        setLG(null);
     };
 
     const _Expand = (id) => {
@@ -135,27 +105,16 @@ const Home = () => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
 
-    const _handleCurrency = (event) => {
-        setCy(event.currentTarget);
-    };
-
-    const _handleCloseCurrency = (e, s) => {
-        if (s === true) {
-            setCurrency(e);
-        }
-        setCy(null);
-    };
-
     const GetPoolStatus = async () => {
         let total_U = 0;
 
         for (let i = 0; i < Vaults.length; i++) {
             if (Vaults[i].vault) {
-                const Pool = new web3.eth.Contract(
-                    Vaults[i].vault.abi,
-                    Vaults[i].vault.address
-                );
-                let t_u = await Pool.methods.userCount().call();
+                // const Pool = new web3.eth.Contract(
+                //     Vaults[i].vault.abi,
+                //     Vaults[i].vault.address
+                // );
+                let t_u = 100;
                 total_U += Number(t_u);
             }
         }
@@ -182,6 +141,15 @@ const Home = () => {
     };
 
     const UpdatingTotalSupply = (id, Tval, coinId, i, s, coins = []) => {
+        console.log(
+            id,
+            Tval,
+            coinId,
+            i,
+            s,
+            coins,
+            "id, Tval, coinId, i, s, coins"
+        );
         let total_S = 0;
         if (!s) {
             countable++;
@@ -205,20 +173,6 @@ const Home = () => {
         if (countable === Vaults.length - 1) {
             setLoading(true);
         }
-    };
-
-    const GetChartInfo = async () => {
-        let startDate = new Date(new Date() - 86400000).toISOString();
-        let endDate = new Date().toISOString();
-        const endpoint = `https://api.nomics.com/v1/currencies/sparkline?key=11eb38db1f3a30c89a0764bf97c083d0d8d6749b&ids=CFLT,AER2,FCF,PFT2,LLN,FFT2,WNOW,WRAITH2,DAPES,ADREAM&start=${startDate}&end=${endDate}`;
-        axios
-            .get(endpoint)
-            .then(({ data }) => {
-                setChartInfo(data);
-            })
-            .catch(() => {
-                setChartInfo(tempChart);
-            });
     };
 
     const GetCoinInfo = async () => {
@@ -293,7 +247,6 @@ const Home = () => {
     }, [currency]);
 
     useEffect(() => {
-        GetChartInfo();
         GetPoolStatus();
     }, []);
 
@@ -303,22 +256,24 @@ const Home = () => {
         setLG(null);
     }, [tablet, mobile]);
 
-    useEffect(() => {
-        if (!tablet || !mobile) {
-            const script = document.createElement("script");
-            script.src = "https://widget.nomics.com/embed.js";
-            script.async = true;
-            document.body.appendChild(script);
-            let iframe = document.querySelector("iframe");
-            if (iframe) {
-                let url = iframe.getAttribute("src");
-                iframe.setAttribute(
-                    "src",
-                    `${url.substr(0, url.length - 4) + currency}/`
-                );
-            }
-        }
-    }, [expanded, tablet, currency]);
+    // useEffect(() => {
+    //     if (!tablet || !mobile) {
+    //         const script = document.createElement("script");
+    //         script.src = "https://widget.nomics.com/embed.js";
+    //         script.async = true;
+    //         document.body.appendChild(script);
+    //         let iframe = document.querySelector("iframe");
+
+    //         console.log(iframe.getAttribute("src"), "-------------");
+    //         if (iframe) {
+    //             let url = iframe.getAttribute("src");
+    //             iframe.setAttribute(
+    //                 "src",
+    //                 `${url.substr(0, url.length - 4) + currency}/`
+    //             );
+    //         }
+    //     }
+    // }, [expanded, tablet, currency]);
 
     return (
         <Box className={styles.Home}>
@@ -391,7 +346,7 @@ const Home = () => {
                                     className="first-box-style"
                                     variant="h6"
                                 >
-                                    $ Doom
+                                    $Doom
                                 </Typography>
                                 <Stack direction="row">
                                     <Stack>
@@ -656,7 +611,7 @@ const Home = () => {
                             default:
                                 order.order = key;
                                 break;
-                        }   
+                        }
                     }
                     return (
                         <>
