@@ -136,7 +136,7 @@ export const Vaults = [
             nomicsUrl: "https://nomics.com/assets/aer2-aerdrop",
         },
         vault: {
-            address: "0x3F89F3ebd6ee4afb09152c79bF774fBA8f57e0e0",
+            address: "0xc003e6e1096617654286e62ce2bdd28913c93081",
             abi: require("../config/abis/do-stake-test.json"),
         },
         search: "Aerdrop",

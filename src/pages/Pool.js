@@ -122,7 +122,7 @@ const Pool = ({
             "RewardDecimal",
             "TokenTotalSup2p11ly"
         );
-        let t_s = await Pool.methods.totalSupply().call();
+        let t_s = await Pool.methods.totalStaked().call();
         let rewardRate = await Pool.methods.rewardRate().call();
         rewardRate = rewardRate * 10 ** (18 - RewardDecimal);
         t_s = String(
@@ -137,9 +137,13 @@ const Pool = ({
             const Reward_Balance = await CT_vault.methods
                 .balanceOf(account)
                 .call();
-            const stakedToken = { amount: 0 };
-            // const stakedToken = await Pool.methods.userInfo(account).call();
-            const rewarded = await Pool.methods.earned(account).call();
+            // const stakedToken = { amount: 0 };
+            const stakedToken = await Pool.methods
+                .stakedBalanceOf(account)
+                .call();
+            const rewarded = await Pool.methods.rewards(account).call();
+
+            console.log(rewarded, "rewarded");
             // const rewarded = await Pool.methods.claimable(account).call();
             const userInfo = {
                 amount: 0,
@@ -168,11 +172,11 @@ const Pool = ({
             OB[item.tokenId[0]] = base_balance.toString();
             OB[item.tokenId[1]] = Reward_Balance.toString();
             setBalance(OB);
-            setSB(stakedToken.amount);
+            setSB(stakedToken);
             setCB(toDec(rewarded, RewardDecimal, 2));
             updateStaked(
                 item.id,
-                toDec(stakedToken.amount, BaseDecimal, 2),
+                toDec(stakedToken, BaseDecimal, 2),
                 toDec(rewarded, RewardDecimal, 2)
             );
             setClaimedAt(userInfo.claimedAt);
@@ -180,7 +184,7 @@ const Pool = ({
         } else {
             const Endtime = await Pool.methods.lastUpdateTime().call();
             Promise.resolve(Endtime).then((res) => {
-                console.log(res, "res------------");
+                console.log(res, "res--------");
                 if (Number(res) - new Date() / 1000 < 0) {
                     setPoolState(false);
                 }
@@ -273,12 +277,12 @@ const Pool = ({
                     await TokenContract.methods
                         .approve(
                             item.vault.address,
-                            toWei(web3, "10000000000000")
+                            toWei(web3, "100000000000000000000000000000")
                         )
                         .send({ from: account });
                 }
                 await Pool.methods
-                    .deposit(
+                    .stake(
                         String(
                             toBN(web3, toWei(web3, dv))
                                 .mul(
@@ -345,7 +349,7 @@ const Pool = ({
                     item.vault.abi,
                     item.vault.address
                 );
-                await Pool.methods.claim().send({ from: account });
+                await Pool.methods.getReward().send({ from: account });
                 await UpdateAllInfo(true);
             } catch {
                 await UpdateAllInfo(true);
@@ -765,14 +769,12 @@ const Pool = ({
                                 <Stack className="col-row-1">
                                     <OutlinedInput
                                         disabled={
-                                            Number(balance[item.tokenId[0]]) >
-                                                0 && poolState
+                                            Number(balance[item.tokenId[0]]) > 0
                                                 ? false
                                                 : true
                                         }
                                         className={
-                                            Number(balance[item.tokenId[0]]) >
-                                                0 && poolState
+                                            Number(balance[item.tokenId[0]]) > 0
                                                 ? "cal-in bg-white"
                                                 : "cal-in disabled"
                                         }
@@ -787,7 +789,7 @@ const Pool = ({
                                                 className={
                                                     Number(
                                                         balance[item.tokenId[0]]
-                                                    ) > 0 && poolState
+                                                    ) > 0
                                                         ? "sub-description c-max"
                                                         : "sub-description"
                                                 }
@@ -809,7 +811,12 @@ const Pool = ({
                                         <LoadingButton
                                             loading
                                             variant="contained"
-                                            className="deposit-btn"
+                                            // className="deposit-btn"
+                                            style={{
+                                                background: `url(${depositWithdraw})`,
+                                                width: "132px",
+                                                height: "32px",
+                                            }}
                                         ></LoadingButton>
                                     ) : (
                                         <Button
@@ -818,14 +825,14 @@ const Pool = ({
                                             disabled={
                                                 Number(
                                                     balance[item.tokenId[0]]
-                                                ) > 0 && poolState
+                                                ) > 0
                                                     ? false
                                                     : true
                                             }
                                             className={
                                                 Number(
                                                     balance[item.tokenId[0]]
-                                                ) > 0 && poolState
+                                                ) > 0
                                                     ? "deposit-btn"
                                                     : "disabled deposit-btn"
                                             }
@@ -922,7 +929,7 @@ const Pool = ({
                                                 width: "132px",
                                                 height: "32px",
                                                 position: "relative",
-                                                left: "26px",
+                                                // left: "26px",
                                             }}
                                             onClick={withdraw}
                                         >
@@ -963,7 +970,7 @@ const Pool = ({
                                         alignSelf="flex-start"
                                         style={{
                                             marginLeft: "21px",
-                                            color: "red",
+                                            color: "white",
                                             position: "relative",
                                             top: "-40%",
                                             fontFamily: "StackFont",
@@ -973,13 +980,18 @@ const Pool = ({
                                             fontWeight: "bolder",
                                         }}
                                     >
-                                        30000 DOOM
+                                        {cb} {item.tokenId[0]}
+                                        {/* 30000 DOOM */}
                                     </Typography>
                                 </Stack>
                                 <Stack className="">
                                     <Button
+                                        onClick={claim}
                                         // className="depositWithdraw"
                                         variant="contained"
+                                        className={
+                                            Number(cb) > 0 ? " " : "disabled"
+                                        }
                                         style={{
                                             color: "white !important",
                                             position: "relative",

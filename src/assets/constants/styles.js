@@ -964,8 +964,8 @@ const useStyles = makeStyles((theme) => {
                                     fontSize: "20px",
                                     letterSpacing: "2px",
                                     // backgroundColor: "unset !important",
-                                    marginTop: "-13px",
-                                    left: "35px",
+                                    // marginTop: "-13px",
+                                    // left: "35px",
                                     // borderRadius: "unset !important",
                                 },
 

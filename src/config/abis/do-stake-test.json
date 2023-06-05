@@ -102,19 +102,6 @@
         "inputs": [
             { "internalType": "address", "name": "account", "type": "address" }
         ],
-        "name": "balanceOf",
-        "outputs": [
-            { "internalType": "uint256", "name": "", "type": "uint256" }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            { "internalType": "address", "name": "account", "type": "address" }
-        ],
         "name": "earned",
         "outputs": [
             { "internalType": "uint256", "name": "", "type": "uint256" }
@@ -290,6 +277,19 @@
     },
     {
         "constant": true,
+        "inputs": [
+            { "internalType": "address", "name": "account", "type": "address" }
+        ],
+        "name": "stakedBalanceOf",
+        "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
         "inputs": [],
         "name": "stakingToken",
         "outputs": [
@@ -302,7 +302,7 @@
     {
         "constant": true,
         "inputs": [],
-        "name": "totalSupply",
+        "name": "totalStaked",
         "outputs": [
             { "internalType": "uint256", "name": "", "type": "uint256" }
         ],

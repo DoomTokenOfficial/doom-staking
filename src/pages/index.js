@@ -434,32 +434,6 @@ const Home = () => {
                                     <Skeleton height={32} animation="wave" />
                                 )}
                             </Stack>
-                            <Stack spacing={2}>
-                                <Typography
-                                    variant="h6"
-                                    className="first-box-style"
-                                    style={{
-                                        color: "#a61919 !important",
-                                    }}
-                                >
-                                    {lang_texts[language][7]}
-                                </Typography>
-                                {loading ? (
-                                    <Stack>
-                                        <Typography
-                                            variant="h5"
-                                            className="first-box-style"
-                                            style={{
-                                                color: "white !important",
-                                            }}
-                                        >
-                                            {totalUser}
-                                        </Typography>
-                                    </Stack>
-                                ) : (
-                                    <Skeleton height={32} animation="wave" />
-                                )}
-                            </Stack>
                         </Stack>
                     );
                 } else if (!mobile && !tablet) {

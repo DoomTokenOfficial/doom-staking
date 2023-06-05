@@ -4,6 +4,13 @@ import Typography from "@mui/material/Typography";
 import { toTimes } from "../config/config";
 
 const LeftTime = ({ timeLeft, device, poolState, loading }) => {
+    console.log(
+        timeLeft,
+        device,
+        poolState,
+        loading,
+        "timeLeft, device, poolState, loading"
+    );
     const [leftTime, setLeftTime] = useState({});
 
     const UpdatingTime = () => {
