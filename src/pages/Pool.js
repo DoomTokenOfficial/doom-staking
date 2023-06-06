@@ -404,649 +404,1202 @@ const Pool = ({
                     padding: "0px",
                 }}
             >
-                <Stack
-                    style={{
-                        backgroundImage: `url(${item.img_url})`,
-                        padding: "20.7px 40px",
-                        display: "grid",
-                        gridTemplateColumns: "repeat(6, 1fr)",
-                    }}
-                    className="item-box"
-                >
-                    <Stack
-                        className="item-1"
-                        style={{
-                            marginLeft: "-18px",
-                        }}
-                    >
-                        <Stack spacing={1} direction="row">
-                            <Typography
-                                style={{
-                                    fontFamily: "PublicFont",
-                                    textShadow:
-                                        "3px 2px 2px black, 3px 2px 0px black",
-                                    fontSize: "13px",
-                                    color: "red",
-                                    // letterSpacing: "1px",
-                                    // fontWeight: "bolder",
-                                    fontPalette: "dark",
-                                }}
-                                variant="span"
-                                className="sub-description"
-                            >
-                                {lang_texts[language][9]} ${item.stake_token}
-                            </Typography>
-                        </Stack>
-                        <Typography
-                            variant="span"
-                            className="value"
-                            style={{
-                                fontFamily: "PublicFont",
-                                textShadow:
-                                    "3px 2px 2px black, 3px 2px 0px black",
-                                fontSize: "13px",
-                                color: "red",
-                                // letterSpacing: "2px",
-                                fontWeight: "bolder",
-                                fontPalette: "dark",
-                                paddingTop: "10px",
-                            }}
-                        >
-                            {lang_texts[language][8]} &nbsp;${item.stake_token}
-                        </Typography>
-                    </Stack>
-                    <Stack
-                        justifyContent="center"
-                        className="item-3"
-                        spacing={0.75}
-                    >
-                        <Stack>
-                            <Typography
-                                variant="span"
-                                className="value"
-                                style={{
-                                    fontFamily: "PublicFont",
-                                    textShadow:
-                                        "4px 3px 1px black, 6px 4px 1px black",
-                                    fontSize: "27px",
-                                    color: "red",
-                                    // fontWeight: "bolder",
-                                }}
-                            >
-                                {APR
-                                    ? Number(APR) > 10000
-                                        ? "+10000"
-                                        : APR
-                                    : 0}
-                                %
-                            </Typography>
-                        </Stack>
-                        {/* {loading ? (
-                        ) : (
-                            <Skeleton height={32} animation="wave" />
-                        )} */}
-                        <Stack spacing={1} direction="row">
-                            <Typography
-                                style={{
-                                    fontFamily: "PublicFont",
-                                    textShadow: "black -1px 2px 2px",
-                                    fontSize: "18px",
-                                    color: "white",
-                                    marginLeft: " 45px",
-                                    marginTop: "10px",
-                                }}
-                                variant="span"
-                                className="sub-description"
-                            >
-                                APY
-                            </Typography>
-                        </Stack>
-                    </Stack>
-                    <Stack className="item-4" spacing={0.75}>
-                        <Stack
-                            className="help"
-                            direction="row"
-                            spacing={1}
-                            style={{
-                                fontFamily: "StackFont",
-                                textShadow:
-                                    "4px 1px 1px black, 4px 2px 1px black",
-                                fontSize: "20px",
-                                color: "red",
-                                // letterSpacing: "3px",
-                                fontWeight: "bolder",
-                                marginTop: "-17px",
-                                // marginLeft: "10px",
-                            }}
-                        >
-                            <Typography
-                                variant="span"
-                                className="title"
-                                style={{
-                                    fontFamily: "PublicFont",
-                                    textShadow: "black -1px 2px 2px",
-                                    fontSize: "14px",
-                                    color: "red",
-                                    letterSpacing: "1px",
-                                    marginTop: "10px",
-                                    marginLeft: "-9px",
-                                }}
-                            >
-                                {lang_texts[language][10]}
-                            </Typography>
-                        </Stack>
-                        <Stack>
-                            <LeftTime
-                                timeLeft={timeblog}
-                                device="laptop"
-                                poolState={poolState}
-                                loading={loading}
-                            />
-                            <Typography
-                                variant="span"
-                                className="description"
-                                style={{
-                                    // letterSpacing: "38px",
-                                    marginLeft: "7px",
-                                    position: "relative",
-                                    top: "19px",
-                                    fontFamily: "PublicFont",
-                                    fontSize: "16px",
-                                    textShadow: "2px 3px 2px black",
-                                    letterSpacing: "-9.9px",
-                                }}
-                            >
-                                D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
-                            </Typography>
-                        </Stack>
-                        {/* {loading ? (
-                        ) : (
-                            <Skeleton height={32} animation="wave" />
-                        )} */}
-                    </Stack>
-                    <Stack
-                        className="item-5"
-                        spacing={0}
-                        style={{
-                            position: "relative",
-                            left: "93px",
-                        }}
-                    >
-                        <Stack className="help" direction="row" spacing={1}>
-                            <Typography
-                                variant="span"
-                                className="title"
-                                style={{
-                                    fontFamily: "PublicFont",
-                                    fontSize: "12px",
-                                    letterSpacing: "3px",
-                                    color: "red",
-                                    textShadow:
-                                        "4px 2px 1px black, 6px 5px 6px black",
-                                    fontWeight: "bold",
-                                    marginTop: "-3px",
-                                    textAlign: "center",
-                                }}
-                            >
-                                {lang_texts[language][11]}
-                            </Typography>
-                        </Stack>
-                        <Stack>
-                            <Typography
-                                variant="span"
-                                className="sub-description"
-                                style={{
-                                    textShadow: "1px 1px 1px black",
-                                    fontFamily: "PublicFont",
-                                    fontSize: "14px",
-                                    marginLeft: "-10px",
-                                    letterSpacing: "2px",
-                                    textAlign: "center",
-                                }}
-                            >
-                                {totalSupply
-                                    ? numberWithCommas(totalSupply)
-                                    : 0}{" "}
-                                {/* {item.tokenId[0]} */}
-                            </Typography>
-                            {/* <Typography
-                                variant="span"
-                                className="sub-description"
-                                style={{
-                                    textShadow: "1px 1px 1px black",
-                                    fontFamily: "StackFont",
-                                    fontSize: "14px",
-                                    marginLeft: "-10px",
-                                    textAlign: "center",
-                                    letterSpacing: "2px",
-                                }}
-                            >
-                                {totalSupply
-                                    ? (
-                                          totalSupply *
-                                          (BaseCoin
-                                              ? Number(BaseCoin.price) > 0
-                                                  ? BaseCoin.price
-                                                  : baseCurrency[
-                                                        item.tokenId[0]
-                                                    ][currency]
-                                              : baseCurrency[item.tokenId[0]][
-                                                    currency
-                                                ])
-                                      ).toFixed(2)
-                                    : 0}{" "}
-                                {currency}
-                            </Typography> */}
-                        </Stack>
-                        {/* {loading ? (
-                        ) : (
-                            <Skeleton height={32} animation="wave" />
-                        )} */}
-                    </Stack>
-                    <Stack className="item-6" height={0} marginLeft={"-70px"}>
-                        {/* <Link
-                                            underline="none"
-                                            target="_blank"
-                                            href={item.chart.nomicsUrl}
+                {(() => {
+                    if(mobile) {
+                        return (
+                            <>
+                                <Stack
+                                    style={{
+                                        backgroundImage: `url(${item.img_url})`,
+                                        padding: "20.7px 40px",
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(6, 1fr)",
+                                    }}
+                                    className="item-box"
+                                >
+                                    <Stack
+                                        className="item-1"
+                                        style={{
+                                            marginLeft: "-18px",
+                                        }}
+                                    >
+                                        <Stack spacing={1} direction="row">
+                                            <Typography
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow:
+                                                        "3px 2px 2px black, 3px 2px 0px black",
+                                                    fontSize: "13px",
+                                                    color: "red",
+                                                    // letterSpacing: "1px",
+                                                    // fontWeight: "bolder",
+                                                    fontPalette: "dark",
+                                                }}
+                                                variant="span"
+                                                className="sub-description"
+                                            >
+                                                {lang_texts[language][9]} ${item.stake_token}
+                                            </Typography>
+                                        </Stack>
+                                        <Typography
+                                            variant="span"
+                                            className="value"
+                                            style={{
+                                                fontFamily: "PublicFont",
+                                                textShadow:
+                                                    "3px 2px 2px black, 3px 2px 0px black",
+                                                fontSize: "13px",
+                                                color: "red",
+                                                // letterSpacing: "2px",
+                                                fontWeight: "bolder",
+                                                fontPalette: "dark",
+                                                paddingTop: "10px",
+                                            }}
                                         >
-                                            <ChartBox
-                                                AllData={chartInfo}
-                                                id={item.chart.id[0]}
-                                                coin={Coin}
+                                            {lang_texts[language][8]} &nbsp;${item.stake_token}
+                                        </Typography>
+                                    </Stack>
+                                    <Stack
+                                        justifyContent="center"
+                                        className="item-3"
+                                        spacing={0.75}
+                                    >
+                                        <Stack>
+                                            <Typography
+                                                variant="span"
+                                                className="value"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow:
+                                                        "4px 3px 1px black, 6px 4px 1px black",
+                                                    fontSize: "27px",
+                                                    color: "red",
+                                                    // fontWeight: "bolder",
+                                                }}
+                                            >
+                                                {APR
+                                                    ? Number(APR) > 10000
+                                                        ? "+10000"
+                                                        : APR
+                                                    : 0}
+                                                %
+                                            </Typography>
+                                        </Stack>
+
+                                        <Stack spacing={1} direction="row">
+                                            <Typography
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow: "black -1px 2px 2px",
+                                                    fontSize: "18px",
+                                                    color: "white",
+                                                    marginLeft: " 45px",
+                                                    marginTop: "10px",
+                                                }}
+                                                variant="span"
+                                                className="sub-description"
+                                            >
+                                                APY
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack className="item-4" spacing={0.75}>
+                                        <Stack
+                                            className="help"
+                                            direction="row"
+                                            spacing={1}
+                                            style={{
+                                                fontFamily: "StackFont",
+                                                textShadow:
+                                                    "4px 1px 1px black, 4px 2px 1px black",
+                                                fontSize: "20px",
+                                                color: "red",
+                                                // letterSpacing: "3px",
+                                                fontWeight: "bolder",
+                                                marginTop: "-17px",
+                                                // marginLeft: "10px",
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="span"
+                                                className="title"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow: "black -1px 2px 2px",
+                                                    fontSize: "14px",
+                                                    color: "red",
+                                                    letterSpacing: "1px",
+                                                    marginTop: "10px",
+                                                    marginLeft: "-9px",
+                                                }}
+                                            >
+                                                {lang_texts[language][10]}
+                                            </Typography>
+                                        </Stack>
+                                        <Stack>
+                                            <LeftTime
+                                                timeLeft={timeblog}
+                                                device="laptop"
+                                                poolState={poolState}
+                                                loading={loading}
                                             />
-                                        </Link> */}
-                    </Stack>
-                    <Stack className="item-7">
-                        <Button
-                            onClick={() => handleExpand(item.id, null)}
-                            variant="contained"
-                            endIcon={
-                                <ChevronRightIcon
-                                    className={
-                                        expand[item.id] === true
-                                            ? "expand-icon activate"
-                                            : "expand-icon"
-                                    }
-                                />
-                            }
-                            disableElevation
-                            style={
-                                poolState
-                                    ? {
-                                          color: "white",
-                                          position: "relative",
-
-                                          background: `url(${claimOrStakeBtn})`,
-                                          width: "175px",
-                                          height: "64px",
-                                          fontFamily: "EternalUI",
-                                          fontSize: "18px",
-                                          letterSpacing: "2px",
-                                          borderRadius: "unset !important",
-                                      }
-                                    : {
-                                          color: "white",
-                                          position: "relative",
-
-                                          background: `url(${claimOrStakeBtn})`,
-                                          width: "175px",
-                                          height: "64px",
-                                          fontFamily: "EternalUI",
-                                          fontSize: "18px",
-                                          letterSpacing: "2px",
-                                          borderRadius: "unset !important",
-                                      }
-                            }
-                        >
-                            STAKE/CLAIM
-                            {/* {poolState
-                                ? lang_texts[language][9]
-                                : lang_texts[language][24]} */}
-                        </Button>
-                    </Stack>
-                </Stack>
-
-                <Collapse
-                    style={{
-                        backgroundImage: `url(${StatusBarLower})`,
-                        padding: "0px",
-                        height: "112px !important",
-                        paddingTop: "8px",
-                    }}
-                    className="collapse"
-                    in={expand[item.id] === true ? true : false}
-                    timeout="auto"
-                    unmountOnExit
-                >
-                    <Stack
-                        className="collapse-body col-nun-padding"
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns: " repeat(2, 1fr)",
-                        }}
-                    >
-                        <Stack className="collapse-1">
-                            <Stack className="sub-title pd-0">
-                                <Stack
-                                    className="help"
-                                    direction="row"
-                                    spacing={0}
-                                >
-                                    <Typography
-                                        variant="span"
-                                        className="title text-font"
-                                        alignSelf="flex-start"
+                                            <Typography
+                                                variant="span"
+                                                className="description"
+                                                style={{
+                                                    // letterSpacing: "38px",
+                                                    marginLeft: "7px",
+                                                    position: "relative",
+                                                    top: "19px",
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "16px",
+                                                    textShadow: "2px 3px 2px black",
+                                                    letterSpacing: "-9.9px",
+                                                }}
+                                            >
+                                                D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack
+                                        className="item-5"
+                                        spacing={0}
                                         style={{
-                                            fontFamily: "EternalUI",
-                                            textShadow: "2px 3px 2px black",
-                                            fontSize: "12px",
+                                            position: "relative",
+                                            left: "93px",
                                         }}
                                     >
-                                        {lang_texts[language][16]}
-                                    </Typography>
+                                        <Stack className="help" direction="row" spacing={1}>
+                                            <Typography
+                                                variant="span"
+                                                className="title"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "12px",
+                                                    letterSpacing: "3px",
+                                                    color: "red",
+                                                    textShadow:
+                                                        "4px 2px 1px black, 6px 5px 6px black",
+                                                    fontWeight: "bold",
+                                                    marginTop: "-3px",
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {lang_texts[language][11]}
+                                            </Typography>
+                                        </Stack>
+                                        <Stack>
+                                            <Typography
+                                                variant="span"
+                                                className="sub-description"
+                                                style={{
+                                                    textShadow: "1px 1px 1px black",
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "14px",
+                                                    marginLeft: "-10px",
+                                                    letterSpacing: "2px",
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {totalSupply
+                                                    ? numberWithCommas(totalSupply)
+                                                    : 0}{" "}
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack
+                                        className="item-6"
+                                        height={0}
+                                        marginLeft={"-70px"}
+                                    ></Stack>
+                                    <Stack className="item-7">
+                                        <Button
+                                            onClick={() => handleExpand(item.id, null)}
+                                            variant="contained"
+                                            endIcon={
+                                                <ChevronRightIcon
+                                                    className={
+                                                        expand[item.id] === true
+                                                            ? "expand-icon activate"
+                                                            : "expand-icon"
+                                                    }
+                                                />
+                                            }
+                                            disableElevation
+                                            style={
+                                                poolState
+                                                    ? {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+                                                        width: "175px",
+                                                        height: "64px",
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "18px",
+                                                        letterSpacing: "2px",
+                                                        borderRadius: "unset !important",
+                                                    }
+                                                    : {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+                                                        width: "175px",
+                                                        height: "64px",
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "18px",
+                                                        letterSpacing: "2px",
+                                                        borderRadius: "unset !important",
+                                                    }
+                                            }
+                                        >
+                                            STAKE/CLAIM
+                                        </Button>
+                                    </Stack>
                                 </Stack>
-                                <Typography
-                                    variant="span"
-                                    className="sub-description text-font"
-                                    alignSelf="flex-start"
+
+                                <Collapse
                                     style={{
-                                        fontFamily: "EternalUI",
-                                        textShadow: "2px 3px 2px black",
-                                        fontSize: "12px",
+                                        backgroundImage: `url(${StatusBarLower})`,
+                                        padding: "0px",
+                                        height: "112px !important",
+                                        paddingTop: "8px",
                                     }}
+                                    className="collapse"
+                                    in={expand[item.id] === true ? true : false}
+                                    timeout="auto"
+                                    unmountOnExit
                                 >
-                                    {(() => {
-                                        if (
-                                            Number(balance[item.tokenId[0]]) > 0
-                                        ) {
-                                            return `${numberWithCommas(
-                                                customToFixed(
-                                                    new BigNumber(
-                                                        balance[item.tokenId[0]]
-                                                    ).div(
-                                                        new BigNumber(10).pow(
-                                                            tokenDecimals.BaseDecimal
+                                    <Stack
+                                        className="collapse-body col-nun-padding"
+                                        style={{
+                                            display: "grid",
+                                            gridTemplateColumns: " repeat(2, 1fr)",
+                                        }}
+                                    >
+                                        <Stack className="collapse-1">
+                                            <Stack className="sub-title pd-0">
+                                                <Stack
+                                                    className="help"
+                                                    direction="row"
+                                                    spacing={0}
+                                                >
+                                                    <Typography
+                                                        variant="span"
+                                                        className="title text-font"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            fontFamily: "EternalUI",
+                                                            textShadow: "2px 3px 2px black",
+                                                            fontSize: "12px",
+                                                        }}
+                                                    >
+                                                        {lang_texts[language][16]}
+                                                    </Typography>
+                                                </Stack>
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description text-font"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        fontFamily: "EternalUI",
+                                                        textShadow: "2px 3px 2px black",
+                                                        fontSize: "12px",
+                                                    }}
+                                                >
+                                                    {(() => {
+                                                        if (
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                        ) {
+                                                            return `${numberWithCommas(
+                                                                customToFixed(
+                                                                    new BigNumber(
+                                                                        balance[item.tokenId[0]]
+                                                                    ).div(
+                                                                        new BigNumber(10).pow(
+                                                                            tokenDecimals.BaseDecimal
+                                                                        )
+                                                                    ),
+                                                                    3
+                                                                )
+                                                            )} ${item.stake_token}`;
+                                                        } else {
+                                                            return `0 ${item.stake_token}`;
+                                                        }
+                                                    })()}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack direction="row" spacing={0} mb={0}>
+                                                <Stack className="col-row-1">
+                                                    <OutlinedInput
+                                                        disabled={
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                                ? false
+                                                                : true
+                                                        }
+                                                        className={
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                                ? "cal-in bg-white"
+                                                                : "cal-in disabled"
+                                                        }
+                                                        placeholder="0"
+                                                        value={dv}
+                                                        onChange={(e) => setDV(e.target.value)}
+                                                        type="number"
+                                                        endAdornment={
+                                                            <Typography
+                                                                onClick={setMax}
+                                                                variant="span"
+                                                                className={
+                                                                    Number(
+                                                                        balance[item.tokenId[0]]
+                                                                    ) > 0
+                                                                        ? "sub-description c-max"
+                                                                        : "sub-description"
+                                                                }
+                                                            >
+                                                                Max
+                                                            </Typography>
+                                                        }
+                                                    />
+                                                </Stack>
+                                                <Stack
+                                                    className={
+                                                        Number(balance[item.tokenId[0]]) > 0 &&
+                                                        poolState
+                                                            ? "col-row-2"
+                                                            : "col-row-2 disabled"
+                                                    }
+                                                >
+                                                    {dloading ? (
+                                                        <LoadingButton
+                                                            loading
+                                                            variant="contained"
+                                                            // className="deposit-btn"
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                            }}
+                                                        ></LoadingButton>
+                                                    ) : (
+                                                        <Button
+                                                            variant="contained"
+                                                            onClick={deposit}
+                                                            disabled={
+                                                                Number(
+                                                                    balance[item.tokenId[0]]
+                                                                ) > 0
+                                                                    ? false
+                                                                    : true
+                                                            }
+                                                            className={
+                                                                Number(
+                                                                    balance[item.tokenId[0]]
+                                                                ) > 0
+                                                                    ? "deposit-btn"
+                                                                    : "disabled deposit-btn"
+                                                            }
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                fontFamily: "EternalUI",
+                                                            }}
+                                                        >
+                                                            {lang_texts[language][18]}{" "}
+                                                            {/* {item.tokenId[0]} */}
+                                                        </Button>
+                                                    )}
+                                                </Stack>
+                                            </Stack>
+                                            <Stack className="sub-title">
+                                                <Stack
+                                                    className="help"
+                                                    direction="row"
+                                                    spacing={0}
+                                                >
+                                                    <Typography
+                                                        variant="span"
+                                                        className="title"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            fontFamily: "EternalUI",
+                                                            textShadow: "2px 3px 2px black",
+                                                            fontSize: "12px",
+                                                        }}
+                                                    >
+                                                        {lang_texts[language][17]}
+                                                    </Typography>
+                                                </Stack>
+
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        fontFamily: "EternalUI",
+                                                        textShadow: "2px 3px 2px black",
+                                                        fontSize: "12px",
+                                                    }}
+                                                >
+                                                    {numberWithCommas(
+                                                        customToFixed(
+                                                            new BigNumber(sb).div(
+                                                                new BigNumber(10).pow(
+                                                                    tokenDecimals.BaseDecimal
+                                                                )
+                                                            ),
+                                                            3
                                                         )
-                                                    ),
-                                                    3
-                                                )
-                                            )} ${item.stake_token}`;
-                                        } else {
-                                            return `0 ${item.stake_token}`;
-                                        }
-                                    })()}
-                                </Typography>
-                            </Stack>
-                            <Stack direction="row" spacing={0} mb={0}>
-                                <Stack className="col-row-1">
-                                    <OutlinedInput
-                                        disabled={
-                                            Number(balance[item.tokenId[0]]) > 0
-                                                ? false
-                                                : true
-                                        }
-                                        className={
-                                            Number(balance[item.tokenId[0]]) > 0
-                                                ? "cal-in bg-white"
-                                                : "cal-in disabled"
-                                        }
-                                        placeholder="0"
-                                        value={dv}
-                                        onChange={(e) => setDV(e.target.value)}
-                                        type="number"
-                                        endAdornment={
-                                            <Typography
-                                                onClick={setMax}
-                                                variant="span"
-                                                className={
-                                                    Number(
-                                                        balance[item.tokenId[0]]
-                                                    ) > 0
-                                                        ? "sub-description c-max"
-                                                        : "sub-description"
-                                                }
-                                            >
-                                                Max
-                                            </Typography>
-                                        }
-                                    />
-                                </Stack>
-                                <Stack
-                                    className={
-                                        Number(balance[item.tokenId[0]]) > 0 &&
-                                        poolState
-                                            ? "col-row-2"
-                                            : "col-row-2 disabled"
-                                    }
-                                >
-                                    {dloading ? (
-                                        <LoadingButton
-                                            loading
-                                            variant="contained"
-                                            // className="deposit-btn"
-                                            style={{
-                                                background: `url(${depositWithdraw})`,
-                                                width: "132px",
-                                                height: "32px",
-                                            }}
-                                        ></LoadingButton>
-                                    ) : (
-                                        <Button
-                                            variant="contained"
-                                            onClick={deposit}
-                                            disabled={
-                                                Number(
-                                                    balance[item.tokenId[0]]
-                                                ) > 0
-                                                    ? false
-                                                    : true
-                                            }
-                                            className={
-                                                Number(
-                                                    balance[item.tokenId[0]]
-                                                ) > 0
-                                                    ? "deposit-btn"
-                                                    : "disabled deposit-btn"
-                                            }
-                                            style={{
-                                                background: `url(${depositWithdraw})`,
-                                                width: "132px",
-                                                height: "32px",
-                                                fontFamily: "EternalUI",
-                                            }}
-                                        >
-                                            {lang_texts[language][18]}{" "}
-                                            {/* {item.tokenId[0]} */}
-                                        </Button>
-                                    )}
-                                </Stack>
-                            </Stack>
-                            <Stack className="sub-title">
-                                <Stack
-                                    className="help"
-                                    direction="row"
-                                    spacing={0}
-                                >
-                                    <Typography
-                                        variant="span"
-                                        className="title"
-                                        alignSelf="flex-start"
-                                        style={{
-                                            fontFamily: "EternalUI",
-                                            textShadow: "2px 3px 2px black",
-                                            fontSize: "12px",
-                                        }}
-                                    >
-                                        {lang_texts[language][17]}
-                                    </Typography>
-                                </Stack>
+                                                    )}{" "}
+                                                    {item.stake_token}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack direction="row" spacing={1.25}>
+                                                <Stack className="col-row-1">
+                                                    <OutlinedInput
+                                                        disabled={Number(sb) > 0 ? false : true}
+                                                        className={
+                                                            Number(sb) > 0
+                                                                ? "cal-in bg-white"
+                                                                : "cal-in disabled"
+                                                        }
+                                                        placeholder="0"
+                                                        value={wv}
+                                                        type="number"
+                                                        onChange={(e) => setWV(e.target.value)}
+                                                        endAdornment={
+                                                            <Typography
+                                                                onClick={setWmax}
+                                                                variant="span"
+                                                                className={
+                                                                    Number(sb) > 0
+                                                                        ? "sub-description c-max"
+                                                                        : "sub-description"
+                                                                }
+                                                            >
+                                                                Max
+                                                            </Typography>
+                                                        }
+                                                    />
+                                                </Stack>
+                                                <Stack className="col-row-2">
+                                                    {wloading ? (
+                                                        <LoadingButton
+                                                            loading
+                                                            variant="contained"
+                                                            // className="return-btn"
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                position: "relative",
+                                                                left: "-10px",
+                                                                // left: "26px",
+                                                            }}
+                                                        ></LoadingButton>
+                                                    ) : (
+                                                        <Button
+                                                            variant="contained"
+                                                            className={
+                                                                Number(sb) > 0
+                                                                    ? "deposit-btn"
+                                                                    : "disabled deposit-btn"
+                                                            }
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                position: "relative",
+                                                                left: "-10px",
+                                                                fontFamily: "EternalUI",
+                                                            }}
+                                                            onClick={withdraw}
+                                                        >
+                                                            {lang_texts[language][19]}{" "}
+                                                            {/* {item.tokenId[0]} */}
+                                                        </Button>
+                                                    )}
+                                                </Stack>
+                                            </Stack>
+                                        </Stack>
+                                        <Stack className="collapse-5" spacing={0}>
+                                            <Stack direction="row" spacing={1.25}>
+                                                <Stack spacing={1.25} className="col-row-1">
+                                                    <Typography
+                                                        variant="span"
+                                                        className="sub-description"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            marginLeft: "21px",
+                                                            position: "relative",
+                                                            top: "-40%",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "14px",
+                                                            textShadow: "2px 3px 2px black",
+                                                            right: "-80%",
+                                                            color: "red",
+                                                            fontWeight: "bolder",
+                                                        }}
+                                                    >
+                                                        Your Rewards
+                                                    </Typography>
+                                                </Stack>
 
-                                <Typography
-                                    variant="span"
-                                    className="sub-description"
-                                    alignSelf="flex-start"
+                                                <Stack className="col-row-1 col-md-6">
+                                                    <Typography
+                                                        variant="span"
+                                                        className="sub-description"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            marginLeft: "21px",
+                                                            color: "white",
+                                                            position: "relative",
+                                                            top: "-40%",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "14px",
+                                                            textShadow: "2px 3px 2px black",
+                                                            right: "-140%",
+                                                            fontWeight: "bolder",
+                                                        }}
+                                                    >
+                                                        {cb} {item.tokenId[0]}
+                                                        {/* 30000 DOOM */}
+                                                    </Typography>
+                                                </Stack>
+                                                <Stack className="">
+                                                    <Button
+                                                        onClick={claim}
+                                                        // className="depositWithdraw"
+                                                        variant="contained"
+                                                        className={
+                                                            Number(cb) > 0 ? " " : "disabled"
+                                                        }
+                                                        style={{
+                                                            color: "white !important",
+                                                            position: "relative",
+                                                            background: `url(${depositWithdraw})`,
+                                                            width: "132px",
+                                                            height: "32px",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "12px",
+                                                            letterSpacing: "2px",
+                                                            top: "65%",
+                                                            right: "21px",
+                                                            backgroundRadius:
+                                                                "unset !important",
+                                                            // left: "35%",
+                                                        }}
+                                                    >
+                                                        Claim
+                                                    </Button>
+                                                </Stack>
+                                            </Stack>
+                                        </Stack>
+                                    </Stack>
+                                </Collapse>
+                            </>
+                        );
+                    } else {
+                        return (
+                            <>
+                                <Stack
                                     style={{
-                                        fontFamily: "EternalUI",
-                                        textShadow: "2px 3px 2px black",
-                                        fontSize: "12px",
+                                        backgroundImage: `url(${item.img_url})`,
+                                        padding: "20.7px 40px",
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(6, 1fr)",
                                     }}
+                                    className="item-box"
                                 >
-                                    {numberWithCommas(
-                                        customToFixed(
-                                            new BigNumber(sb).div(
-                                                new BigNumber(10).pow(
-                                                    tokenDecimals.BaseDecimal
-                                                )
-                                            ),
-                                            3
-                                        )
-                                    )}{" "}
-                                    {item.stake_token}
-                                </Typography>
-                            </Stack>
-                            <Stack direction="row" spacing={1.25}>
-                                <Stack className="col-row-1">
-                                    <OutlinedInput
-                                        disabled={Number(sb) > 0 ? false : true}
-                                        className={
-                                            Number(sb) > 0
-                                                ? "cal-in bg-white"
-                                                : "cal-in disabled"
-                                        }
-                                        placeholder="0"
-                                        value={wv}
-                                        type="number"
-                                        onChange={(e) => setWV(e.target.value)}
-                                        endAdornment={
+                                    <Stack
+                                        className="item-1"
+                                        style={{
+                                            marginLeft: "-18px",
+                                        }}
+                                    >
+                                        <Stack spacing={1} direction="row">
                                             <Typography
-                                                onClick={setWmax}
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow:
+                                                        "3px 2px 2px black, 3px 2px 0px black",
+                                                    fontSize: "13px",
+                                                    color: "red",
+                                                    // letterSpacing: "1px",
+                                                    // fontWeight: "bolder",
+                                                    fontPalette: "dark",
+                                                }}
                                                 variant="span"
-                                                className={
-                                                    Number(sb) > 0
-                                                        ? "sub-description c-max"
-                                                        : "sub-description"
-                                                }
+                                                className="sub-description"
                                             >
-                                                Max
+                                                {lang_texts[language][9]} ${item.stake_token}
                                             </Typography>
-                                        }
-                                    />
-                                </Stack>
-                                <Stack className="col-row-2">
-                                    {wloading ? (
-                                        <LoadingButton
-                                            loading
-                                            variant="contained"
-                                            // className="return-btn"
+                                        </Stack>
+                                        <Typography
+                                            variant="span"
+                                            className="value"
                                             style={{
-                                                background: `url(${depositWithdraw})`,
-                                                width: "132px",
-                                                height: "32px",
-                                                position: "relative",
-                                                left: "-10px",
-                                                // left: "26px",
+                                                fontFamily: "PublicFont",
+                                                textShadow:
+                                                    "3px 2px 2px black, 3px 2px 0px black",
+                                                fontSize: "13px",
+                                                color: "red",
+                                                // letterSpacing: "2px",
+                                                fontWeight: "bolder",
+                                                fontPalette: "dark",
+                                                paddingTop: "10px",
                                             }}
-                                        ></LoadingButton>
-                                    ) : (
-                                        <Button
-                                            variant="contained"
-                                            className={
-                                                Number(sb) > 0
-                                                    ? "deposit-btn"
-                                                    : "disabled deposit-btn"
-                                            }
-                                            style={{
-                                                background: `url(${depositWithdraw})`,
-                                                width: "132px",
-                                                height: "32px",
-                                                position: "relative",
-                                                left: "-10px",
-                                                fontFamily: "EternalUI",
-                                            }}
-                                            onClick={withdraw}
                                         >
-                                            {lang_texts[language][19]}{" "}
-                                            {/* {item.tokenId[0]} */}
-                                        </Button>
-                                    )}
-                                </Stack>
-                            </Stack>
-                        </Stack>
-                        <Stack className="collapse-5" spacing={0}>
-                            <Stack direction="row" spacing={1.25}>
-                                <Stack spacing={1.25} className="col-row-1">
-                                    <Typography
-                                        variant="span"
-                                        className="sub-description"
-                                        alignSelf="flex-start"
-                                        style={{
-                                            marginLeft: "21px",
-                                            position: "relative",
-                                            top: "-40%",
-                                            fontFamily: "EternalUI",
-                                            fontSize: "14px",
-                                            textShadow: "2px 3px 2px black",
-                                            right: "-80%",
-                                            color: "red",
-                                            fontWeight: "bolder",
-                                        }}
+                                            {lang_texts[language][8]} &nbsp;${item.stake_token}
+                                        </Typography>
+                                    </Stack>
+                                    <Stack
+                                        justifyContent="center"
+                                        className="item-3"
+                                        spacing={0.75}
                                     >
-                                        Your Rewards
-                                    </Typography>
-                                </Stack>
+                                        <Stack>
+                                            <Typography
+                                                variant="span"
+                                                className="value"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow:
+                                                        "4px 3px 1px black, 6px 4px 1px black",
+                                                    fontSize: "27px",
+                                                    color: "red",
+                                                    // fontWeight: "bolder",
+                                                }}
+                                            >
+                                                {APR
+                                                    ? Number(APR) > 10000
+                                                        ? "+10000"
+                                                        : APR
+                                                    : 0}
+                                                %
+                                            </Typography>
+                                        </Stack>
 
-                                <Stack className="col-row-1 col-md-6">
-                                    <Typography
-                                        variant="span"
-                                        className="sub-description"
-                                        alignSelf="flex-start"
+                                        <Stack spacing={1} direction="row">
+                                            <Typography
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow: "black -1px 2px 2px",
+                                                    fontSize: "18px",
+                                                    color: "white",
+                                                    marginLeft: " 45px",
+                                                    marginTop: "10px",
+                                                }}
+                                                variant="span"
+                                                className="sub-description"
+                                            >
+                                                APY
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack className="item-4" spacing={0.75}>
+                                        <Stack
+                                            className="help"
+                                            direction="row"
+                                            spacing={1}
+                                            style={{
+                                                fontFamily: "StackFont",
+                                                textShadow:
+                                                    "4px 1px 1px black, 4px 2px 1px black",
+                                                fontSize: "20px",
+                                                color: "red",
+                                                // letterSpacing: "3px",
+                                                fontWeight: "bolder",
+                                                marginTop: "-17px",
+                                                // marginLeft: "10px",
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="span"
+                                                className="title"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow: "black -1px 2px 2px",
+                                                    fontSize: "14px",
+                                                    color: "red",
+                                                    letterSpacing: "1px",
+                                                    marginTop: "10px",
+                                                    marginLeft: "-9px",
+                                                }}
+                                            >
+                                                {lang_texts[language][10]}
+                                            </Typography>
+                                        </Stack>
+                                        <Stack>
+                                            <LeftTime
+                                                timeLeft={timeblog}
+                                                device="laptop"
+                                                poolState={poolState}
+                                                loading={loading}
+                                            />
+                                            <Typography
+                                                variant="span"
+                                                className="description"
+                                                style={{
+                                                    // letterSpacing: "38px",
+                                                    marginLeft: "7px",
+                                                    position: "relative",
+                                                    top: "19px",
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "16px",
+                                                    textShadow: "2px 3px 2px black",
+                                                    letterSpacing: "-9.9px",
+                                                }}
+                                            >
+                                                D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack
+                                        className="item-5"
+                                        spacing={0}
                                         style={{
-                                            marginLeft: "21px",
-                                            color: "white",
                                             position: "relative",
-                                            top: "-40%",
-                                            fontFamily: "EternalUI",
-                                            fontSize: "14px",
-                                            textShadow: "2px 3px 2px black",
-                                            right: "-140%",
-                                            fontWeight: "bolder",
+                                            left: "93px",
                                         }}
                                     >
-                                        {cb} {item.tokenId[0]}
-                                        {/* 30000 DOOM */}
-                                    </Typography>
+                                        <Stack className="help" direction="row" spacing={1}>
+                                            <Typography
+                                                variant="span"
+                                                className="title"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "12px",
+                                                    letterSpacing: "3px",
+                                                    color: "red",
+                                                    textShadow:
+                                                        "4px 2px 1px black, 6px 5px 6px black",
+                                                    fontWeight: "bold",
+                                                    marginTop: "-3px",
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {lang_texts[language][11]}
+                                            </Typography>
+                                        </Stack>
+                                        <Stack>
+                                            <Typography
+                                                variant="span"
+                                                className="sub-description"
+                                                style={{
+                                                    textShadow: "1px 1px 1px black",
+                                                    fontFamily: "PublicFont",
+                                                    fontSize: "14px",
+                                                    marginLeft: "-10px",
+                                                    letterSpacing: "2px",
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {totalSupply
+                                                    ? numberWithCommas(totalSupply)
+                                                    : 0}{" "}
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack
+                                        className="item-6"
+                                        height={0}
+                                        marginLeft={"-70px"}
+                                    ></Stack>
+                                    <Stack className="item-7">
+                                        <Button
+                                            onClick={() => handleExpand(item.id, null)}
+                                            variant="contained"
+                                            endIcon={
+                                                <ChevronRightIcon
+                                                    className={
+                                                        expand[item.id] === true
+                                                            ? "expand-icon activate"
+                                                            : "expand-icon"
+                                                    }
+                                                />
+                                            }
+                                            disableElevation
+                                            style={
+                                                poolState
+                                                    ? {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+                                                        width: "175px",
+                                                        height: "64px",
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "18px",
+                                                        letterSpacing: "2px",
+                                                        borderRadius: "unset !important",
+                                                    }
+                                                    : {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+                                                        width: "175px",
+                                                        height: "64px",
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "18px",
+                                                        letterSpacing: "2px",
+                                                        borderRadius: "unset !important",
+                                                    }
+                                            }
+                                        >
+                                            STAKE/CLAIM
+                                        </Button>
+                                    </Stack>
                                 </Stack>
-                                <Stack className="">
-                                    <Button
-                                        onClick={claim}
-                                        // className="depositWithdraw"
-                                        variant="contained"
-                                        className={
-                                            Number(cb) > 0 ? " " : "disabled"
-                                        }
+                                <Collapse
+                                    style={{
+                                        backgroundImage: `url(${StatusBarLower})`,
+                                        padding: "0px",
+                                        height: "112px !important",
+                                        paddingTop: "8px",
+                                    }}
+                                    className="collapse"
+                                    in={expand[item.id] === true ? true : false}
+                                    timeout="auto"
+                                    unmountOnExit
+                                >
+                                    <Stack
+                                        className="collapse-body col-nun-padding"
                                         style={{
-                                            color: "white !important",
-                                            position: "relative",
-                                            background: `url(${depositWithdraw})`,
-                                            width: "132px",
-                                            height: "32px",
-                                            fontFamily: "EternalUI",
-                                            fontSize: "12px",
-                                            letterSpacing: "2px",
-                                            top: "65%",
-                                            right: "21px",
-                                            backgroundRadius:
-                                                "unset !important",
-                                            // left: "35%",
+                                            display: "grid",
+                                            gridTemplateColumns: " repeat(2, 1fr)",
                                         }}
                                     >
-                                        Claim
-                                    </Button>
-                                </Stack>
-                            </Stack>
-                        </Stack>
-                    </Stack>
-                </Collapse>
+                                        <Stack className="collapse-1">
+                                            <Stack className="sub-title pd-0">
+                                                <Stack
+                                                    className="help"
+                                                    direction="row"
+                                                    spacing={0}
+                                                >
+                                                    <Typography
+                                                        variant="span"
+                                                        className="title text-font"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            fontFamily: "EternalUI",
+                                                            textShadow: "2px 3px 2px black",
+                                                            fontSize: "12px",
+                                                        }}
+                                                    >
+                                                        {lang_texts[language][16]}
+                                                    </Typography>
+                                                </Stack>
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description text-font"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        fontFamily: "EternalUI",
+                                                        textShadow: "2px 3px 2px black",
+                                                        fontSize: "12px",
+                                                    }}
+                                                >
+                                                    {(() => {
+                                                        if (
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                        ) {
+                                                            return `${numberWithCommas(
+                                                                customToFixed(
+                                                                    new BigNumber(
+                                                                        balance[item.tokenId[0]]
+                                                                    ).div(
+                                                                        new BigNumber(10).pow(
+                                                                            tokenDecimals.BaseDecimal
+                                                                        )
+                                                                    ),
+                                                                    3
+                                                                )
+                                                            )} ${item.stake_token}`;
+                                                        } else {
+                                                            return `0 ${item.stake_token}`;
+                                                        }
+                                                    })()}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack direction="row" spacing={0} mb={0}>
+                                                <Stack className="col-row-1">
+                                                    <OutlinedInput
+                                                        disabled={
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                                ? false
+                                                                : true
+                                                        }
+                                                        className={
+                                                            Number(balance[item.tokenId[0]]) > 0
+                                                                ? "cal-in bg-white"
+                                                                : "cal-in disabled"
+                                                        }
+                                                        placeholder="0"
+                                                        value={dv}
+                                                        onChange={(e) => setDV(e.target.value)}
+                                                        type="number"
+                                                        endAdornment={
+                                                            <Typography
+                                                                onClick={setMax}
+                                                                variant="span"
+                                                                className={
+                                                                    Number(
+                                                                        balance[item.tokenId[0]]
+                                                                    ) > 0
+                                                                        ? "sub-description c-max"
+                                                                        : "sub-description"
+                                                                }
+                                                            >
+                                                                Max
+                                                            </Typography>
+                                                        }
+                                                    />
+                                                </Stack>
+                                                <Stack
+                                                    className={
+                                                        Number(balance[item.tokenId[0]]) > 0 &&
+                                                        poolState
+                                                            ? "col-row-2"
+                                                            : "col-row-2 disabled"
+                                                    }
+                                                >
+                                                    {dloading ? (
+                                                        <LoadingButton
+                                                            loading
+                                                            variant="contained"
+                                                            // className="deposit-btn"
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                            }}
+                                                        ></LoadingButton>
+                                                    ) : (
+                                                        <Button
+                                                            variant="contained"
+                                                            onClick={deposit}
+                                                            disabled={
+                                                                Number(
+                                                                    balance[item.tokenId[0]]
+                                                                ) > 0
+                                                                    ? false
+                                                                    : true
+                                                            }
+                                                            className={
+                                                                Number(
+                                                                    balance[item.tokenId[0]]
+                                                                ) > 0
+                                                                    ? "deposit-btn"
+                                                                    : "disabled deposit-btn"
+                                                            }
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                fontFamily: "EternalUI",
+                                                            }}
+                                                        >
+                                                            {lang_texts[language][18]}{" "}
+                                                            {/* {item.tokenId[0]} */}
+                                                        </Button>
+                                                    )}
+                                                </Stack>
+                                            </Stack>
+                                            <Stack className="sub-title">
+                                                <Stack
+                                                    className="help"
+                                                    direction="row"
+                                                    spacing={0}
+                                                >
+                                                    <Typography
+                                                        variant="span"
+                                                        className="title"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            fontFamily: "EternalUI",
+                                                            textShadow: "2px 3px 2px black",
+                                                            fontSize: "12px",
+                                                        }}
+                                                    >
+                                                        {lang_texts[language][17]}
+                                                    </Typography>
+                                                </Stack>
+
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        fontFamily: "EternalUI",
+                                                        textShadow: "2px 3px 2px black",
+                                                        fontSize: "12px",
+                                                    }}
+                                                >
+                                                    {numberWithCommas(
+                                                        customToFixed(
+                                                            new BigNumber(sb).div(
+                                                                new BigNumber(10).pow(
+                                                                    tokenDecimals.BaseDecimal
+                                                                )
+                                                            ),
+                                                            3
+                                                        )
+                                                    )}{" "}
+                                                    {item.stake_token}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack direction="row" spacing={1.25}>
+                                                <Stack className="col-row-1">
+                                                    <OutlinedInput
+                                                        disabled={Number(sb) > 0 ? false : true}
+                                                        className={
+                                                            Number(sb) > 0
+                                                                ? "cal-in bg-white"
+                                                                : "cal-in disabled"
+                                                        }
+                                                        placeholder="0"
+                                                        value={wv}
+                                                        type="number"
+                                                        onChange={(e) => setWV(e.target.value)}
+                                                        endAdornment={
+                                                            <Typography
+                                                                onClick={setWmax}
+                                                                variant="span"
+                                                                className={
+                                                                    Number(sb) > 0
+                                                                        ? "sub-description c-max"
+                                                                        : "sub-description"
+                                                                }
+                                                            >
+                                                                Max
+                                                            </Typography>
+                                                        }
+                                                    />
+                                                </Stack>
+                                                <Stack className="col-row-2">
+                                                    {wloading ? (
+                                                        <LoadingButton
+                                                            loading
+                                                            variant="contained"
+                                                            // className="return-btn"
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                position: "relative",
+                                                                left: "-10px",
+                                                                // left: "26px",
+                                                            }}
+                                                        ></LoadingButton>
+                                                    ) : (
+                                                        <Button
+                                                            variant="contained"
+                                                            className={
+                                                                Number(sb) > 0
+                                                                    ? "deposit-btn"
+                                                                    : "disabled deposit-btn"
+                                                            }
+                                                            style={{
+                                                                background: `url(${depositWithdraw})`,
+                                                                width: "132px",
+                                                                height: "32px",
+                                                                position: "relative",
+                                                                left: "-10px",
+                                                                fontFamily: "EternalUI",
+                                                            }}
+                                                            onClick={withdraw}
+                                                        >
+                                                            {lang_texts[language][19]}{" "}
+                                                            {/* {item.tokenId[0]} */}
+                                                        </Button>
+                                                    )}
+                                                </Stack>
+                                            </Stack>
+                                        </Stack>
+                                        <Stack className="collapse-5" spacing={0}>
+                                            <Stack direction="row" spacing={1.25}>
+                                                <Stack spacing={1.25} className="col-row-1">
+                                                    <Typography
+                                                        variant="span"
+                                                        className="sub-description"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            marginLeft: "21px",
+                                                            position: "relative",
+                                                            top: "-40%",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "14px",
+                                                            textShadow: "2px 3px 2px black",
+                                                            right: "-80%",
+                                                            color: "red",
+                                                            fontWeight: "bolder",
+                                                        }}
+                                                    >
+                                                        Your Rewards
+                                                    </Typography>
+                                                </Stack>
+
+                                                <Stack className="col-row-1 col-md-6">
+                                                    <Typography
+                                                        variant="span"
+                                                        className="sub-description"
+                                                        alignSelf="flex-start"
+                                                        style={{
+                                                            marginLeft: "21px",
+                                                            color: "white",
+                                                            position: "relative",
+                                                            top: "-40%",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "14px",
+                                                            textShadow: "2px 3px 2px black",
+                                                            right: "-140%",
+                                                            fontWeight: "bolder",
+                                                        }}
+                                                    >
+                                                        {cb} {item.tokenId[0]}
+                                                        {/* 30000 DOOM */}
+                                                    </Typography>
+                                                </Stack>
+                                                <Stack className="">
+                                                    <Button
+                                                        onClick={claim}
+                                                        // className="depositWithdraw"
+                                                        variant="contained"
+                                                        className={
+                                                            Number(cb) > 0 ? " " : "disabled"
+                                                        }
+                                                        style={{
+                                                            color: "white !important",
+                                                            position: "relative",
+                                                            background: `url(${depositWithdraw})`,
+                                                            width: "132px",
+                                                            height: "32px",
+                                                            fontFamily: "EternalUI",
+                                                            fontSize: "12px",
+                                                            letterSpacing: "2px",
+                                                            top: "65%",
+                                                            right: "21px",
+                                                            backgroundRadius:
+                                                                "unset !important",
+                                                            // left: "35%",
+                                                        }}
+                                                    >
+                                                        Claim
+                                                    </Button>
+                                                </Stack>
+                                            </Stack>
+                                        </Stack>
+                                    </Stack>
+                                </Collapse>
+                            </>
+                        );
+                    }
+                })()}
             </Box>
         </>
     );

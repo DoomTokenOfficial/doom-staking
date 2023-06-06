@@ -437,7 +437,115 @@ const Home = () => {
                         </Stack>
                     );
                 } else if (!mobile && !tablet) {
-                    return <></>;
+                    return (
+                        <>
+                            <Stack
+                                style={{
+                                    display: "block !important",
+                                }}
+                                className="state-bar"
+                                direction="row"
+                                spacing={4}
+                            >
+                                <Stack spacing={2} className="token-state">
+                                    <Typography
+                                        className="first-box-style"
+                                        variant="h6"
+                                    >
+                                        $Doom
+                                    </Typography>
+                                    <Stack direction="row">
+                                        <Stack>
+                                            <Typography
+                                                className="first-box-style"
+                                                variant="h5"
+                                                style={{
+                                                    color: "white !important;",
+                                                }}
+                                            >
+                                                {CurrencySymbol[currency]}{" "}
+                                                {coinStatus.price
+                                                    ? coinStatus.price
+                                                    : toDec(
+                                                          baseCurrency.DOOM.USD,
+                                                          0,
+                                                          6
+                                                      )}
+                                            </Typography>
+                                            {/* <Typography
+                                            variant="span"
+                                            style={{
+                                                color: "#a61919 !important",
+                                            }}
+                                            className={
+                                                coinStatus.status
+                                                    ? `first-box-style state-percent ${coinStatus.status}`
+                                                    : "first-box-style state-percent"
+                                            }
+                                        >
+                                            {coinStatus.priceptc
+                                                ? coinStatus.priceptc
+                                                : "0.00"}
+                                            %
+                                        </Typography> */}
+                                        </Stack>
+                                    </Stack>
+                                </Stack>
+                                <Stack spacing={2} className="token-state">
+                                    <Typography
+                                        className="first-box-style"
+                                        variant="h6"
+                                    >
+                                        {lang_texts[language][5]}
+                                    </Typography>
+                                    <Stack>
+                                        <Typography
+                                            variant="h5"
+                                            className="first-box-style"
+                                        >
+                                            {TotalPoolNum}
+                                        </Typography>
+                                    </Stack>
+                                </Stack>
+                                <Stack spacing={2} className="token-state">
+                                    <Typography
+                                        variant="h6"
+                                        className="first-box-style"
+                                        style={{
+                                            color: "#a61919 !important",
+                                        }}
+                                    >
+                                        {lang_texts[language][6]}
+                                    </Typography>
+                                    {loading ? (
+                                        <Stack>
+                                            <Typography
+                                                variant="h5"
+                                                className="first-box-style"
+                                            >
+                                                {CurrencySymbol[currency]}{" "}
+                                                {numberWithCommas(
+                                                    toDec(
+                                                        totalSpy.reduce(
+                                                            (a, b) => a + b,
+                                                            0
+                                                        ),
+                                                        0,
+                                                        2
+                                                    )
+                                                )}
+                                            </Typography>
+                                        </Stack>
+                                    ) : (
+                                        <Skeleton
+                                            height={32}
+                                            animation="wave"
+                                        />
+                                    )}
+                                </Stack>
+                            </Stack>
+                        </>
+                    );
                 } else {
                     return (
                         <Stack
@@ -592,7 +700,13 @@ const Home = () => {
                             <img
                                 src={!key ? ShoresHell : Inferno}
                                 style={{
-                                    width: !key ? "29%" : "12%",
+                                    width: mobile
+                                        ? !key
+                                            ? "29%"
+                                            : "12%"
+                                        : !key
+                                        ? "100%"
+                                        : "10%",
                                 }}
                             />
                             <Stack

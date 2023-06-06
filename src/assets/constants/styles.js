@@ -622,8 +622,12 @@ const useStyles = makeStyles((theme) => {
                 justifyContent: "space-between",
                 flexDirection: "row",
                 width: theme.isTablet ? "100%" : 900,
+                display: theme.isTablet ? "block" : "",
                 alignSelf: "center",
-                margin: `${theme.spacing(2.5, 0, 0, 0)}`,
+                margin: theme.isTablet
+                    ? `${theme.spacing(0, 0, 0, 0)}`
+                    : `${theme.spacing(2.5, 0, 0, 0)}`,
+
                 zIndex: 100,
                 "& .state-daily-chart": {
                     marginTop: -15,
@@ -669,6 +673,8 @@ const useStyles = makeStyles((theme) => {
             },
             "& .token-state": {
                 minWidth: "260px !important",
+                marginLeft: theme.isTablet ? "0px" : "",
+                marginTop: theme.isTablet ? "20px" : "",
                 "& > div": {
                     justifyContent: "space-between",
                     "& > div": {
