@@ -710,6 +710,8 @@ const Pool = ({
                     style={{
                         backgroundImage: `url(${StatusBarLower})`,
                         padding: "0px",
+                        height: "112px !important",
+                        paddingTop: "8px",
                     }}
                     className="collapse"
                     in={expand[item.id] === true ? true : false}

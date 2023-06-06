@@ -908,6 +908,7 @@ const useStyles = makeStyles((theme) => {
                         },
                     },
                     "& .collapse": {
+                        height: "110px !important",
                         "& .col-nun-padding": {
                             padding: "0px !important",
                             margin: "0px !important",
