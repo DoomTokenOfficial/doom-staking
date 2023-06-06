@@ -182,7 +182,7 @@ const Pool = ({
             setClaimedAt(userInfo.claimedAt);
             settokenTotalS(toDec(TokenTotalSupply, BaseDecimal, 0));
         } else {
-            const Endtime = await Pool.methods.lastUpdateTime().call();
+            const Endtime = await Pool.methods.periodFinish().call();
             Promise.resolve(Endtime).then((res) => {
                 console.log(res, "res--------");
                 if (Number(res) - new Date() / 1000 < 0) {
@@ -422,19 +422,19 @@ const Pool = ({
                         <Stack spacing={1} direction="row">
                             <Typography
                                 style={{
-                                    fontFamily: "StackFont",
+                                    fontFamily: "PublicFont",
                                     textShadow:
-                                        "3px 2px 2px black, 3px 2px 2px black",
-                                    fontSize: "20px",
+                                        "3px 2px 2px black, 3px 2px 0px black",
+                                    fontSize: "13px",
                                     color: "red",
-                                    letterSpacing: "1px",
-                                    fontWeight: "bolder",
+                                    // letterSpacing: "1px",
+                                    // fontWeight: "bolder",
                                     fontPalette: "dark",
                                 }}
                                 variant="span"
                                 className="sub-description"
                             >
-                                {lang_texts[language][9]} $ {item.stake_token}
+                                {lang_texts[language][9]} ${item.stake_token}
                             </Typography>
                         </Stack>
                         <Typography
@@ -443,16 +443,16 @@ const Pool = ({
                             style={{
                                 fontFamily: "PublicFont",
                                 textShadow:
-                                    "3px 2px 2px black, 3px 2px 2px black",
+                                    "3px 2px 2px black, 3px 2px 0px black",
                                 fontSize: "13px",
                                 color: "red",
-                                letterSpacing: "2px",
+                                // letterSpacing: "2px",
                                 fontWeight: "bolder",
                                 fontPalette: "dark",
                                 paddingTop: "10px",
                             }}
                         >
-                            {lang_texts[language][8]} {item.tokenId[1]}
+                            {lang_texts[language][8]} &nbsp;${item.stake_token}
                         </Typography>
                     </Stack>
                     <Stack
@@ -914,7 +914,15 @@ const Pool = ({
                                         <LoadingButton
                                             loading
                                             variant="contained"
-                                            className="return-btn"
+                                            // className="return-btn"
+                                            style={{
+                                                background: `url(${depositWithdraw})`,
+                                                width: "132px",
+                                                height: "32px",
+                                                position: "relative",
+                                                left: "-10px",
+                                                // left: "26px",
+                                            }}
                                         ></LoadingButton>
                                     ) : (
                                         <Button
@@ -929,7 +937,7 @@ const Pool = ({
                                                 width: "132px",
                                                 height: "32px",
                                                 position: "relative",
-                                                // left: "26px",
+                                                left: "-10px",
                                             }}
                                             onClick={withdraw}
                                         >

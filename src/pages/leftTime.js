@@ -18,7 +18,7 @@ const LeftTime = ({ timeLeft, device, poolState, loading }) => {
     };
 
     useEffect(() => {
-        if (timeLeft && poolState && loading) {
+        if (timeLeft && poolState) {
             let timing = setInterval(UpdatingTime, 1000);
             return () => {
                 clearInterval(timing);
@@ -43,19 +43,19 @@ const LeftTime = ({ timeLeft, device, poolState, loading }) => {
                             }}
                         >
                             <Typography variant="span" className="value">
-                                {leftTime.days ? leftTime.days : "05"}
+                                {leftTime.days ? leftTime.days : "00"}
                             </Typography>
                             <Typography variant="span" className="value">
                                 &nbsp;&nbsp;
                             </Typography>
                             <Typography variant="span" className="value">
-                                {leftTime.hours ? leftTime.hours : "10"}
+                                {leftTime.hours ? leftTime.hours : "00"}
                             </Typography>
                             <Typography variant="span" className="value">
                                 &nbsp;&nbsp;
                             </Typography>
                             <Typography variant="span" className="value">
-                                {leftTime.minutes ? leftTime.minutes : "09"}
+                                {leftTime.minutes ? leftTime.minutes : "00"}
                             </Typography>
                         </Stack>
                     );

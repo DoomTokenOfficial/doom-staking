@@ -366,7 +366,7 @@ const Home = () => {
                                                       6
                                                   )}
                                         </Typography>
-                                        <Typography
+                                        {/* <Typography
                                             variant="span"
                                             style={{
                                                 color: "#a61919 !important",
@@ -381,7 +381,7 @@ const Home = () => {
                                                 ? coinStatus.priceptc
                                                 : "0.00"}
                                             %
-                                        </Typography>
+                                        </Typography> */}
                                     </Stack>
                                 </Stack>
                             </Stack>
