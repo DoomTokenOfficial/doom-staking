@@ -1009,17 +1009,20 @@ const Pool = ({
                                 <Stack
                                     style={{
                                         
-                                        position: "absolute",
-                                        left:"26px"
                                         // display: "grid",
                                         // gridTemplateColumns: "repeat(6, 1fr)",
+                                        width:"100vw",
+                                        left:"0",
+                                        position:"absolute"
                                     }}
                                     className="item-box"
                                 >
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            marginLeft: "-18px",
+                                            width:"323px",
+                                            height:"106px",
+                                            margin:"auto",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
