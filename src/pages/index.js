@@ -361,7 +361,7 @@ const Home = () => {
                                             {coinStatus.price
                                                 ? coinStatus.price
                                                 : toDec(
-                                                      baseCurrency.CFLT.USD,
+                                                      baseCurrency.DOOM.USD,
                                                       0,
                                                       6
                                                   )}
