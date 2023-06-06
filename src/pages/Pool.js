@@ -406,7 +406,7 @@ const Pool = ({
                 }}
             >
                 {(() => {
-                    if(mobile) {
+                    if (mobile) {
                         return (
                             <>
                                 <Stack
@@ -439,7 +439,8 @@ const Pool = ({
                                                 variant="span"
                                                 className="sub-description"
                                             >
-                                                {lang_texts[language][9]} ${item.stake_token}
+                                                {lang_texts[language][9]} $
+                                                {item.stake_token}
                                             </Typography>
                                         </Stack>
                                         <Typography
@@ -457,7 +458,8 @@ const Pool = ({
                                                 paddingTop: "10px",
                                             }}
                                         >
-                                            {lang_texts[language][8]} &nbsp;${item.stake_token}
+                                            {lang_texts[language][8]} &nbsp;$
+                                            {item.stake_token}
                                         </Typography>
                                     </Stack>
                                     <Stack
@@ -491,7 +493,8 @@ const Pool = ({
                                             <Typography
                                                 style={{
                                                     fontFamily: "PublicFont",
-                                                    textShadow: "black -1px 2px 2px",
+                                                    textShadow:
+                                                        "black -1px 2px 2px",
                                                     fontSize: "18px",
                                                     color: "white",
                                                     marginLeft: " 45px",
@@ -526,7 +529,8 @@ const Pool = ({
                                                 className="title"
                                                 style={{
                                                     fontFamily: "PublicFont",
-                                                    textShadow: "black -1px 2px 2px",
+                                                    textShadow:
+                                                        "black -1px 2px 2px",
                                                     fontSize: "14px",
                                                     color: "red",
                                                     letterSpacing: "1px",
@@ -554,7 +558,8 @@ const Pool = ({
                                                     top: "19px",
                                                     fontFamily: "PublicFont",
                                                     fontSize: "16px",
-                                                    textShadow: "2px 3px 2px black",
+                                                    textShadow:
+                                                        "2px 3px 2px black",
                                                     letterSpacing: "-9.9px",
                                                 }}
                                             >
@@ -570,7 +575,11 @@ const Pool = ({
                                             left: "93px",
                                         }}
                                     >
-                                        <Stack className="help" direction="row" spacing={1}>
+                                        <Stack
+                                            className="help"
+                                            direction="row"
+                                            spacing={1}
+                                        >
                                             <Typography
                                                 variant="span"
                                                 className="title"
@@ -594,7 +603,8 @@ const Pool = ({
                                                 variant="span"
                                                 className="sub-description"
                                                 style={{
-                                                    textShadow: "1px 1px 1px black",
+                                                    textShadow:
+                                                        "1px 1px 1px black",
                                                     fontFamily: "PublicFont",
                                                     fontSize: "14px",
                                                     marginLeft: "-10px",
@@ -603,7 +613,9 @@ const Pool = ({
                                                 }}
                                             >
                                                 {totalSupply
-                                                    ? numberWithCommas(totalSupply)
+                                                    ? numberWithCommas(
+                                                          totalSupply
+                                                      )
                                                     : 0}{" "}
                                             </Typography>
                                         </Stack>
@@ -615,7 +627,9 @@ const Pool = ({
                                     ></Stack>
                                     <Stack className="item-7">
                                         <Button
-                                            onClick={() => handleExpand(item.id, null)}
+                                            onClick={() =>
+                                                handleExpand(item.id, null)
+                                            }
                                             variant="contained"
                                             endIcon={
                                                 <ChevronRightIcon
@@ -630,29 +644,33 @@ const Pool = ({
                                             style={
                                                 poolState
                                                     ? {
-                                                        color: "white",
-                                                        position: "relative",
+                                                          color: "white",
+                                                          position: "relative",
 
-                                                        background: `url(${claimOrStakeBtn})`,
-                                                        width: "175px",
-                                                        height: "64px",
-                                                        fontFamily: "EternalUI",
-                                                        fontSize: "18px",
-                                                        letterSpacing: "2px",
-                                                        borderRadius: "unset !important",
-                                                    }
+                                                          background: `url(${claimOrStakeBtn})`,
+                                                          width: "175px",
+                                                          height: "64px",
+                                                          fontFamily:
+                                                              "EternalUI",
+                                                          fontSize: "18px",
+                                                          letterSpacing: "2px",
+                                                          borderRadius:
+                                                              "unset !important",
+                                                      }
                                                     : {
-                                                        color: "white",
-                                                        position: "relative",
+                                                          color: "white",
+                                                          position: "relative",
 
-                                                        background: `url(${claimOrStakeBtn})`,
-                                                        width: "175px",
-                                                        height: "64px",
-                                                        fontFamily: "EternalUI",
-                                                        fontSize: "18px",
-                                                        letterSpacing: "2px",
-                                                        borderRadius: "unset !important",
-                                                    }
+                                                          background: `url(${claimOrStakeBtn})`,
+                                                          width: "175px",
+                                                          height: "64px",
+                                                          fontFamily:
+                                                              "EternalUI",
+                                                          fontSize: "18px",
+                                                          letterSpacing: "2px",
+                                                          borderRadius:
+                                                              "unset !important",
+                                                      }
                                             }
                                         >
                                             STAKE/CLAIM
@@ -676,7 +694,8 @@ const Pool = ({
                                         className="collapse-body col-nun-padding"
                                         style={{
                                             display: "grid",
-                                            gridTemplateColumns: " repeat(2, 1fr)",
+                                            gridTemplateColumns:
+                                                " repeat(2, 1fr)",
                                         }}
                                     >
                                         <Stack className="collapse-1">
@@ -691,12 +710,18 @@ const Pool = ({
                                                         className="title text-font"
                                                         alignSelf="flex-start"
                                                         style={{
-                                                            fontFamily: "EternalUI",
-                                                            textShadow: "2px 3px 2px black",
+                                                            fontFamily:
+                                                                "EternalUI",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             fontSize: "12px",
                                                         }}
                                                     >
-                                                        {lang_texts[language][16]}
+                                                        {
+                                                            lang_texts[
+                                                                language
+                                                            ][16]
+                                                        }
                                                     </Typography>
                                                 </Stack>
                                                 <Typography
@@ -705,48 +730,78 @@ const Pool = ({
                                                     alignSelf="flex-start"
                                                     style={{
                                                         fontFamily: "EternalUI",
-                                                        textShadow: "2px 3px 2px black",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
                                                         fontSize: "12px",
                                                     }}
                                                 >
                                                     {(() => {
                                                         if (
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                         ) {
                                                             return `${numberWithCommas(
                                                                 customToFixed(
                                                                     new BigNumber(
-                                                                        balance[item.tokenId[0]]
+                                                                        balance[
+                                                                            item.tokenId[0]
+                                                                        ]
                                                                     ).div(
-                                                                        new BigNumber(10).pow(
+                                                                        new BigNumber(
+                                                                            10
+                                                                        ).pow(
                                                                             tokenDecimals.BaseDecimal
                                                                         )
                                                                     ),
                                                                     3
                                                                 )
-                                                            )} ${item.stake_token}`;
+                                                            )} ${
+                                                                item.stake_token
+                                                            }`;
                                                         } else {
                                                             return `0 ${item.stake_token}`;
                                                         }
                                                     })()}
                                                 </Typography>
                                             </Stack>
-                                            <Stack direction="row" spacing={0} mb={0}>
+                                            <Stack
+                                                direction="row"
+                                                spacing={0}
+                                                mb={0}
+                                            >
                                                 <Stack className="col-row-1">
                                                     <OutlinedInput
                                                         disabled={
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                                 ? false
                                                                 : true
                                                         }
                                                         className={
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                                 ? "cal-in bg-white"
                                                                 : "cal-in disabled"
                                                         }
                                                         placeholder="0"
                                                         value={dv}
-                                                        onChange={(e) => setDV(e.target.value)}
+                                                        onChange={(e) =>
+                                                            setDV(
+                                                                e.target.value
+                                                            )
+                                                        }
                                                         type="number"
                                                         endAdornment={
                                                             <Typography
@@ -754,7 +809,10 @@ const Pool = ({
                                                                 variant="span"
                                                                 className={
                                                                     Number(
-                                                                        balance[item.tokenId[0]]
+                                                                        balance[
+                                                                            item
+                                                                                .tokenId[0]
+                                                                        ]
                                                                     ) > 0
                                                                         ? "sub-description c-max"
                                                                         : "sub-description"
@@ -767,8 +825,11 @@ const Pool = ({
                                                 </Stack>
                                                 <Stack
                                                     className={
-                                                        Number(balance[item.tokenId[0]]) > 0 &&
-                                                        poolState
+                                                        Number(
+                                                            balance[
+                                                                item.tokenId[0]
+                                                            ]
+                                                        ) > 0 && poolState
                                                             ? "col-row-2"
                                                             : "col-row-2 disabled"
                                                     }
@@ -790,14 +851,20 @@ const Pool = ({
                                                             onClick={deposit}
                                                             disabled={
                                                                 Number(
-                                                                    balance[item.tokenId[0]]
+                                                                    balance[
+                                                                        item
+                                                                            .tokenId[0]
+                                                                    ]
                                                                 ) > 0
                                                                     ? false
                                                                     : true
                                                             }
                                                             className={
                                                                 Number(
-                                                                    balance[item.tokenId[0]]
+                                                                    balance[
+                                                                        item
+                                                                            .tokenId[0]
+                                                                    ]
                                                                 ) > 0
                                                                     ? "deposit-btn"
                                                                     : "disabled deposit-btn"
@@ -806,10 +873,15 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                fontFamily: "EternalUI",
+                                                                fontFamily:
+                                                                    "EternalUI",
                                                             }}
                                                         >
-                                                            {lang_texts[language][18]}{" "}
+                                                            {
+                                                                lang_texts[
+                                                                    language
+                                                                ][18]
+                                                            }{" "}
                                                             {/* {item.tokenId[0]} */}
                                                         </Button>
                                                     )}
@@ -826,12 +898,18 @@ const Pool = ({
                                                         className="title"
                                                         alignSelf="flex-start"
                                                         style={{
-                                                            fontFamily: "EternalUI",
-                                                            textShadow: "2px 3px 2px black",
+                                                            fontFamily:
+                                                                "EternalUI",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             fontSize: "12px",
                                                         }}
                                                     >
-                                                        {lang_texts[language][17]}
+                                                        {
+                                                            lang_texts[
+                                                                language
+                                                            ][17]
+                                                        }
                                                     </Typography>
                                                 </Stack>
 
@@ -841,14 +919,19 @@ const Pool = ({
                                                     alignSelf="flex-start"
                                                     style={{
                                                         fontFamily: "EternalUI",
-                                                        textShadow: "2px 3px 2px black",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
                                                         fontSize: "12px",
                                                     }}
                                                 >
                                                     {numberWithCommas(
                                                         customToFixed(
-                                                            new BigNumber(sb).div(
-                                                                new BigNumber(10).pow(
+                                                            new BigNumber(
+                                                                sb
+                                                            ).div(
+                                                                new BigNumber(
+                                                                    10
+                                                                ).pow(
                                                                     tokenDecimals.BaseDecimal
                                                                 )
                                                             ),
@@ -858,10 +941,17 @@ const Pool = ({
                                                     {item.stake_token}
                                                 </Typography>
                                             </Stack>
-                                            <Stack direction="row" spacing={1.25}>
+                                            <Stack
+                                                direction="row"
+                                                spacing={1.25}
+                                            >
                                                 <Stack className="col-row-1">
                                                     <OutlinedInput
-                                                        disabled={Number(sb) > 0 ? false : true}
+                                                        disabled={
+                                                            Number(sb) > 0
+                                                                ? false
+                                                                : true
+                                                        }
                                                         className={
                                                             Number(sb) > 0
                                                                 ? "cal-in bg-white"
@@ -870,13 +960,20 @@ const Pool = ({
                                                         placeholder="0"
                                                         value={wv}
                                                         type="number"
-                                                        onChange={(e) => setWV(e.target.value)}
+                                                        onChange={(e) =>
+                                                            setWV(
+                                                                e.target.value
+                                                            )
+                                                        }
                                                         endAdornment={
                                                             <Typography
-                                                                onClick={setWmax}
+                                                                onClick={
+                                                                    setWmax
+                                                                }
                                                                 variant="span"
                                                                 className={
-                                                                    Number(sb) > 0
+                                                                    Number(sb) >
+                                                                    0
                                                                         ? "sub-description c-max"
                                                                         : "sub-description"
                                                                 }
@@ -896,7 +993,8 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                position: "relative",
+                                                                position:
+                                                                    "relative",
                                                                 left: "-10px",
                                                                 // left: "26px",
                                                             }}
@@ -913,36 +1011,55 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                position: "relative",
+                                                                position:
+                                                                    "relative",
                                                                 left: "-10px",
-                                                                fontFamily: "EternalUI",
+                                                                fontFamily:
+                                                                    "EternalUI",
                                                             }}
                                                             onClick={withdraw}
                                                         >
-                                                            {lang_texts[language][19]}{" "}
+                                                            {
+                                                                lang_texts[
+                                                                    language
+                                                                ][19]
+                                                            }{" "}
                                                             {/* {item.tokenId[0]} */}
                                                         </Button>
                                                     )}
                                                 </Stack>
                                             </Stack>
                                         </Stack>
-                                        <Stack className="collapse-5" spacing={0}>
-                                            <Stack direction="row" spacing={1.25}>
-                                                <Stack spacing={1.25} className="col-row-1">
+                                        <Stack
+                                            className="collapse-5"
+                                            spacing={0}
+                                        >
+                                            <Stack
+                                                direction="row"
+                                                spacing={1.25}
+                                            >
+                                                <Stack
+                                                    spacing={1.25}
+                                                    className="col-row-1"
+                                                >
                                                     <Typography
                                                         variant="span"
                                                         className="sub-description"
                                                         alignSelf="flex-start"
                                                         style={{
                                                             marginLeft: "21px",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             top: "-40%",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "14px",
-                                                            textShadow: "2px 3px 2px black",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             right: "-80%",
                                                             color: "red",
-                                                            fontWeight: "bolder",
+                                                            fontWeight:
+                                                                "bolder",
                                                         }}
                                                     >
                                                         Your Rewards
@@ -957,13 +1074,17 @@ const Pool = ({
                                                         style={{
                                                             marginLeft: "21px",
                                                             color: "white",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             top: "-40%",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "14px",
-                                                            textShadow: "2px 3px 2px black",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             right: "-140%",
-                                                            fontWeight: "bolder",
+                                                            fontWeight:
+                                                                "bolder",
                                                         }}
                                                     >
                                                         {cb} {item.tokenId[0]}
@@ -976,17 +1097,22 @@ const Pool = ({
                                                         // className="depositWithdraw"
                                                         variant="contained"
                                                         className={
-                                                            Number(cb) > 0 ? " " : "disabled"
+                                                            Number(cb) > 0
+                                                                ? " "
+                                                                : "disabled"
                                                         }
                                                         style={{
                                                             color: "white !important",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             background: `url(${depositWithdraw})`,
                                                             width: "132px",
                                                             height: "32px",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "12px",
-                                                            letterSpacing: "2px",
+                                                            letterSpacing:
+                                                                "2px",
                                                             top: "65%",
                                                             right: "21px",
                                                             backgroundRadius:
@@ -1008,21 +1134,20 @@ const Pool = ({
                             <>
                                 <Stack
                                     style={{
-                                        
                                         // display: "grid",
                                         // gridTemplateColumns: "repeat(6, 1fr)",
-                                        width:"100vw",
-                                        left:"0",
-                                        position:"absolute"
+                                        width: "100vw",
+                                        left: "0",
+                                        position: "absolute",
                                     }}
                                     className="item-box"
                                 >
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width:"323px",
-                                            height:"106px",
-                                            margin:"auto",
+                                            width: "323px",
+                                            height: "106px",
+                                            margin: "auto",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
@@ -1041,7 +1166,8 @@ const Pool = ({
                                                 variant="span"
                                                 className="sub-description"
                                             >
-                                                {lang_texts[language][9]} ${item.stake_token}
+                                                {lang_texts[language][9]} $
+                                                {item.stake_token}
                                             </Typography>
                                         </Stack>
                                         <Typography
@@ -1059,7 +1185,8 @@ const Pool = ({
                                                 paddingTop: "10px",
                                             }}
                                         >
-                                            {lang_texts[language][8]} &nbsp;${item.stake_token}
+                                            {lang_texts[language][8]} &nbsp;$
+                                            {item.stake_token}
                                         </Typography>
                                     </Stack>
                                     {/* <Stack
@@ -1105,8 +1232,8 @@ const Pool = ({
                                                 APY
                                             </Typography>
                                         </Stack>
-                                    </Stack>
-                                    <Stack className="item-4" spacing={0.75}>
+                                    </Stack> */}
+                                    {/* <Stack className="item-4" spacing={0.75}>
                                         <Stack
                                             className="help"
                                             direction="row"
@@ -1163,8 +1290,8 @@ const Pool = ({
                                                 D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M
                                             </Typography>
                                         </Stack>
-                                    </Stack>
-                                    <Stack
+                                    </Stack> */}
+                                    {/* <Stack
                                         className="item-5"
                                         spacing={0}
                                         style={{
@@ -1209,13 +1336,13 @@ const Pool = ({
                                                     : 0}{" "}
                                             </Typography>
                                         </Stack>
-                                    </Stack>
-                                    <Stack
+                                    </Stack> */}
+                                    {/* <Stack
                                         className="item-6"
                                         height={0}
                                         marginLeft={"-70px"}
-                                    ></Stack>
-                                    <Stack className="item-7">
+                                    ></Stack> */}
+                                    {/* <Stack className="item-7">
                                         <Button
                                             onClick={() => handleExpand(item.id, null)}
                                             variant="contained"
@@ -1277,7 +1404,8 @@ const Pool = ({
                                         className="collapse-body col-nun-padding"
                                         style={{
                                             display: "grid",
-                                            gridTemplateColumns: " repeat(2, 1fr)",
+                                            gridTemplateColumns:
+                                                " repeat(2, 1fr)",
                                         }}
                                     >
                                         <Stack className="collapse-1">
@@ -1292,12 +1420,18 @@ const Pool = ({
                                                         className="title text-font"
                                                         alignSelf="flex-start"
                                                         style={{
-                                                            fontFamily: "EternalUI",
-                                                            textShadow: "2px 3px 2px black",
+                                                            fontFamily:
+                                                                "EternalUI",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             fontSize: "12px",
                                                         }}
                                                     >
-                                                        {lang_texts[language][16]}
+                                                        {
+                                                            lang_texts[
+                                                                language
+                                                            ][16]
+                                                        }
                                                     </Typography>
                                                 </Stack>
                                                 <Typography
@@ -1306,48 +1440,78 @@ const Pool = ({
                                                     alignSelf="flex-start"
                                                     style={{
                                                         fontFamily: "EternalUI",
-                                                        textShadow: "2px 3px 2px black",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
                                                         fontSize: "12px",
                                                     }}
                                                 >
                                                     {(() => {
                                                         if (
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                         ) {
                                                             return `${numberWithCommas(
                                                                 customToFixed(
                                                                     new BigNumber(
-                                                                        balance[item.tokenId[0]]
+                                                                        balance[
+                                                                            item.tokenId[0]
+                                                                        ]
                                                                     ).div(
-                                                                        new BigNumber(10).pow(
+                                                                        new BigNumber(
+                                                                            10
+                                                                        ).pow(
                                                                             tokenDecimals.BaseDecimal
                                                                         )
                                                                     ),
                                                                     3
                                                                 )
-                                                            )} ${item.stake_token}`;
+                                                            )} ${
+                                                                item.stake_token
+                                                            }`;
                                                         } else {
                                                             return `0 ${item.stake_token}`;
                                                         }
                                                     })()}
                                                 </Typography>
                                             </Stack>
-                                            <Stack direction="row" spacing={0} mb={0}>
+                                            <Stack
+                                                direction="row"
+                                                spacing={0}
+                                                mb={0}
+                                            >
                                                 <Stack className="col-row-1">
                                                     <OutlinedInput
                                                         disabled={
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                                 ? false
                                                                 : true
                                                         }
                                                         className={
-                                                            Number(balance[item.tokenId[0]]) > 0
+                                                            Number(
+                                                                balance[
+                                                                    item
+                                                                        .tokenId[0]
+                                                                ]
+                                                            ) > 0
                                                                 ? "cal-in bg-white"
                                                                 : "cal-in disabled"
                                                         }
                                                         placeholder="0"
                                                         value={dv}
-                                                        onChange={(e) => setDV(e.target.value)}
+                                                        onChange={(e) =>
+                                                            setDV(
+                                                                e.target.value
+                                                            )
+                                                        }
                                                         type="number"
                                                         endAdornment={
                                                             <Typography
@@ -1355,7 +1519,10 @@ const Pool = ({
                                                                 variant="span"
                                                                 className={
                                                                     Number(
-                                                                        balance[item.tokenId[0]]
+                                                                        balance[
+                                                                            item
+                                                                                .tokenId[0]
+                                                                        ]
                                                                     ) > 0
                                                                         ? "sub-description c-max"
                                                                         : "sub-description"
@@ -1368,8 +1535,11 @@ const Pool = ({
                                                 </Stack>
                                                 <Stack
                                                     className={
-                                                        Number(balance[item.tokenId[0]]) > 0 &&
-                                                        poolState
+                                                        Number(
+                                                            balance[
+                                                                item.tokenId[0]
+                                                            ]
+                                                        ) > 0 && poolState
                                                             ? "col-row-2"
                                                             : "col-row-2 disabled"
                                                     }
@@ -1391,14 +1561,20 @@ const Pool = ({
                                                             onClick={deposit}
                                                             disabled={
                                                                 Number(
-                                                                    balance[item.tokenId[0]]
+                                                                    balance[
+                                                                        item
+                                                                            .tokenId[0]
+                                                                    ]
                                                                 ) > 0
                                                                     ? false
                                                                     : true
                                                             }
                                                             className={
                                                                 Number(
-                                                                    balance[item.tokenId[0]]
+                                                                    balance[
+                                                                        item
+                                                                            .tokenId[0]
+                                                                    ]
                                                                 ) > 0
                                                                     ? "deposit-btn"
                                                                     : "disabled deposit-btn"
@@ -1407,10 +1583,15 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                fontFamily: "EternalUI",
+                                                                fontFamily:
+                                                                    "EternalUI",
                                                             }}
                                                         >
-                                                            {lang_texts[language][18]}{" "}
+                                                            {
+                                                                lang_texts[
+                                                                    language
+                                                                ][18]
+                                                            }{" "}
                                                             {/* {item.tokenId[0]} */}
                                                         </Button>
                                                     )}
@@ -1427,12 +1608,18 @@ const Pool = ({
                                                         className="title"
                                                         alignSelf="flex-start"
                                                         style={{
-                                                            fontFamily: "EternalUI",
-                                                            textShadow: "2px 3px 2px black",
+                                                            fontFamily:
+                                                                "EternalUI",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             fontSize: "12px",
                                                         }}
                                                     >
-                                                        {lang_texts[language][17]}
+                                                        {
+                                                            lang_texts[
+                                                                language
+                                                            ][17]
+                                                        }
                                                     </Typography>
                                                 </Stack>
 
@@ -1442,14 +1629,19 @@ const Pool = ({
                                                     alignSelf="flex-start"
                                                     style={{
                                                         fontFamily: "EternalUI",
-                                                        textShadow: "2px 3px 2px black",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
                                                         fontSize: "12px",
                                                     }}
                                                 >
                                                     {numberWithCommas(
                                                         customToFixed(
-                                                            new BigNumber(sb).div(
-                                                                new BigNumber(10).pow(
+                                                            new BigNumber(
+                                                                sb
+                                                            ).div(
+                                                                new BigNumber(
+                                                                    10
+                                                                ).pow(
                                                                     tokenDecimals.BaseDecimal
                                                                 )
                                                             ),
@@ -1459,10 +1651,17 @@ const Pool = ({
                                                     {item.stake_token}
                                                 </Typography>
                                             </Stack>
-                                            <Stack direction="row" spacing={1.25}>
+                                            <Stack
+                                                direction="row"
+                                                spacing={1.25}
+                                            >
                                                 <Stack className="col-row-1">
                                                     <OutlinedInput
-                                                        disabled={Number(sb) > 0 ? false : true}
+                                                        disabled={
+                                                            Number(sb) > 0
+                                                                ? false
+                                                                : true
+                                                        }
                                                         className={
                                                             Number(sb) > 0
                                                                 ? "cal-in bg-white"
@@ -1471,13 +1670,20 @@ const Pool = ({
                                                         placeholder="0"
                                                         value={wv}
                                                         type="number"
-                                                        onChange={(e) => setWV(e.target.value)}
+                                                        onChange={(e) =>
+                                                            setWV(
+                                                                e.target.value
+                                                            )
+                                                        }
                                                         endAdornment={
                                                             <Typography
-                                                                onClick={setWmax}
+                                                                onClick={
+                                                                    setWmax
+                                                                }
                                                                 variant="span"
                                                                 className={
-                                                                    Number(sb) > 0
+                                                                    Number(sb) >
+                                                                    0
                                                                         ? "sub-description c-max"
                                                                         : "sub-description"
                                                                 }
@@ -1497,7 +1703,8 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                position: "relative",
+                                                                position:
+                                                                    "relative",
                                                                 left: "-10px",
                                                                 // left: "26px",
                                                             }}
@@ -1514,36 +1721,55 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "132px",
                                                                 height: "32px",
-                                                                position: "relative",
+                                                                position:
+                                                                    "relative",
                                                                 left: "-10px",
-                                                                fontFamily: "EternalUI",
+                                                                fontFamily:
+                                                                    "EternalUI",
                                                             }}
                                                             onClick={withdraw}
                                                         >
-                                                            {lang_texts[language][19]}{" "}
+                                                            {
+                                                                lang_texts[
+                                                                    language
+                                                                ][19]
+                                                            }{" "}
                                                             {/* {item.tokenId[0]} */}
                                                         </Button>
                                                     )}
                                                 </Stack>
                                             </Stack>
                                         </Stack>
-                                        <Stack className="collapse-5" spacing={0}>
-                                            <Stack direction="row" spacing={1.25}>
-                                                <Stack spacing={1.25} className="col-row-1">
+                                        <Stack
+                                            className="collapse-5"
+                                            spacing={0}
+                                        >
+                                            <Stack
+                                                direction="row"
+                                                spacing={1.25}
+                                            >
+                                                <Stack
+                                                    spacing={1.25}
+                                                    className="col-row-1"
+                                                >
                                                     <Typography
                                                         variant="span"
                                                         className="sub-description"
                                                         alignSelf="flex-start"
                                                         style={{
                                                             marginLeft: "21px",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             top: "-40%",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "14px",
-                                                            textShadow: "2px 3px 2px black",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             right: "-80%",
                                                             color: "red",
-                                                            fontWeight: "bolder",
+                                                            fontWeight:
+                                                                "bolder",
                                                         }}
                                                     >
                                                         Your Rewards
@@ -1558,13 +1784,17 @@ const Pool = ({
                                                         style={{
                                                             marginLeft: "21px",
                                                             color: "white",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             top: "-40%",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "14px",
-                                                            textShadow: "2px 3px 2px black",
+                                                            textShadow:
+                                                                "2px 3px 2px black",
                                                             right: "-140%",
-                                                            fontWeight: "bolder",
+                                                            fontWeight:
+                                                                "bolder",
                                                         }}
                                                     >
                                                         {cb} {item.tokenId[0]}
@@ -1577,17 +1807,22 @@ const Pool = ({
                                                         // className="depositWithdraw"
                                                         variant="contained"
                                                         className={
-                                                            Number(cb) > 0 ? " " : "disabled"
+                                                            Number(cb) > 0
+                                                                ? " "
+                                                                : "disabled"
                                                         }
                                                         style={{
                                                             color: "white !important",
-                                                            position: "relative",
+                                                            position:
+                                                                "relative",
                                                             background: `url(${depositWithdraw})`,
                                                             width: "132px",
                                                             height: "32px",
-                                                            fontFamily: "EternalUI",
+                                                            fontFamily:
+                                                                "EternalUI",
                                                             fontSize: "12px",
-                                                            letterSpacing: "2px",
+                                                            letterSpacing:
+                                                                "2px",
                                                             top: "65%",
                                                             right: "21px",
                                                             backgroundRadius:
