@@ -1145,16 +1145,18 @@ const Pool = ({
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width: "323px",
-                                            height: "106px",
+                                            width: "86%",
+                                            position:"relative",
                                             margin: "auto",
+                                            height:"28.5vw",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
                                         <Stack
                                             style={{
                                                 display:"grid",
-                                                gridTemplateColumns:"1fr 1fr"
+                                                gridTemplateColumns:"1fr 1fr",
+                                                marginTop:"-20px",
                                             }}
                                         >
                                             <Typography
@@ -1164,8 +1166,12 @@ const Pool = ({
                                                     fontFamily: "PublicFont",
                                                     textShadow:
                                                         "4px 3px 1px black, 6px 4px 1px black",
-                                                    fontSize: "27px",
+                                                    fontSize: "30px",
                                                     color: "red",
+                                                    textAlign:"right",
+                                                    left:"30px",
+                                                    position:"relative",
+                                                    
                                                     // fontWeight: "bolder",
                                                 }}
                                             >
@@ -1192,44 +1198,97 @@ const Pool = ({
                                             >
                                                 APY
                                             </Typography> 
+                                            <Stack style={{
+                                                position:"relative",
+                                                top:"18px",
+                                                marginLeft:"12px"
+                                            }}>
+                                                <Typography
+                                                    style={{
+                                                        fontFamily: "PublicFont",
+                                                        textShadow:
+                                                            "3px 2px 2px black, 3px 2px 0px black",
+                                                        fontSize: "10px",
+                                                        color: "red",
+
+                                                        // letterSpacing: "1px",
+                                                        // fontWeight: "bolder",
+                                                        // paddingTop:"30px",
+                                                        fontPalette: "dark",
+                                                    }}
+                                                    variant="span"
+                                                    className="sub-description"
+                                                >
+                                                    {lang_texts[language][9]} $
+                                                    {item.stake_token}
+                                                </Typography>
+                                                <Typography
+                                                    variant="span"
+                                                    className="value"
+                                                    style={{
+                                                        fontFamily: "PublicFont",
+                                                        textShadow:
+                                                            "3px 2px 2px black, 3px 2px 0px black",
+                                                        fontSize: "10px",
+                                                        color: "red",
+                                                        // letterSpacing: "2px",
+                                                        fontWeight: "bolder",
+                                                        fontPalette: "dark",
+                                                        paddingTop: "10px",
+                                                    }}
+                                                >
+                                                    {lang_texts[language][8]} &nbsp;$
+                                                    {item.stake_token}
+                                                </Typography>
+                                            </Stack>
+                                              <Button
+                                            onClick={() => handleExpand(item.id, null)}
+                                            variant="contained"
+                                            
+                                            endIcon={
+                                                <ChevronRightIcon
+                                                    className={
+                                                        expand[item.id] === true
+                                                            ? "expand-icon activate"
+                                                            : "expand-icon"
+                                                    }
+                                                />
+                                            }
+                                            disableElevation
+                                            style={
+                                                poolState
+                                                    ? {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+
+                                                        fontFamily: "EternalUI",
+                                                        letterSpacing: "1px",
+                                                        borderRadius: "unset !important",
+                                                         width:"26vw",
+                                                height:"7vw",
+                                                fontSize:"11px"
+                                                    }
+                                                    : {
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        background: `url(${claimOrStakeBtn})`,
+
+                                                        fontFamily: "EternalUI",
+                                                        letterSpacing: "2px",
+                                                        borderRadius: "unset !important",
+                                                         width:"26vw",
+                                                height:"9vw",
+                                                fontSize:"7px"
+                                                    }
+                                            }
+                                        >
+                                            STAKE/CLAIM
+                                        </Button>
                                         </Stack>
-                                        {/* <Stack spacing={1} direction="row">
-                                        </Stack> */}
-                                        <Typography
-                                            style={{
-                                                fontFamily: "PublicFont",
-                                                textShadow:
-                                                    "3px 2px 2px black, 3px 2px 0px black",
-                                                fontSize: "13px",
-                                                color: "red",
-                                                // letterSpacing: "1px",
-                                                // fontWeight: "bolder",
-                                                fontPalette: "dark",
-                                            }}
-                                            variant="span"
-                                            className="sub-description"
-                                        >
-                                            {lang_texts[language][9]} $
-                                            {item.stake_token}
-                                        </Typography>
-                                        <Typography
-                                            variant="span"
-                                            className="value"
-                                            style={{
-                                                fontFamily: "PublicFont",
-                                                textShadow:
-                                                    "3px 2px 2px black, 3px 2px 0px black",
-                                                fontSize: "13px",
-                                                color: "red",
-                                                // letterSpacing: "2px",
-                                                fontWeight: "bolder",
-                                                fontPalette: "dark",
-                                                paddingTop: "10px",
-                                            }}
-                                        >
-                                            {lang_texts[language][8]} &nbsp;$
-                                            {item.stake_token}
-                                        </Typography>
+                                                                              
                                     </Stack>
                                     {/* <Stack
                                         justifyContent="center"
