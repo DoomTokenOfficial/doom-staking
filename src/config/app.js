@@ -14,7 +14,7 @@ export const Currencys = [
     "INR",
     "VND",
 ];
-
+// dsfsdf
 export const netId = 4002;
 export const TotalPoolNum = 2;
 
