@@ -40,6 +40,7 @@ import ChartBox from "./chart";
 import StatusBar1 from "../assets/img/StatusBar1.png";
 import StatusBar2 from "../assets/img/StatusBar2.png";
 import StatusBarLower from "../assets/img/StatusBarLower.png";
+import StatusBarMobile from "../assets/img/StatusBar1-Mobile.png";
 const Pool = ({
     item,
     handleExpand,
@@ -1007,10 +1008,11 @@ const Pool = ({
                             <>
                                 <Stack
                                     style={{
-                                        backgroundImage: `url(${item.img_url})`,
-                                        padding: "20.7px 40px",
-                                        display: "grid",
-                                        gridTemplateColumns: "repeat(6, 1fr)",
+                                        
+                                        position: "absolute",
+                                        left:"26px"
+                                        // display: "grid",
+                                        // gridTemplateColumns: "repeat(6, 1fr)",
                                     }}
                                     className="item-box"
                                 >
@@ -1018,6 +1020,7 @@ const Pool = ({
                                         className="item-1"
                                         style={{
                                             marginLeft: "-18px",
+                                            backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
                                         <Stack spacing={1} direction="row">
@@ -1056,7 +1059,7 @@ const Pool = ({
                                             {lang_texts[language][8]} &nbsp;${item.stake_token}
                                         </Typography>
                                     </Stack>
-                                    <Stack
+                                    {/* <Stack
                                         justifyContent="center"
                                         className="item-3"
                                         spacing={0.75}
@@ -1253,7 +1256,7 @@ const Pool = ({
                                         >
                                             STAKE/CLAIM
                                         </Button>
-                                    </Stack>
+                                    </Stack> */}
                                 </Stack>
                                 <Collapse
                                     style={{
