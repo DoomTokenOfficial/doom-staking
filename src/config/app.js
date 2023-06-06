@@ -16,7 +16,7 @@ export const Currencys = [
 ];
 
 export const netId = 4002;
-export const TotalPoolNum = 16;
+export const TotalPoolNum = 2;
 
 export const reward_test = {
     abi: {
