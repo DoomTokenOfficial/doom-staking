@@ -1151,25 +1151,67 @@ const Pool = ({
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
-                                        <Stack spacing={1} direction="row">
+                                        <Stack
+                                            style={{
+                                                display:"grid",
+                                                gridTemplateColumns:"1fr 1fr"
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="span"
+                                                className="value"
+                                                style={{
+                                                    fontFamily: "PublicFont",
+                                                    textShadow:
+                                                        "4px 3px 1px black, 6px 4px 1px black",
+                                                    fontSize: "27px",
+                                                    color: "red",
+                                                    // fontWeight: "bolder",
+                                                }}
+                                            >
+                                                {APR
+                                                    ? Number(APR) > 10000
+                                                        ? "+10000"
+                                                        : APR
+                                                    : 0}
+                                                %
+                                            </Typography>
+                                                                                        
                                             <Typography
                                                 style={{
                                                     fontFamily: "PublicFont",
                                                     textShadow:
-                                                        "3px 2px 2px black, 3px 2px 0px black",
-                                                    fontSize: "13px",
-                                                    color: "red",
-                                                    // letterSpacing: "1px",
-                                                    // fontWeight: "bolder",
-                                                    fontPalette: "dark",
+                                                        "black -1px 2px 2px",
+                                                    fontSize: "18px",
+                                                    color: "white",
+                                                    marginLeft: " 45px",
+                                                    marginTop: "10px",
                                                 }}
                                                 variant="span"
                                                 className="sub-description"
                                             >
-                                                {lang_texts[language][9]} $
-                                                {item.stake_token}
-                                            </Typography>
+                                                APY
+                                            </Typography> 
                                         </Stack>
+                                        {/* <Stack spacing={1} direction="row">
+                                        </Stack> */}
+                                        <Typography
+                                            style={{
+                                                fontFamily: "PublicFont",
+                                                textShadow:
+                                                    "3px 2px 2px black, 3px 2px 0px black",
+                                                fontSize: "13px",
+                                                color: "red",
+                                                // letterSpacing: "1px",
+                                                // fontWeight: "bolder",
+                                                fontPalette: "dark",
+                                            }}
+                                            variant="span"
+                                            className="sub-description"
+                                        >
+                                            {lang_texts[language][9]} $
+                                            {item.stake_token}
+                                        </Typography>
                                         <Typography
                                             variant="span"
                                             className="value"
