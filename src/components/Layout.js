@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     return (
         <div className={styles.AppContainer}>
             <Header />
-            {children}
+            {/* {children} */}
         </div>
     );
 };

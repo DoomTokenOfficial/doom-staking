@@ -25,6 +25,12 @@ body,
     src: url("./fonts/EternalLogo-w1572.ttf");
     font-weight: 300;
 }
+@media screen and (min-width: 800px) {
+    #logo-title-img {
+        top: 100px;
+    }
+}
+
 #depositWidthdraw {
     color: white !important;
     position: relative;
