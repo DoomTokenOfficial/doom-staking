@@ -914,7 +914,7 @@ const useStyles = makeStyles((theme) => {
                         },
                         "& .collapse-body": {
                             marginTop: 20,
-                            borderTop: "1px solid #DADADA",
+                            // borderTop: "1px solid #DADADA",
                             padding: theme.spacing(2.5, 0, 0.5),
                             flexDirection: "row",
                             justifyContent: "space-between",

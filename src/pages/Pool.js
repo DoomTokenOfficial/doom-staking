@@ -674,24 +674,24 @@ const Pool = ({
                                 poolState
                                     ? {
                                           color: "white",
-                                          position: "absolute",
+                                          position: "relative",
 
                                           background: `url(${claimOrStakeBtn})`,
                                           width: "175px",
                                           height: "64px",
-                                          fontFamily: "StackFont",
+                                          fontFamily: "EternalUI",
                                           fontSize: "18px",
                                           letterSpacing: "2px",
                                           borderRadius: "unset !important",
                                       }
                                     : {
                                           color: "white",
-                                          position: "absolute",
+                                          position: "relative",
 
                                           background: `url(${claimOrStakeBtn})`,
                                           width: "175px",
                                           height: "64px",
-                                          fontFamily: "StackFont",
+                                          fontFamily: "EternalUI",
                                           fontSize: "18px",
                                           letterSpacing: "2px",
                                           borderRadius: "unset !important",
@@ -732,16 +732,26 @@ const Pool = ({
                                 >
                                     <Typography
                                         variant="span"
-                                        className="title"
+                                        className="title text-font"
                                         alignSelf="flex-start"
+                                        style={{
+                                            fontFamily: "EternalUI",
+                                            textShadow: "2px 3px 2px black",
+                                            fontSize: "12px",
+                                        }}
                                     >
                                         {lang_texts[language][16]}
                                     </Typography>
                                 </Stack>
                                 <Typography
                                     variant="span"
-                                    className="sub-description"
+                                    className="sub-description text-font"
                                     alignSelf="flex-start"
+                                    style={{
+                                        fontFamily: "EternalUI",
+                                        textShadow: "2px 3px 2px black",
+                                        fontSize: "12px",
+                                    }}
                                 >
                                     {(() => {
                                         if (
@@ -840,6 +850,7 @@ const Pool = ({
                                                 background: `url(${depositWithdraw})`,
                                                 width: "132px",
                                                 height: "32px",
+                                                fontFamily: "EternalUI",
                                             }}
                                         >
                                             {lang_texts[language][18]}{" "}
@@ -858,6 +869,11 @@ const Pool = ({
                                         variant="span"
                                         className="title"
                                         alignSelf="flex-start"
+                                        style={{
+                                            fontFamily: "EternalUI",
+                                            textShadow: "2px 3px 2px black",
+                                            fontSize: "12px",
+                                        }}
                                     >
                                         {lang_texts[language][17]}
                                     </Typography>
@@ -867,6 +883,11 @@ const Pool = ({
                                     variant="span"
                                     className="sub-description"
                                     alignSelf="flex-start"
+                                    style={{
+                                        fontFamily: "EternalUI",
+                                        textShadow: "2px 3px 2px black",
+                                        fontSize: "12px",
+                                    }}
                                 >
                                     {numberWithCommas(
                                         customToFixed(
@@ -938,6 +959,7 @@ const Pool = ({
                                                 height: "32px",
                                                 position: "relative",
                                                 left: "-10px",
+                                                fontFamily: "EternalUI",
                                             }}
                                             onClick={withdraw}
                                         >
@@ -959,10 +981,10 @@ const Pool = ({
                                             marginLeft: "21px",
                                             position: "relative",
                                             top: "-40%",
-                                            fontFamily: "StackFont",
-                                            fontSize: "16px",
+                                            fontFamily: "EternalUI",
+                                            fontSize: "14px",
                                             textShadow: "2px 3px 2px black",
-                                            right: "-140%",
+                                            right: "-80%",
                                             color: "red",
                                             fontWeight: "bolder",
                                         }}
@@ -981,8 +1003,8 @@ const Pool = ({
                                             color: "white",
                                             position: "relative",
                                             top: "-40%",
-                                            fontFamily: "StackFont",
-                                            fontSize: "16px",
+                                            fontFamily: "EternalUI",
+                                            fontSize: "14px",
                                             textShadow: "2px 3px 2px black",
                                             right: "-140%",
                                             fontWeight: "bolder",
@@ -1006,7 +1028,7 @@ const Pool = ({
                                             background: `url(${depositWithdraw})`,
                                             width: "132px",
                                             height: "32px",
-                                            fontFamily: "StackFont",
+                                            fontFamily: "EternalUI",
                                             fontSize: "12px",
                                             letterSpacing: "2px",
                                             top: "65%",
