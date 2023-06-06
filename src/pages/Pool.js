@@ -141,7 +141,7 @@ const Pool = ({
             const stakedToken = await Pool.methods
                 .stakedBalanceOf(account)
                 .call();
-            const rewarded = await Pool.methods.rewards(account).call();
+            const rewarded = await Pool.methods.earned(account).call();
 
             console.log(rewarded, "rewarded");
             // const rewarded = await Pool.methods.claimable(account).call();
