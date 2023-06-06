@@ -825,7 +825,7 @@ const useStyles = makeStyles((theme) => {
                         marginRight: -40,
                         justifyContent: "center !important",
                         "& > div": {
-                            alignItems: "flex-start",
+                            alignItems:!theme.isMobile? "flex-start" : "",
                             justifyContent: "space-between",
                             lineHeight: 1,
                             marginTop: 3,
