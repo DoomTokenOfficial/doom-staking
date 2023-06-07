@@ -1264,8 +1264,8 @@ const Pool = ({
                                                             //  width:"100%",
                                                             left:"194px",
                                                             top:"60px",
-                                                    height:"10vw",
-                                                    width:"26.5vw",
+                                                    // height:"10vw",
+                                                    width:"100px",
                                                     fontSize:"11px"
                                                         }
                                                         : {
@@ -1280,8 +1280,8 @@ const Pool = ({
                                                             //  width:"100%",
                                                             left:"194px",
                                                             top:"60px",
-                                                    height:"10vw",
-                                                    width:"26.5vw",
+                                                    // height:"10vw",
+                                                    width:"100px",
                                                     fontSize:"7px"
                                                         }
                                                 }
