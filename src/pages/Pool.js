@@ -1873,7 +1873,43 @@ const Pool = ({
                                                         {/* 30000 DOOM */}
                                                     </Typography>
                                                 </Stack>
-                                            </Stack>
+                                        </Stack>
+                                        <Stack 
+                                            style={{
+                                               alignItems:"center" 
+                                            }}
+                                        >
+                                                    <Button
+                                                        onClick={claim}
+                                                        // className="depositWithdraw"
+                                                        variant="contained"
+                                                        className={
+                                                            Number(cb) > 0
+                                                                ? " "
+                                                                : "disabled"
+                                                        }
+                                                        style={{
+                                                            color: "white !important",
+                                                            position:
+                                                                "relative",
+                                                            background: `url(${depositWithdraw})`,
+                                                            width: "132px",
+                                                            height: "32px",
+                                                            fontFamily:
+                                                                "EternalUI",
+                                                            fontSize: "12px",
+                                                            letterSpacing:
+                                                                "2px",
+                                                            top: "65%",
+                                                            // right: "21px",
+                                                            backgroundRadius:
+                                                                "unset !important",
+                                                            // left: "35%",
+                                                        }}
+                                                    >
+                                                        Claim
+                                                    </Button>
+                                                </Stack>
                                     </Stack>
                                 </Stack>
                             </>
