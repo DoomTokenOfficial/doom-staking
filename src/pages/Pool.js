@@ -55,7 +55,7 @@ const Pool = ({
     _web3,
     loading = false,
 }) => {
-    console.log(item, "------------------------------");
+    console.log(CoinInfo, "------------------------------");
     const Coin = CoinInfo.find((co) => co.id === item.chart.id[0]);
     const BaseCoin = CoinInfo.find((co) => co.id === item.chart.id[1]);
     const { currency, language } = useContext(ThemeModeContext);

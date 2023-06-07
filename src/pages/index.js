@@ -179,69 +179,74 @@ const Home = () => {
         await axios
             .get("https://deep-index.moralis.io/api/v2/erc20/0xa594f09ad2f031a286eae64c5ab3ce05191668ae/price?chain=eth&include=percent_change&exchange=uniswapv3",
                 {
-                    "accept": "application/json",
-                    "X-API-Key": "6yQovJ4FlVFcu4o6rSmnPbCsIXgpM62X9vY8xHFfB3I1d2xKmwBTCs9hM9ky3hSp"
-                }
-            )
-            .then(({ data }) => {
-                console.log(data,'123123123123123')
-                for (let i = 0; i < Vaults.length; i++) {
-                    if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
-                        UpdatingTotalSupply(
-                            Vaults[i].id,
-                            totalSupply[Vaults[i].id],
-                            Vaults[i].chart.id[1],
-                            i,
-                            true,
-                            data
-                        );
+                    headers:{
+                        "accept": "application/json",
+                        "X-API-Key": "6yQovJ4FlVFcu4o6rSmnPbCsIXgpM62X9vY8xHFfB3I1d2xKmwBTCs9hM9ky3hSp"
                     }
                 }
-                setCoinInfo([...data]);
+            )
+            .then((res) => {
+                const data = res.data;
+                console.log(data,'123123123123123')
+                // for (let i = 0; i < Vaults.length; i++) {
+                //     if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
+                //         UpdatingTotalSupply(
+                //             Vaults[i].id,
+                //             totalSupply[Vaults[i].id],
+                //             Vaults[i].chart.id[1],
+                //             i,
+                //             true,
+                //             data
+                //         );
+                //     }
+                // }
+                // setCoinInfo([...data]);
 
-                let CFLTINFO = data.find((item) => item.id === "CFLT");
-                let priceptc = (
-                    CFLTINFO["1d"]
-                        ? CFLTINFO["1d"].price_change_pct * 100
-                        : CFLTINFO["7d"]
-                        ? CFLTINFO["7d"].price_change_pct * 100
-                        : 0
-                ).toFixed(2);
-                let status = "";
-                if (priceptc >= 1) {
-                    status = "text-green";
-                    priceptc = `+${priceptc}`;
-                }
-                if (priceptc > 0 && priceptc < 1) {
-                    status = "text-purple";
-                    priceptc = `+${priceptc}`;
-                }
-                if (priceptc <= -1) {
-                    status = "text-red";
-                }
-                if (priceptc > -1 && priceptc < 0) {
-                    status = "text-pink";
-                }
-
+                // let CFLTINFO = data.find((item) => item.id === "CFLT");
+                // let priceptc = (
+                //     CFLTINFO["1d"]
+                //         ? CFLTINFO["1d"].price_change_pct * 100
+                //         : CFLTINFO["7d"]
+                //         ? CFLTINFO["7d"].price_change_pct * 100
+                //         : 0
+                // ).toFixed(2);
+                // let status = "";
+                // if (priceptc >= 1) {
+                //     status = "text-green";
+                //     priceptc = `+${priceptc}`;
+                // }
+                // if (priceptc > 0 && priceptc < 1) {
+                //     status = "text-purple";
+                //     priceptc = `+${priceptc}`;
+                // }
+                // if (priceptc <= -1) {
+                //     status = "text-red";
+                // }
+                // if (priceptc > -1 && priceptc < 0) {
+                //     status = "text-pink";
+                // }
                 setCoinStatus({
-                    price: Number(CFLTINFO.price).toFixed(6),
-                    priceptc,
-                    status,
-                });
+                    price:data.usdPrice
+                })
+                // setCoinStatus({
+                //     price: Number(CFLTINFO.price).toFixed(6),
+                //     priceptc,
+                //     status,
+                // });
             })
             .catch((err) => {
                 console.log(err);
-                for (let i = 0; i < Vaults.length; i++) {
-                    if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
-                        UpdatingTotalSupply(
-                            Vaults[i].id,
-                            totalSupply[Vaults[i].id],
-                            Vaults[i].chart.id[1],
-                            i,
-                            true
-                        );
-                    }
-                }
+                // for (let i = 0; i < Vaults.length; i++) {
+                //     if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
+                //         UpdatingTotalSupply(
+                //             Vaults[i].id,
+                //             totalSupply[Vaults[i].id],
+                //             Vaults[i].chart.id[1],
+                //             i,
+                //             true
+                //         );
+                //     }
+                // }
             });
     };
 
@@ -252,6 +257,7 @@ const Home = () => {
 
     useEffect(() => {
         GetPoolStatus();
+        GetCoinInfo();
     }, []);
 
     useEffect(() => {
@@ -363,7 +369,11 @@ const Home = () => {
                                         >
                                             {CurrencySymbol[currency]}{" "}
                                             {coinStatus.price
-                                                ? coinStatus.price
+                                                ?toDec(
+                                                      coinStatus.price,
+                                                      0,
+                                                      9
+                                                  ) 
                                                 : toDec(
                                                       baseCurrency.DOOM.USD,
                                                       0,
