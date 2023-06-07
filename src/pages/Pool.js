@@ -1245,16 +1245,7 @@ const Pool = ({
                                               <Button
                                                 onClick={() => handleExpand(item.id, null)}
                                                 variant="contained"
-                                                
-                                                endIcon={
-                                                    <ChevronRightIcon
-                                                        className={
-                                                            expand[item.id] === true
-                                                                ? "expand-icon activate"
-                                                                : "expand-icon"
-                                                        }
-                                                    />
-                                                }
+                                             
                                                 disableElevation
                                                 style={
                                                     poolState
