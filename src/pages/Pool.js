@@ -55,12 +55,12 @@ const Pool = ({
     _web3,
     loading = false,
 }) => {
-    console.log(CoinInfo, "------------------------------");
-    const Coin = CoinInfo.find((co) => co.id === item.chart.id[0]);
-    const BaseCoin = CoinInfo.find((co) => co.id === item.chart.id[1]);
+    const Coin = CoinInfo.find((co) => co.tokenSymbol === item.chart.id[0]);
+    const BaseCoin = CoinInfo.find((co) => co.tokenSymbol === item.chart.id[1]);
     const { currency, language } = useContext(ThemeModeContext);
     const { account, chainId, library } = useWeb3React();
 
+    console.log(CoinInfo,Coin,BaseCoin, "------------------------------");
     const tablet = useMediaQuery("(min-width:1200px)");
     const mobile = useMediaQuery("(min-width:800px)");
 
@@ -201,6 +201,7 @@ const Pool = ({
                         rewardRate) /
                         (t_s > 0 ? t_s : 10 ** BaseDecimal)) *
                     100;
+                    console.log(APR,'00303030303003')
                 setAPR(toDec(APR, 0, 0));
                 updateAPRs(item.id, toDec(APR, 0, 0));
             } else {

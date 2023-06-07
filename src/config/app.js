@@ -130,7 +130,7 @@ export const Vaults = [
         tokenId: ["DOOM", "DOOM"],
         status: true,
         chart: {
-            id: ["AER2", "CFLT"],
+            id: ["DOOM", "DOOM"],
             name: "Aerdrop",
             url: "https://nomics.com/images/sparkline/assets/AER2-USD-1d.svg",
             nomicsUrl: "https://nomics.com/assets/aer2-aerdrop",
@@ -150,7 +150,7 @@ export const Vaults = [
         tokenId: ["DOOM", "DOOM"],
         status: true,
         chart: {
-            id: ["CFLT", "AER2"],
+            id: ["DOOM", "DOOM"],
             name: "Coinflect",
             url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",

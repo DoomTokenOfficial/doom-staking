@@ -157,8 +157,8 @@ const Home = () => {
                 return { ...prev, [id]: Tval };
             });
         }
-        const coin = coins.find((item) => item.id === coinId);
-
+        const coin = coins.find((item) => item.tokenSymbol === coinId);
+    
         if (coin) {
             total_S = coin.price * Tval;
         } else {
@@ -188,20 +188,20 @@ const Home = () => {
             .then((res) => {
                 const data = res.data;
                 console.log(data,'123123123123123')
-                // for (let i = 0; i < Vaults.length; i++) {
-                //     if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
-                //         UpdatingTotalSupply(
-                //             Vaults[i].id,
-                //             totalSupply[Vaults[i].id],
-                //             Vaults[i].chart.id[1],
-                //             i,
-                //             true,
-                //             data
-                //         );
-                //     }
-                // }
-                // setCoinInfo([...data]);
-
+                for (let i = 0; i < Vaults.length; i++) {
+                    if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
+                        UpdatingTotalSupply(
+                            Vaults[i].id,
+                            totalSupply[Vaults[i].id],
+                            Vaults[i].chart.id[1],
+                            i,
+                            true,
+                            [data]
+                        );
+                    }
+                }
+                setCoinInfo([data]);
+                console.log(data,'23423423')
                 // let CFLTINFO = data.find((item) => item.id === "CFLT");
                 // let priceptc = (
                 //     CFLTINFO["1d"]
@@ -226,7 +226,8 @@ const Home = () => {
                 //     status = "text-pink";
                 // }
                 setCoinStatus({
-                    price:data.usdPrice
+                    price:data.usdPrice,
+                    status:"text-pink"
                 })
                 // setCoinStatus({
                 //     price: Number(CFLTINFO.price).toFixed(6),
