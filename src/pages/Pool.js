@@ -1138,7 +1138,7 @@ const Pool = ({
                                     style={{
                                         display: "block",
                                         // gridTemplateColumns: "repeat(6, 1fr)",
-                                        width: "99vw",
+                                        // width: "99vw",
                                         left: "0px",
                                         position: "relative",
                                         
