@@ -81,6 +81,7 @@ const Pool = ({
     const [totalSupply, setTotalSupply] = useState();
     const [tokenTotalS, settokenTotalS] = useState(0);
     const [tokenDecimals, setTokenDecimals] = useState({});
+    const [displayInfo, setDisplayInfo] = useState(false);
 
     const toBN = useCallback((web3, val) => {
         if (val) {
@@ -1245,7 +1246,7 @@ const Pool = ({
                                                 </Typography>
                                             </Stack>
                                               <Button
-                                                onClick={() => handleExpand(item.id, null)}
+                                                onClick={() => setDisplayInfo(!displayInfo)}
                                                 variant="contained"
                                              
                                                 disableElevation
@@ -1391,6 +1392,8 @@ const Pool = ({
                                             height:"106px",
                                             marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
+                                            display:displayInfo?"block":"none"
+                                            ,paddingTop:"9px"
                                         }}
                                     >
                                         <Stack className="collapse-1">
@@ -1822,6 +1825,8 @@ const Pool = ({
                                             height:"106px",
                                             marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
+                                            display:displayInfo?"block":"none"
+                                            ,paddingTop:"30px"
                                         }}
                                     >
                                         <Stack
