@@ -93,7 +93,7 @@ export const CurrencySymbol = {
 
 export const baseCurrency = {
     DOOM: {
-        USD: 0.43,
+        USD: 0.000012417,
         CAD: 0.58,
         EUR: 0.41,
         GBP: 0.35,

@@ -123,7 +123,7 @@ export const Pools_test = {
 
 export const Vaults = [
     {
-        id: "cflt_aer",
+        id: "doom_doom",
         img_url: StatusBar1,
         stake_token: "DOOM",
         tokenName: ["Coinflect", "Aerdrop"],
@@ -143,7 +143,7 @@ export const Vaults = [
     },
    
     {
-        id: "aer_cflt",
+        id: "doom_lp",
         img_url: StatusBar2,
         stake_token: "LP",
         tokenName: ["Aerdrop", "Coinflect"],
