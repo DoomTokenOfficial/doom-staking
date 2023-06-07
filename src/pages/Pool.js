@@ -194,6 +194,7 @@ const Pool = ({
                 setTimeblog(res);
                 updateTime(item.id, res);
             });
+            setAPR(Coin ,"&&", BaseCoin,toDec(APR, 0, 0));
             if (Coin && BaseCoin) {
                 const APR =
                     (((Coin.price / BaseCoin.price) *
@@ -202,7 +203,7 @@ const Pool = ({
                         (t_s > 0 ? t_s : 10 ** BaseDecimal)) *
                     100;
                     console.log(APR,'00303030303003')
-                setAPR(toDec(APR, 0, 0));
+                
                 updateAPRs(item.id, toDec(APR, 0, 0));
             } else {
                 const APR =

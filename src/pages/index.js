@@ -56,7 +56,7 @@ const Home = () => {
     const [currentFilter, setCurrentFilter] = React.useState("");
 
     const filtermenu = Boolean(filter);
-
+    let response = null;
     const _handleCloseFilter = (e, s) => {
         if (s === true) {
             setCurrentFilter(e);
@@ -176,7 +176,7 @@ const Home = () => {
     };
 
     const GetCoinInfo = async () => {
-        await axios
+        response =  await axios
             .get("https://deep-index.moralis.io/api/v2/erc20/0xa594f09ad2f031a286eae64c5ab3ce05191668ae/price?chain=eth&include=percent_change&exchange=uniswapv3",
                 {
                     headers:{
@@ -249,6 +249,7 @@ const Home = () => {
                 //     }
                 // }
             });
+            
     };
 
     useEffect(() => {
@@ -259,6 +260,11 @@ const Home = () => {
     useEffect(() => {
         GetCoinInfo();
         GetPoolStatus();
+        return ()=> {
+            if(response !== null) {
+                response.cancel();
+            }
+        }
     }, []);
 
     useEffect(() => {
