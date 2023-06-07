@@ -787,10 +787,10 @@ const useStyles = makeStyles((theme) => {
                         : theme.spacing(2, 5),
                     borderRadius: theme.spacing(1),
                     marginBottom: theme.spacing(1.5),
-                    background:
-                        theme.palette.mode === "light"
-                            ? "rgba(0, 0, 0, 0.7)"
-                            : "rgba(255, 255, 255, 0.1)",
+                    // background:
+                    //     theme.palette.mode === "light"
+                    //         ? "rgba(0, 0, 0, 0.7)"
+                    //         : "rgba(255, 255, 255, 0.1)",
                     flexDirection: "column",
                     width: "100%",
                     color: "white",

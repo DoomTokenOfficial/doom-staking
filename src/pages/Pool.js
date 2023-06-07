@@ -1580,7 +1580,7 @@ const Pool = ({
                                                                     color:"white",
                                                                     fontSize:"12px",
                                                                     position:"relative",
-                                                                    left:"10px"
+                                                                    left:"6px"
                                                             }}
                                                         >
                                                             {
@@ -1720,7 +1720,7 @@ const Pool = ({
                                                                 height: "32px",
                                                                 position:
                                                                     "relative",
-                                                                left: "0px",
+                                                                left: "-3px",
                                                                 fontFamily:
                                                                     "EternalUI",
                                                                     color:"white",
