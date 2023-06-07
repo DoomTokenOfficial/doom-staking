@@ -4,6 +4,26 @@ body,
     height: 100%;
     background-color: #10141b;
 }
+body {
+  background-color: lightblue !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .css-1p5q5e5-MuiStack-root{
+      margin-left:0px !important
+  }
+}
+@media screen and (max-width: 414px) {
+  .css-1p5q5e5-MuiStack-root{
+      margin-left:0px !important
+  }
+}
+@media screen and (min-width: 800px) {
+  body {
+    background-color: lavender !important;
+  }
+}
+
 .grid-columns {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
