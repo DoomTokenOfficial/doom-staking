@@ -442,6 +442,7 @@ const Home = () => {
                             <Stack
                                 style={{
                                     display: "block !important",
+                                    width:"323px"
                                 }}
                                 className="state-bar"
                                 direction="row"

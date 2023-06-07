@@ -24,6 +24,7 @@ import { ThemeModeContext } from "../context/themmode";
 import { netId, Tokens, Vaults } from "../config/app";
 import claimOrStakeBtn from "../assets/img/StakeClaimButton.png";
 import depositWithdraw from "../assets/img/DepositWithdrawClaimButton.png";
+import StakeClaimButtonMobile from "../assets/img/StakeClaimButtonMobile.png";
 import {
     baseCurrency,
     CurrencySymbol,
@@ -1102,7 +1103,7 @@ const Pool = ({
                                                                 : "disabled"
                                                         }
                                                         style={{
-                                                            color: "white !important",
+                                                            // color: "white !important",
                                                             position:
                                                                 "relative",
                                                             background: `url(${depositWithdraw})`,
@@ -1146,10 +1147,11 @@ const Pool = ({
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width: "86%",
+                                            width: "323px",
                                             position:"relative",
                                             margin: "auto",
-                                            height:"28.5vw",
+                                            height:"106px",
+                                            marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
@@ -1253,30 +1255,32 @@ const Pool = ({
                                                             color: "white",
                                                             position: "absolute",
 
-                                                            background: `url(${claimOrStakeBtn})`,
+                                                            background: `url(${StakeClaimButtonMobile})`,
 
                                                             fontFamily: "EternalUI",
                                                             // letterSpacing: "1px",
                                                             borderRadius: "unset !important",
                                                             //  width:"100%",
-                                                            left:"156px",
+                                                            left:"194px",
                                                             top:"60px",
-                                                    height:"7vw",
+                                                    height:"10vw",
+                                                    width:"26.5vw",
                                                     fontSize:"11px"
                                                         }
                                                         : {
                                                             color: "white",
                                                             position: "relative",
 
-                                                            background: `url(${claimOrStakeBtn})`,
+                                                            background: `url(${StakeClaimButtonMobile})`,
 
                                                             fontFamily: "EternalUI",
                                                             // letterSpacing: "2px",
                                                             borderRadius: "unset !important",
                                                             //  width:"100%",
-                                                            left:"156px",
+                                                            left:"194px",
                                                             top:"60px",
-                                                    height:"9vw",
+                                                    height:"10vw",
+                                                    width:"26.5vw",
                                                     fontSize:"7px"
                                                         }
                                                 }
@@ -1289,10 +1293,11 @@ const Pool = ({
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width: "86%",
+                                            width: "323px",
                                             position:"relative",
                                             margin: "auto",
-                                            height:"28.5vw",
+                                            height:"106px",
+                                            marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
@@ -1379,10 +1384,11 @@ const Pool = ({
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width: "86%",
+                                            width: "323px",
                                             position:"relative",
                                             margin: "auto",
-                                            height:"28.5vw",
+                                            height:"106px",
+                                            marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
@@ -1461,7 +1467,8 @@ const Pool = ({
                                                 spacing={0}
                                                 mb={0}
                                             >
-                                                <Stack className="col-row-1">
+                                                <Stack className="col-row-1"
+                                                >
                                                     <OutlinedInput
                                                         disabled={
                                                             Number(
@@ -1480,9 +1487,10 @@ const Pool = ({
                                                                         .tokenId[0]
                                                                 ]
                                                             ) > 0
-                                                                ? "cal-in bg-white mobile-input"
+                                                                ? "cal-in mobile-input"
                                                                 : "cal-in disabled mobile-input"
                                                         }
+                                                        
                                                         placeholder="0"
                                                         value={dv}
                                                         onChange={(e) =>
@@ -1495,6 +1503,7 @@ const Pool = ({
                                                             <Typography
                                                                 onClick={setMax}
                                                                 variant="span"
+
                                                                 className={
                                                                     Number(
                                                                         balance[
@@ -1559,10 +1568,12 @@ const Pool = ({
                                                             }
                                                             style={{
                                                                 background: `url(${depositWithdraw})`,
-                                                                width: "132px",
+                                                                width: "100px",
                                                                 height: "32px",
                                                                 fontFamily:
                                                                     "EternalUI",
+                                                                    color:"white",
+                                                                    fontSize:"12px"
                                                             }}
                                                         >
                                                             {
@@ -1591,6 +1602,7 @@ const Pool = ({
                                                             textShadow:
                                                                 "2px 3px 2px black",
                                                             fontSize: "12px",
+                                                            
                                                         }}
                                                     >
                                                         {
@@ -1642,7 +1654,7 @@ const Pool = ({
                                                         }
                                                         className={
                                                             Number(sb) > 0
-                                                                ? "cal-in bg-white mobile-input"
+                                                                ? "cal-in mobile-input"
                                                                 : "cal-in disabled mobile-input"
                                                         }
                                                         placeholder="0"
@@ -1697,13 +1709,15 @@ const Pool = ({
                                                             }
                                                             style={{
                                                                 background: `url(${depositWithdraw})`,
-                                                                width: "132px",
+                                                                width: "100px",
                                                                 height: "32px",
                                                                 position:
                                                                     "relative",
                                                                 left: "0px",
                                                                 fontFamily:
                                                                     "EternalUI",
+                                                                    color:"white",
+                                                                    fontSize:"12px"
                                                             }}
                                                             onClick={withdraw}
                                                         >
@@ -1801,10 +1815,11 @@ const Pool = ({
                                     <Stack
                                         className="item-1"
                                         style={{
-                                            width: "86%",
+                                            width: "323px",
                                             position:"relative",
                                             margin: "auto",
-                                            height:"28.5vw",
+                                            height:"106px",
+                                            marginBottom:"5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
@@ -1867,9 +1882,11 @@ const Pool = ({
                                         </Stack>
                                         <Stack 
                                             style={{
-                                               alignItems:"center" 
+                                               alignItems:"center" ,
+                                               color: "red !important",
                                             }}
                                         >
+                                            <Stack>
                                                     <Button
                                                         onClick={claim}
                                                         // className="depositWithdraw"
@@ -1880,7 +1897,6 @@ const Pool = ({
                                                                 : "disabled"
                                                         }
                                                         style={{
-                                                            color: "white !important",
                                                             position:
                                                                 "relative",
                                                             background: `url(${depositWithdraw})`,
@@ -1896,10 +1912,14 @@ const Pool = ({
                                                             backgroundRadius:
                                                                 "unset !important",
                                                             // left: "35%",
+                                                            color:"white"
+                                                            
+
                                                         }}
                                                     >
                                                         Claim
                                                     </Button>
+                                                    </Stack>
                                                 </Stack>
                                     </Stack>
                                 </Stack>
