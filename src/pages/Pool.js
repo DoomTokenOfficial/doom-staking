@@ -529,7 +529,7 @@ const Pool = ({
                                         >
                                             <Typography
                                                 variant="span"
-                                                className="title"
+                                                className="title left-time"
                                                 style={{
                                                     fontFamily: "PublicFont",
                                                     textShadow:
@@ -538,7 +538,8 @@ const Pool = ({
                                                     color: "red",
                                                     letterSpacing: "1px",
                                                     marginTop: "10px",
-                                                    marginLeft: "-9px",
+                                                    marginLeft: "-12px",
+                                                    position:"relative"
                                                 }}
                                             >
                                                 {lang_texts[language][10]}
@@ -1544,8 +1545,9 @@ const Pool = ({
                                                             // className="deposit-btn"
                                                             style={{
                                                                 background: `url(${depositWithdraw})`,
-                                                                width: "132px",
+                                                                width: "100px",
                                                                 height: "32px",
+                                                                left:"6px"
                                                             }}
                                                         ></LoadingButton>
                                                     ) : (
@@ -1699,11 +1701,11 @@ const Pool = ({
                                                             // className="return-btn"
                                                             style={{
                                                                 background: `url(${depositWithdraw})`,
-                                                                width: "132px",
+                                                                width: "100px",
                                                                 height: "32px",
                                                                 position:
                                                                     "relative",
-                                                                left: "-10px",
+                                                                left: "-3px",
                                                                 // left: "26px",
                                                             }}
                                                         ></LoadingButton>

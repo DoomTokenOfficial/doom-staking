@@ -10,9 +10,15 @@ body {
 
 @media screen and (max-width: 1024px) {
   .css-1p5q5e5-MuiStack-root{
-      margin-left:0px !important
+      position:"relative";
+      margin-left:-13px !important
   }
 }
+// @media screen and (max-width: 1500px) {
+//   .left-time{
+//       margin-left:0px !important
+//   }
+// }
 @media screen and (max-width: 414px) {
   .css-1p5q5e5-MuiStack-root{
       margin-left:0px !important
