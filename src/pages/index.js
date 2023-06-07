@@ -177,10 +177,14 @@ const Home = () => {
 
     const GetCoinInfo = async () => {
         await axios
-            .get(
-                `https://api.nomics.com/v1/currencies/ticker?key=11eb38db1f3a30c89a0764bf97c083d0d8d6749b&ids=CFLT,AER2,FCF,PFT2,LLN,FFT2,WNOW,WRAITH2,DAPES,ADREAM&interval=1d,7d&convert=${currency}`
+            .get("https://deep-index.moralis.io/api/v2/erc20/0xa594f09ad2f031a286eae64c5ab3ce05191668ae/price?chain=eth&include=percent_change&exchange=uniswapv3",
+                {
+                    "accept": "application/json",
+                    "X-API-Key": "6yQovJ4FlVFcu4o6rSmnPbCsIXgpM62X9vY8xHFfB3I1d2xKmwBTCs9hM9ky3hSp"
+                }
             )
             .then(({ data }) => {
+                console.log(data,'123123123123123')
                 for (let i = 0; i < Vaults.length; i++) {
                     if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
                         UpdatingTotalSupply(
