@@ -14,7 +14,7 @@ export const Currencys = [
     "INR",
     "VND",
 ];
-// dsfsdf
+
 export const netId = 4002;
 export const TotalPoolNum = 2;
 
@@ -141,25 +141,26 @@ export const Vaults = [
         },
         search: "Aerdrop",
     },
-    // {
-    //     id: "aer_cflt",
-    //     img_url: StatusBar2,
-    //     stake_token: "LP",
-    //     tokenName: ["Aerdrop", "Coinflect"],
-    //     tokenId: ["AER", "CFLT"],
-    //     status: true,
-    //     chart: {
-    //         id: ["CFLT", "AER2"],
-    //         name: "Coinflect",
-    //         url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
-    //         nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
-    //     },
-    //     vault: {
-    //         address: "0x12c27543a1c2C7113241B144A855Ab4F16BbB447",
-    //         abi: require("../config/abis/aer-cflt.json"),
-    //     },
-    //     search: "Aerdrop cflt coinflect",
-    // },
+   
+    {
+        id: "aer_cflt",
+        img_url: StatusBar2,
+        stake_token: "LP",
+        tokenName: ["Aerdrop", "Coinflect"],
+        tokenId: ["AER", "CFLT"],
+        status: true,
+        chart: {
+            id: ["CFLT", "AER2"],
+            name: "Coinflect",
+            url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
+            nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
+        },
+        vault: {
+            address: "0x12c27543a1c2C7113241B144A855Ab4F16BbB447",
+            abi: require("../config/abis/aer-cflt.json"),
+        },
+        search: "Aerdrop cflt coinflect",
+    },
     // {
     //     id: 'cflt_fcf',
     //     tokenName: ["Coinflect", "French"],
