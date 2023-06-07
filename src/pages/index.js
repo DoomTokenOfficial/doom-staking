@@ -160,7 +160,7 @@ const Home = () => {
         const coin = coins.find((item) => item.tokenSymbol === coinId);
     
         if (coin) {
-            total_S = coin.price * Tval;
+            total_S = coin.usdPrice * Tval;
         } else {
             total_S = baseCurrency[Vaults[i].tokenId[0]][currency] * Tval;
         }
@@ -257,8 +257,8 @@ const Home = () => {
     }, [currency]);
 
     useEffect(() => {
-        GetPoolStatus();
         GetCoinInfo();
+        GetPoolStatus();
     }, []);
 
     useEffect(() => {
