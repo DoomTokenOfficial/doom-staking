@@ -172,7 +172,7 @@ const Cwallet = ({ isOpen, setIsOpen }) => {
                             />
                             <ListItemSecondaryAction className="action">
                                 <Link
-                                    href={`https://bscscan.com/address/${account}`}
+                                    href={`https://testnet.ftmscan.com/address/${account}`}
                                     target="_blank"
                                     underline="none"
                                 >

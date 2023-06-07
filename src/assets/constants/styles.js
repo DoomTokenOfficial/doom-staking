@@ -5,52 +5,66 @@ const useStyles = makeStyles((theme) => {
     return {
         appbar: {
             "& .header": {
+                alignItems: "right",
                 backgroundColor: "transparent !important",
-                padding: theme.isMobile ? `${theme.spacing(0.75, 2)}` : theme.isTablet ? `${theme.spacing(0.75, 5)}` : `${theme.spacing(0.75, 11)}`,
+                padding: theme.isMobile
+                    ? `${theme.spacing(0.75, 2)}`
+                    : theme.isTablet
+                    ? `${theme.spacing(0.75, 5)}`
+                    : `${theme.spacing(0.75, 11)}`,
                 backgroundImage: "none !important",
                 boxShadow: "none !important",
                 "&.top": {
-                    backgroundColor: theme.palette.mode === "light" ? "rgb(255 255 255 / 50%) !important" : "rgb(0 0 0 / 50%) !important"
+                    backgroundColor:
+                        theme.palette.mode === "light"
+                            ? "rgb(255 255 255 / 50%) !important"
+                            : "rgb(0 0 0 / 50%) !important",
                 },
                 "& .MuiToolbar-root": {
                     padding: "0px !important",
+                    justifyContent: "right",
                 },
-                '& .MuiPaper-root': {
+                "& .MuiPaper-root": {
                     borderRadius: 6,
                     marginTop: theme.spacing(1),
                     minWidth: 180,
-                    color: theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+                    color:
+                        theme.palette.mode === "light"
+                            ? "rgb(55, 65, 81)"
+                            : theme.palette.grey[300],
                     boxShadow:
-                        'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
-                    '& .MuiMenu-list': {
-                        padding: '4px 0',
+                        "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+                    "& .MuiMenu-list": {
+                        padding: "4px 0",
                     },
-                    '& .MuiMenuItem-root': {
-                        '& .MuiSvgIcon-root': {
+                    "& .MuiMenuItem-root": {
+                        "& .MuiSvgIcon-root": {
                             fontSize: 18,
                             color: theme.palette.text.secondary,
                             marginRight: theme.spacing(1.5),
                         },
-                        '&:active': {
+                        "&:active": {
                             backgroundColor: alpha(
                                 theme.palette.primary.main,
-                                theme.palette.action.selectedOpacity,
+                                theme.palette.action.selectedOpacity
                             ),
                         },
                     },
                 },
                 "& button": {
                     marginLeft: theme.spacing(4),
-                    borderColor: theme.palette.mode === 'light' ? "black" : "white",
-                    color: theme.palette.mode === 'light' ? "black" : "white",
+                    borderColor:
+                        theme.palette.mode === "light" ? "black" : "white",
+                    color: theme.palette.mode === "light" ? "black" : "white",
                     padding: "6px 20px",
                     borderRadius: theme.custom.ButtonBorderRadius,
                     fontSize: 17,
-                    fontWeight: 600
+                    fontWeight: 600,
                 },
+
                 "& .active-wallet-icon": {
                     width: "20px",
-                    marginLeft: 10
+                    marginLeft: 10,
                 },
                 "& .headerbar-drop-button": {
                     minWidth: theme.spacing(11),
@@ -60,8 +74,8 @@ const useStyles = makeStyles((theme) => {
                     fontWeight: 500,
                     textTransform: "unset",
                     "&:hover": {
-                        background: "transparent"
-                    }
+                        background: "transparent",
+                    },
                 },
                 "& .mode-btn": {
                     borderRadius: "100px",
@@ -71,31 +85,36 @@ const useStyles = makeStyles((theme) => {
                     marginLeft: theme.spacing(2),
                     color: "#5AB489",
                     "&:hover": {
-                        background: "transparent"
-                    }
+                        background: "transparent",
+                    },
                 },
                 "& .logo": {
-                    width: theme.isMobile ? theme.spacing(13) : theme.spacing(13)
+                    width: theme.isMobile ? theme.spacing(13) : "39.2%",
                 },
                 "& .wallet-btn": {
-                    backgroundColor: theme.palette.mode === 'light' ? "#4B8AEB" : "#66DC95",
-                    color: theme.palette.mode === 'light' ? "white" : "black",
+                    backgroundColor:
+                        theme.palette.mode === "light" ? "#182438" : "#182438",
+                    color: theme.palette.mode === "light" ? "white" : "white",
                     fontSize: theme.isMobile ? "12px" : theme.fontSize.md,
                     textTransform: "unset",
                     fontWeight: 500,
                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                    borderRadius: theme.custom.ButtonBorderRadius
+                    borderRadius: theme.custom.ButtonBorderRadius,
                 },
                 "& .wallet-btn:hover": {
-                    backgroundColor: theme.palette.mode === 'light' ? "#4B8AEB" : "#66DC95",
+                    backgroundColor:
+                        theme.palette.mode === "light" ? "#4B8AEB" : "#66DC95",
                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                }
-            }
+                },
+            },
         },
         headermenu: {
             height: theme.spacing(62.5),
             "& .MuiPaper-root": {
-                background: theme.palette.mode === 'light' ? "white" : "rgba(0, 0, 0, 0.8)",
+                background:
+                    theme.palette.mode === "light"
+                        ? "white"
+                        : "rgba(0, 0, 0, 0.8)",
                 backgroundImage: "none",
                 height: theme.isMobile ? 250 : 300,
             },
@@ -106,20 +125,26 @@ const useStyles = makeStyles((theme) => {
                     lineHeight: 1.2,
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        color: theme.palette.mode === "light" ? "#027AFF" : "#66dc95",
-                        background: "transparent"
-                    }
-                }
-            }
+                        color:
+                            theme.palette.mode === "light"
+                                ? "#027AFF"
+                                : "#66dc95",
+                        background: "transparent",
+                    },
+                },
+            },
         },
         currencymenu: {
             height: theme.spacing(62.5),
             "& .MuiPaper-root": {
                 width: 95,
-                background: theme.palette.mode === 'light' ? "white" : "rgba(0, 0, 0, 0.8)",
+                background:
+                    theme.palette.mode === "light"
+                        ? "white"
+                        : "rgba(0, 0, 0, 0.8)",
                 backgroundImage: "none",
                 marginTop: 1,
-                height: theme.isMobile ? 250 : 300
+                height: theme.isMobile ? 250 : 300,
             },
             "& ul": {
                 "& li": {
@@ -128,11 +153,14 @@ const useStyles = makeStyles((theme) => {
                     lineHeight: 1.2,
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        color: theme.palette.mode === "light" ? "#027AFF" : "#66dc95",
-                        background: "transparent"
-                    }
-                }
-            }
+                        color:
+                            theme.palette.mode === "light"
+                                ? "#027AFF"
+                                : "#66dc95",
+                        background: "transparent",
+                    },
+                },
+            },
         },
         languagemenu: {
             height: theme.spacing(62.5),
@@ -141,19 +169,22 @@ const useStyles = makeStyles((theme) => {
                     return 45;
                 }
                 switch (theme.language) {
-                    case 'Indonesian':
+                    case "Indonesian":
                         return -10;
-                    case 'Finnish':
+                    case "Finnish":
                         return 0;
                     default:
                         return 20;
                 }
             },
             "& .MuiPaper-root": {
-                background: theme.palette.mode === 'light' ? "white" : "rgba(0, 0, 0, 0.8)",
+                background:
+                    theme.palette.mode === "light"
+                        ? "white"
+                        : "rgba(0, 0, 0, 0.8)",
                 backgroundImage: "none",
                 marginTop: 1,
-                height: theme.isMobile ? 250 : 300
+                height: theme.isMobile ? 250 : 300,
             },
             "& ul": {
                 "& li": {
@@ -162,18 +193,24 @@ const useStyles = makeStyles((theme) => {
                     lineHeight: 1.2,
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        color: theme.palette.mode === "light" ? "#027AFF" : "#66dc95",
-                        background: "transparent"
-                    }
-                }
-            }
+                        color:
+                            theme.palette.mode === "light"
+                                ? "#027AFF"
+                                : "#66dc95",
+                        background: "transparent",
+                    },
+                },
+            },
         },
         filter: {
             "& .MuiPaper-root": {
                 marginTop: 1,
-                background: theme.palette.mode === 'light' ? "white" : "rgba(0, 0, 0, 0.8)",
+                background:
+                    theme.palette.mode === "light"
+                        ? "white"
+                        : "rgba(0, 0, 0, 0.8)",
                 top: 56,
-                height: theme.isTablet && !theme.isMobile ? 200 : 'auto'
+                height: theme.isTablet && !theme.isMobile ? 200 : "auto",
             },
             "& ul": {
                 "& li": {
@@ -181,11 +218,14 @@ const useStyles = makeStyles((theme) => {
                     lineHeight: 1.2,
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        color: theme.palette.mode === "light" ? "#027AFF" : "#66dc95",
-                        background: "transparent"
-                    }
-                }
-            }
+                        color:
+                            theme.palette.mode === "light"
+                                ? "#027AFF"
+                                : "#66dc95",
+                        background: "transparent",
+                    },
+                },
+            },
         },
         cWallet: {
             "& .cwallet-paper": {
@@ -202,12 +242,12 @@ const useStyles = makeStyles((theme) => {
                         "& h2": {
                             padding: theme.spacing(1, 2),
                             marginRight: theme.spacing(0.625),
-                        }
+                        },
                     },
                     "& > button": {
                         width: theme.spacing(6.25),
-                        height: theme.spacing(6.25)
-                    }
+                        height: theme.spacing(6.25),
+                    },
                 },
                 "& .content": {
                     padding: theme.spacing(1, 0, 0, 0),
@@ -223,18 +263,18 @@ const useStyles = makeStyles((theme) => {
                                     fontSize: theme.spacing(3.5),
                                 },
                                 "& img": {
-                                    width: `${theme.spacing(3.5)} !important`
+                                    width: `${theme.spacing(3.5)} !important`,
                                 },
                                 "& .walletIcon": {
-                                    width: `35px`
-                                }
+                                    width: `35px`,
+                                },
                             },
                             "& .activating-description": {
                                 padding: theme.spacing(0.5625, 2),
                                 margin: 0,
                                 "& p": {
-                                    fontSize: theme.spacing(1.375)
-                                }
+                                    fontSize: theme.spacing(1.375),
+                                },
                             },
                             "& .description": {
                                 padding: theme.spacing(1.5, 2),
@@ -244,9 +284,8 @@ const useStyles = makeStyles((theme) => {
                         "& .action": {
                             "& button": {
                                 marginRight: theme.spacing(1),
-                                "& svg": {
-                                }
-                            }
+                                "& svg": {},
+                            },
                         },
                         "& .state": {
                             paddingTop: theme.spacing(4),
@@ -256,23 +295,29 @@ const useStyles = makeStyles((theme) => {
                                 justifyContent: "center",
                                 "& .MuiCircularProgress-root": {
                                     width: `${theme.spacing(3.5)}px !important`,
-                                    height: `${theme.spacing(3.5)}px !important`
-                                }
+                                    height: `${theme.spacing(
+                                        3.5
+                                    )}px !important`,
+                                },
                             },
                             "& .description": {
                                 padding: theme.spacing(1.5, 1),
-                            }
+                            },
                         },
                         "& .activating-item": {
                             marginBottom: 0,
-                        }
-                    }
-                }
+                        },
+                    },
+                },
             },
         },
         AppContainer: {
-            padding: theme.isMobile ? `0px ${theme.spacing(2)}` : theme.isTablet ? `0px ${theme.spacing(5)}` : `0px ${theme.spacing(11)}`,
-            paddingTop: 90
+            padding: theme.isMobile
+                ? `0px ${theme.spacing(2)}`
+                : theme.isTablet
+                ? `0px ${theme.spacing(5)}`
+                : `0px ${theme.spacing(11)}`,
+            paddingTop: 90,
         },
         AnimationBG: {
             zIndex: 0,
@@ -288,7 +333,7 @@ const useStyles = makeStyles((theme) => {
                 borderRadius: "100%",
                 position: "absolute",
                 transition: "1s",
-                opacity: 0.75
+                opacity: 0.75,
             },
             "& .circle-1": {
                 background: "#5AB489",
@@ -323,19 +368,22 @@ const useStyles = makeStyles((theme) => {
         },
         laptopControlBar: {
             alignItems: "center",
-            borderBottom: theme.palette.mode === "light" ? "0.5px solid black" : "0.5px solid white",
+            borderBottom:
+                theme.palette.mode === "light"
+                    ? "0.5px solid black"
+                    : "0.5px solid white",
             marginBottom: "10px",
             flexDirection: "row !important",
             justifyContent: "space-between",
             zIndex: 100,
             "& > h6": {
                 width: theme.spacing(25),
-                fontSize: theme.fontSize.xl
+                fontSize: theme.fontSize.xl,
             },
             "& .active-btn-box": {
                 flexDirection: "row",
                 "& label": {
-                    marginLeft: -8
+                    marginLeft: -8,
                 },
                 "& button": {
                     width: theme.spacing(19),
@@ -344,20 +392,20 @@ const useStyles = makeStyles((theme) => {
                     borderRadius: theme.spacing(1),
                     padding: theme.spacing(0.5),
                     fontSize: theme.fontSize.md,
-                    boxShadow: "none"
+                    boxShadow: "none",
                 },
                 "& button.active": {
                     backgroundColor: "#DCE8FF",
                     color: "#0155FF",
                 },
                 "& span": {
-                    fontSize: theme.fontSize.sm
-                }
+                    fontSize: theme.fontSize.sm,
+                },
             },
             "& .search-filter-box": {
                 "& > div": {
                     justifyContent: "flex-end",
-                    flexDirection: "row"
+                    flexDirection: "row",
                 },
                 "& button": {
                     color: theme.palette.mode === "light" ? "black" : "white",
@@ -366,32 +414,36 @@ const useStyles = makeStyles((theme) => {
                     fontSize: theme.fontSize.md,
                     marginLeft: theme.spacing(1),
                     "&:hover": {
-                        background: "transparent"
-                    }
+                        background: "transparent",
+                    },
                 },
                 "& .search": {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
                     "& input": {
-                        padding: '0px !important',
+                        padding: "0px !important",
                         marginLeft: theme.spacing(1),
                         width: theme.spacing(10),
                         border: "none",
                         background: "none",
                         fontSize: theme.fontSize.md,
-                        color: theme.palette.mode === "light" ? "black" : "white",
+                        color:
+                            theme.palette.mode === "light" ? "black" : "white",
                         "&:hover": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&:focus-visible": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&::placeholder": {
-                            color: theme.palette.mode === "light" ? "black" : "white"
-                        }
-                    }
-                }
+                            color:
+                                theme.palette.mode === "light"
+                                    ? "black"
+                                    : "white",
+                        },
+                    },
+                },
             },
         },
         tabletControlbar: {
@@ -410,7 +462,7 @@ const useStyles = makeStyles((theme) => {
                     "& > span": {
                         marginLeft: 0,
                         fontSize: 14,
-                    }
+                    },
                 },
                 "& button": {
                     width: theme.spacing(19),
@@ -419,21 +471,24 @@ const useStyles = makeStyles((theme) => {
                     borderRadius: theme.spacing(1),
                     padding: theme.spacing(0.5),
                     fontSize: theme.fontSize.md,
-                    boxShadow: "none"
+                    boxShadow: "none",
                 },
                 "& button.active": {
                     backgroundColor: "#DCE8FF",
                     color: "#0155FF",
-                }
+                },
             },
             "& .search-filter-box": {
                 width: `100%`,
-                borderBottom: theme.palette.mode === "light" ? "0.5px solid black" : "0.5px solid white",
+                borderBottom:
+                    theme.palette.mode === "light"
+                        ? "0.5px solid black"
+                        : "0.5px solid white",
                 flexDirection: "row",
                 justifyContent: "space-between",
                 "& > div": {
                     justifyContent: "space-between",
-                    flexDirection: "row"
+                    flexDirection: "row",
                 },
                 "& button": {
                     color: theme.palette.mode === "light" ? "black" : "white",
@@ -441,33 +496,37 @@ const useStyles = makeStyles((theme) => {
                     textTransform: "unset",
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        background: "transparent"
-                    }
+                        background: "transparent",
+                    },
                 },
                 "& .search": {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
                     "& input": {
-                        padding: '0px !important',
+                        padding: "0px !important",
                         marginLeft: theme.spacing(1),
                         width: theme.spacing(10),
                         border: "none",
                         background: "none",
                         fontSize: theme.fontSize.md,
-                        color: theme.palette.mode === "light" ? "black" : "white",
+                        color:
+                            theme.palette.mode === "light" ? "black" : "white",
                         "&:hover": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&:focus-visible": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&::placeholder": {
-                            color: theme.palette.mode === "light" ? "black" : "white"
-                        }
-                    }
-                }
-            }
+                            color:
+                                theme.palette.mode === "light"
+                                    ? "black"
+                                    : "white",
+                        },
+                    },
+                },
+            },
         },
         mobileControlbar: {
             alignItems: "center",
@@ -486,7 +545,7 @@ const useStyles = makeStyles((theme) => {
                     "& > span": {
                         marginLeft: 0,
                         fontSize: 14,
-                    }
+                    },
                 },
                 "& button": {
                     width: theme.spacing(19),
@@ -495,19 +554,22 @@ const useStyles = makeStyles((theme) => {
                     borderRadius: theme.spacing(1),
                     padding: theme.spacing(0.5),
                     fontSize: theme.fontSize.md,
-                    boxShadow: "none"
+                    boxShadow: "none",
                 },
                 "& button.active": {
                     backgroundColor: "#DCE8FF",
                     color: "#0155FF",
-                }
+                },
             },
             "& .search-filter-box": {
                 width: `100%`,
-                borderBottom: theme.palette.mode === "light" ? "0.5px solid black" : "0.5px solid white",
+                borderBottom:
+                    theme.palette.mode === "light"
+                        ? "0.5px solid black"
+                        : "0.5px solid white",
                 "& > div": {
                     justifyContent: "space-between",
-                    flexDirection: "row"
+                    flexDirection: "row",
                 },
                 "& button": {
                     color: theme.palette.mode === "light" ? "black" : "white",
@@ -515,8 +577,8 @@ const useStyles = makeStyles((theme) => {
                     textTransform: "unset",
                     fontSize: theme.fontSize.md,
                     "&:hover": {
-                        background: "transparent"
-                    }
+                        background: "transparent",
+                    },
                 },
                 "& .search": {
                     width: 90,
@@ -524,29 +586,33 @@ const useStyles = makeStyles((theme) => {
                     justifyContent: "center",
                     alignItems: "center",
                     "& input": {
-                        padding: '0px !important',
+                        padding: "0px !important",
                         marginLeft: theme.spacing(1),
                         width: "100%",
                         border: "none",
                         background: "none",
                         fontSize: theme.fontSize.md,
-                        color: theme.palette.mode === "light" ? "black" : "white",
+                        color:
+                            theme.palette.mode === "light" ? "black" : "white",
                         "&:hover": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&:focus-visible": {
-                            outline: '-webkit-focus-ring-color auto 0px'
+                            outline: "-webkit-focus-ring-color auto 0px",
                         },
                         "&::placeholder": {
-                            color: theme.palette.mode === "light" ? "black" : "white"
-                        }
-                    }
-                }
+                            color:
+                                theme.palette.mode === "light"
+                                    ? "black"
+                                    : "white",
+                        },
+                    },
+                },
             },
             "& .mobile-language-button": {
                 "& > .MuiButton-endIcon": {
-                    marginLeft: '0px !important'
-                }
+                    marginLeft: "0px !important",
+                },
             },
         },
         Home: {
@@ -556,14 +622,21 @@ const useStyles = makeStyles((theme) => {
                 justifyContent: "space-between",
                 flexDirection: "row",
                 width: theme.isTablet ? "100%" : 900,
+                display: theme.isTablet ? "block" : "",
                 alignSelf: "center",
-                margin: `${theme.spacing(2.5, 0, 0, 0)}`,
+                margin: theme.isTablet
+                    ? `${theme.spacing(0, 0, 0, 0)}`
+                    : `${theme.spacing(2.5, 0, 0, 0)}`,
+
                 zIndex: 100,
                 "& .state-daily-chart": {
-                    marginTop: -15
+                    marginTop: -15,
                 },
                 "& > div": {
-                    background: theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.1)",
+                    background:
+                        theme.palette.mode === "light"
+                            ? "rgba(0, 0, 0, 0.7)"
+                            : "rgba(255, 255, 255, 0.1)",
                     padding: "10px 15px",
                     borderRadius: theme.spacing(1),
                     boxShadow: "0px 6.38599px 14.0241px rgba(0, 0, 0, 0.07)",
@@ -571,38 +644,46 @@ const useStyles = makeStyles((theme) => {
                     width: "100%",
                     "& > h6": {
                         fontSize: theme.fontSize.sm,
-                        color: "white"
+                        color: "#a61919",
                     },
                     "& span": {
-                        color: "white"
+                        color: "white",
                     },
                     "& > div": {
                         "& h5": {
                             fontSize: theme.fontSize.xl,
-                            color: 'white'
+                            color: "white",
                         },
                         "& .state-percent": {
                             fontSize: theme.fontSize.md,
-                            lineHeight: 1
+                            lineHeight: 1,
                         },
                         "&.styled": {
                             justifyContent: "center",
-                            height: "60%"
-                        }
-                    }
-                }
+                            height: "60%",
+                        },
+                    },
+                },
+            },
+            "& .first-box-style": {
+                fontFamily: "EternalLogo",
+                fontSize: "14px !important",
+                color: "#a61919",
+                textShadow: "2px 3px 1px black;",
             },
             "& .token-state": {
-                minWidth: '260px !important',
+                minWidth: "260px !important",
+                marginLeft: theme.isTablet ? "0px" : "",
+                marginTop: theme.isTablet ? "20px" : "",
                 "& > div": {
                     justifyContent: "space-between",
                     "& > div": {
-                        width: "100%"
+                        width: "100%",
                     },
                     "& img": {
-                        width: "100%"
-                    }
-                }
+                        width: "100%",
+                    },
+                },
             },
             "& > div": {
                 width: "100%",
@@ -611,52 +692,59 @@ const useStyles = makeStyles((theme) => {
                 width: 30,
                 height: 15,
                 padding: 0,
-                '& .MuiSwitch-switchBase': {
+                "& .MuiSwitch-switchBase": {
                     padding: 0,
                     margin: 2,
-                    transitionDuration: '300ms',
-                    '&.Mui-checked': {
-                        transform: 'translateX(16px)',
-                        color: '#fff',
-                        '& + .MuiSwitch-track': {
-                            backgroundColor: theme.palette.mode === 'dark' ? '#66DC95' : '#027AFF',
+                    transitionDuration: "300ms",
+                    "&.Mui-checked": {
+                        transform: "translateX(16px)",
+                        color: "#fff",
+                        "& + .MuiSwitch-track": {
+                            backgroundColor:
+                                theme.palette.mode === "dark"
+                                    ? "#66DC95"
+                                    : "#027AFF",
                             opacity: 1,
                             border: 0,
                         },
-                        '&.Mui-disabled + .MuiSwitch-track': {
+                        "&.Mui-disabled + .MuiSwitch-track": {
                             opacity: 0.5,
                         },
                     },
-                    '&.Mui-focusVisible .MuiSwitch-thumb': {
-                        color: '#33cf4d',
-                        border: '6px solid #fff',
+                    "&.Mui-focusVisible .MuiSwitch-thumb": {
+                        color: "#33cf4d",
+                        border: "6px solid #fff",
                     },
-                    '&.Mui-disabled .MuiSwitch-thumb': {
+                    "&.Mui-disabled .MuiSwitch-thumb": {
                         color:
-                            theme.palette.mode === 'light'
+                            theme.palette.mode === "light"
                                 ? theme.palette.grey[100]
                                 : theme.palette.grey[600],
                     },
-                    '&.Mui-disabled + .MuiSwitch-track': {
-                        opacity: theme.palette.mode === 'light' ? 0.7 : 0.3,
+                    "&.Mui-disabled + .MuiSwitch-track": {
+                        opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
                     },
                 },
-                '& .MuiSwitch-thumb': {
-                    boxSizing: 'border-box',
+                "& .MuiSwitch-thumb": {
+                    boxSizing: "border-box",
                     width: 11,
                     height: 11,
                 },
-                '& .MuiSwitch-track': {
+                "& .MuiSwitch-track": {
                     borderRadius: 15 / 2,
-                    backgroundColor: theme.palette.mode === 'light' ? '#5A5A5A' : '#5A5A5A',
+                    backgroundColor:
+                        theme.palette.mode === "light" ? "#5A5A5A" : "#5A5A5A",
                     opacity: 1,
-                    transition: theme.transitions.create(['background-color'], {
+                    transition: theme.transitions.create(["background-color"], {
                         duration: 500,
                     }),
                 },
             },
             "& .vault-lists": {
-                padding: !theme.isMobile && theme.isTablet ? theme.spacing(5, 10) : theme.spacing(5, 0),
+                padding:
+                    !theme.isMobile && theme.isTablet
+                        ? theme.spacing(5, 10)
+                        : theme.spacing(5, 0),
                 zIndex: 100,
                 display: "flex",
                 flexDirection: "column",
@@ -665,34 +753,44 @@ const useStyles = makeStyles((theme) => {
                     cursor: "not-allowed",
                     "& input": {
                         cursor: "not-allowed",
-                    }
+                    },
                 },
                 "& .disabled-mb": {
                     color: "#d5d5d5 !important",
                     cursor: "not-allowed",
                     "& input": {
                         cursor: "not-allowed",
-                    }
+                    },
                 },
                 "& .bg-white": {
                     background: "white !important",
                 },
                 "& .text-red": {
-                    color: "red"
+                    color: "red",
                 },
                 "& .help": {
                     flexDirection: "row",
                     alignItems: "center",
                     "& svg": {
-                        marginBottom: 3
-                    }
+                        marginBottom: 3,
+                    },
                 },
                 "& > div > div": {
-                    boxShadow: theme.palette.mode === "light" ? "1px 1px 15px rgb(255 255 255 / 24%)" : "1px 1px 15px rgb(0 0 0 / 24%)",
-                    padding: theme.isMobile ? theme.spacing(2, 2) : theme.isTablet ? theme.spacing(2, 3) : theme.spacing(2, 5),
+                    boxShadow:
+                        theme.palette.mode === "light"
+                            ? "1px 1px 15px rgb(255 255 255 / 24%)"
+                            : "1px 1px 15px rgb(0 0 0 / 24%)",
+                    padding: theme.isMobile
+                        ? theme.spacing(2, 2)
+                        : theme.isTablet
+                        ? theme.spacing(2, 3)
+                        : theme.spacing(2, 5),
                     borderRadius: theme.spacing(1),
                     marginBottom: theme.spacing(1.5),
-                    background: theme.palette.mode === 'light' ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.1)",
+                    // background:
+                    //     theme.palette.mode === "light"
+                    //         ? "rgba(0, 0, 0, 0.7)"
+                    //         : "rgba(255, 255, 255, 0.1)",
                     flexDirection: "column",
                     width: "100%",
                     color: "white",
@@ -701,115 +799,129 @@ const useStyles = makeStyles((theme) => {
                         width: "100%",
                         justifyContent: "space-between",
                         "& > div": {
-                            justifyContent: "space-between"
-                        }
+                            justifyContent: "space-between",
+                        },
                     },
                     "& .title": {
-                        fontSize: theme.fontSize.md
+                        fontSize: theme.fontSize.md,
                     },
                     "& .sub-title": {
-                        fontSize: theme.fontSize.lg
+                        fontSize: theme.fontSize.lg,
                     },
                     "& .value": {
-                        fontSize: theme.fontSize.xl
+                        fontSize: theme.fontSize.xl,
                     },
                     "& .sub-description": {
-                        fontSize: theme.fontSize.sm
+                        fontSize: theme.fontSize.sm,
                     },
                     "& .description": {
-                        fontSize: theme.fontSize.xs
+                        fontSize: theme.fontSize.xs,
                     },
                     "& .w-50": {
-                        width: "50%"
+                        width: "50%",
                     },
                     "& .item-1": {
                         width: 160,
                         marginRight: -40,
                         justifyContent: "center !important",
                         "& > div": {
-                            alignItems: "flex-start",
+                            alignItems:!theme.isMobile? "flex-start" : "",
                             justifyContent: "space-between",
                             lineHeight: 1,
                             marginTop: 3,
                             "& span": {
-                                fontSize: theme.fontSize.md
-                            }
+                                fontSize: theme.fontSize.md,
+                            },
                         },
                         "& > span": {
-                            lineHeight: 1
-                        }
+                            lineHeight: 1,
+                        },
                     },
                     "& .item-2": {
                         alignItems: "center",
                         "& img": {
                             width: theme.spacing(3),
                             height: theme.spacing(3),
-                        }
+                        },
                     },
                     "& .item-3": {
                         "& .title": {
                             width: 50,
-                            textAlign: "center"
+                            textAlign: "center",
                         },
                         "& .value": {
                             lineHeight: 1,
                             width: 50,
-                            textAlign: "center"
+                            textAlign: "center",
                         },
                         "& div:last-child": {
                             height: "100%",
-                            justifyContent: "flex-start"
+                            justifyContent: "flex-start",
                         },
                         "& svg": {
-                            marginLeft: -4
-                        }
+                            marginLeft: -4,
+                        },
                     },
                     "& .item-4": {
                         "& .value": {
-                            lineHeight: 1
+                            lineHeight: 1,
                         },
                         "& div:last-child": {
                             height: "100%",
-                            justifyContent: "flex-start"
-                        }
+                            justifyContent: "flex-start",
+                        },
                     },
                     "& .item-6": {
                         justifyContent: "center !important",
                         width: theme.spacing(12.5),
                         "& img": {
                             width: theme.spacing(18),
-                            height: "100%"
-                        }
+                            height: "100%",
+                        },
                     },
                     "& .item-7": {
                         justifyContent: "center !important",
                         "& button": {
-                            borderColor: theme.palette.mode === 'light' ? "#293142" : "white",
-                            color: theme.palette.mode === 'light' ? "whtie" : "black",
-                            borderRadius: theme.custom.ButtonBorderRadius,
-                            backgroundColor: theme.palette.mode === 'light' ? "#4B8AEB" : "#66DC95",
+                            borderColor:
+                                theme.palette.mode === "light"
+                                    ? "#293142"
+                                    : "white",
+                            color:
+                                theme.palette.mode === "light"
+                                    ? "whtie"
+                                    : "black",
+                            // borderRadius: theme.custom.ButtonBorderRadius,
+                            backgroundColor:
+                                theme.palette.mode === "light"
+                                    ? "#4B8AEB"
+                                    : "#66DC95",
                             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                             fontSize: theme.fontSize.sm,
                             textTransform: "unset",
                             "& .expand-icon": {
                                 transition: "0.3s",
-                                transform: "rotate(0deg)"
+                                transform: "rotate(0deg)",
                             },
                             "& .activate": {
-                                transform: "rotate(90deg) !important"
-                            }
+                                transform: "rotate(90deg) !important",
+                            },
                         },
                         "& .mobile-expand-icon": {
                             borderRadius: 100,
                             background: "transparent",
                             boxShadow: "none",
-                            color: "white"
-                        }
+                            color: "white",
+                        },
                     },
                     "& .collapse": {
+                        height: "110px !important",
+                        "& .col-nun-padding": {
+                            padding: "0px !important",
+                            margin: "0px !important",
+                        },
                         "& .collapse-body": {
                             marginTop: 20,
-                            borderTop: "1px solid #DADADA",
+                            // borderTop: "1px solid #DADADA",
                             padding: theme.spacing(2.5, 0, 0.5),
                             flexDirection: "row",
                             justifyContent: "space-between",
@@ -817,76 +929,111 @@ const useStyles = makeStyles((theme) => {
                                 justifyContent: "space-between",
                                 width: "100%",
                                 "& .description": {
-                                    fontSize: theme.fontSize.md
+                                    fontSize: theme.fontSize.md,
                                 },
                                 "& button": {
-                                    borderColor: theme.palette.mode === 'light' ? "#293142" : "white",
-                                    color: theme.palette.mode === 'light' ? "#293142" : "white",
-                                    borderRadius: "20px",
+                                    borderColor:
+                                        theme.palette.mode === "light"
+                                            ? "#293142"
+                                            : "white",
+                                    color:
+                                        theme.palette.mode === "light"
+                                            ? "#293142"
+                                            : "white",
+                                    // borderRadius: "20px",
                                     width: "fit-content",
-                                    alignSelf: "center"
+                                    alignSelf: "center",
                                 },
                             },
                             "& .collapse-1": {
                                 "& .nomics-ticker-widget-embedded": {
-                                    display: "none !important"
+                                    display: "none !important",
                                 },
                                 "& .sub-title": {
-                                    marginBottom: 4,
+                                    marginBottom: -2,
                                     flexDirection: "row",
                                     justifyContent: "space-between",
-                                    width: theme.spacing(40),
+                                    width: "250px",
+                                    position: "relative",
+                                    left: "84px",
+                                },
+
+                                "& .deposit-btn": {
+                                    color: "white !important",
+                                    position: "relative",
+
+                                    // background: "transparent",
+                                    // border: "3px outset rgb(84, 84, 85)",
+                                    // boxShadow: "grey 1px 1px 1px",
+                                    width: "138px",
+                                    height: "30px",
+                                    fontFamily: "StackFont",
+                                    fontSize: "20px",
+                                    letterSpacing: "2px",
+                                    // backgroundColor: "unset !important",
+                                    // marginTop: "-13px",
+                                    // left: "35px",
+                                    // borderRadius: "unset !important",
                                 },
 
                                 "& .cal-in": {
-                                    background: theme.palette.mode === 'light' ? "white" : "rgba(255, 255, 255, 0.5)",
+                                    background:
+                                        theme.palette.mode === "light"
+                                            ? "white"
+                                            : "rgba(255, 255, 255, 0.5)",
                                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                     border: "none",
-                                    height: theme.spacing(4.5),
+                                    height: theme.spacing(3.5),
                                     fontSize: theme.fontSize.sm,
                                     color: "black",
+                                    width: "78%",
+                                    left: "27%",
                                     borderRadius: 6,
                                     "& span.c-max": {
                                         color: "#027AFF",
-                                        cursor: "pointer"
+                                        cursor: "pointer",
                                     },
                                     "& fieldset": {
-                                        border: "none"
-                                    }
+                                        border: "none",
+                                    },
                                 },
                                 "& .col-row-1": {
                                     width: theme.spacing(40),
-                                    minWidth: theme.spacing(40)
+                                    minWidth: theme.spacing(40),
                                 },
                                 "& .col-row-2": {
                                     width: "40%",
                                     "& button": {
-                                        borderRadius: theme.custom.ButtonBorderRadius,
+                                        borderRadius: 0,
                                         width: "120PX",
                                         backgroundColor: "#66DC95",
-                                        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                                        boxShadow:
+                                            "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                         color: "black",
                                         textTransform: "unset",
                                         fontSize: theme.fontSize.sm,
                                         height: theme.spacing(4.5),
                                         paddingLeft: 0,
                                         paddingRight: 0,
-                                        lineHeight: 1
+                                        lineHeight: 1,
                                     },
                                     "& button.return-btn": {
                                         color: "#fff",
-                                        backgroundColor: theme.palette.mode === 'light' ? "rgb(255 46 46)" : "rgb(255 46 46)",
+                                        backgroundColor:
+                                            theme.palette.mode === "light"
+                                                ? "rgb(255 46 46)"
+                                                : "rgb(255 46 46)",
                                     },
                                     "& button.earn-btn": {
                                         backgroundColor: "#4B8AEB",
                                         color: "white",
                                         paddingLeft: 0,
-                                        paddingRight: 0
+                                        paddingRight: 0,
                                     },
                                     "& a": {
-                                        textDecoration: "none"
-                                    }
-                                }
+                                        textDecoration: "none",
+                                    },
+                                },
                             },
                             "& .collapse-2": {
                                 background: "#EBEBEB",
@@ -897,24 +1044,24 @@ const useStyles = makeStyles((theme) => {
                                 margin: theme.spacing(0, 3.75),
                                 width: 190,
                                 minWidth: 190,
-                                '& .time-description': {
+                                "& .time-description": {
                                     fontSize: theme.spacing(1.2),
-                                    lineHeight: 1
+                                    lineHeight: 1,
                                 },
                                 "& > div": {
                                     alignItems: "flex-start",
                                 },
                                 "& button": {
                                     width: "100%",
-                                    borderRadius: theme.custom.ButtonBorderRadius,
+                                    borderRadius:
+                                        theme.custom.ButtonBorderRadius,
                                     background: "white",
-                                    boxShadow: 'none',
+                                    boxShadow: "none",
                                     textTransform: "capitalize",
                                     color: "black",
                                     fontSize: theme.fontSize.sm,
-                                    height: theme.spacing(3.5)
+                                    height: theme.spacing(3.5),
                                 },
-
                             },
                             "& .bg-green": {
                                 background: "#66DC95",
@@ -924,7 +1071,7 @@ const useStyles = makeStyles((theme) => {
                                 maxWidth: theme.spacing(26.25),
                                 "& input": {
                                     fontSize: theme.fontSize.sm,
-                                    padding: 0
+                                    padding: 0,
                                 },
                                 "& .slider": {
                                     color: "#027AFF !important",
@@ -935,31 +1082,40 @@ const useStyles = makeStyles((theme) => {
                                         height: theme.spacing(1.25),
                                     },
                                     "& .css-1ti6opd-MuiSlider-thumb": {
-                                        width: `${theme.spacing(1.25)} !important`,
-                                        height: `${theme.spacing(1.25)} !important`,
+                                        width: `${theme.spacing(
+                                            1.25
+                                        )} !important`,
+                                        height: `${theme.spacing(
+                                            1.25
+                                        )} !important`,
                                     },
                                     "& .MuiSlider-thumb": {
-                                        width: `${theme.spacing(1.25)} !important`,
-                                        height: `${theme.spacing(1.25)} !important`,
-                                    }
+                                        width: `${theme.spacing(
+                                            1.25
+                                        )} !important`,
+                                        height: `${theme.spacing(
+                                            1.25
+                                        )} !important`,
+                                    },
                                 },
                                 "& .currency-control-box": {
                                     "& > div": {
-                                        color: 'white',
-                                        borderBottom: "1px solid rgba(255, 255, 255, 0.7)",
+                                        color: "white",
+                                        borderBottom:
+                                            "1px solid rgba(255, 255, 255, 0.7)",
                                         "&:before": {
-                                            border: "none"
+                                            border: "none",
                                         },
                                         "&:after": {
-                                            border: "none"
-                                        }
-                                    }
-                                }
+                                            border: "none",
+                                        },
+                                    },
+                                },
                             },
                             "& .collapse-4": {
                                 justifyContent: "center !important",
                                 margin: theme.spacing(0, 2.5),
-                                width: theme.spacing(10)
+                                width: theme.spacing(10),
                             },
                             "& .collapse-5": {
                                 marginLeft: theme.spacing(3.75),
@@ -970,9 +1126,9 @@ const useStyles = makeStyles((theme) => {
                                     lineHeight: 1,
                                     "& span": {
                                         alignSelf: "flex-start",
-                                    }
-                                }
-                            }
+                                    },
+                                },
+                            },
                         },
                         "& .collapse-body-mobile": {
                             marginTop: 20,
@@ -985,24 +1141,29 @@ const useStyles = makeStyles((theme) => {
                                 justifyContent: "space-between",
                                 "& > div": {
                                     width: "100%",
-                                    maxWidth: "100%"
-                                }
+                                    maxWidth: "100%",
+                                },
                             },
-                            '& .time-description': {
+                            "& .time-description": {
                                 fontSize: theme.spacing(1.25),
-                                lineHeight: theme.isMobile ? 0.5 : 1.2
+                                lineHeight: theme.isMobile ? 0.5 : 1.2,
                             },
                             "& .collapse-2": {
                                 width: "100%",
                                 "& > div:first-child": {
-                                    flexDirection: theme.isMobile ? "row" : "column",
-                                    justifyContent: "space-between"
+                                    flexDirection: theme.isMobile
+                                        ? "row"
+                                        : "column",
+                                    justifyContent: "space-between",
                                 },
                                 "& .first": {
                                     background: "white !important",
                                 },
                                 "& .cal-in": {
-                                    background: theme.palette.mode === 'light' ? "white" : "rgba(255, 255, 255, 0.5)",
+                                    background:
+                                        theme.palette.mode === "light"
+                                            ? "white"
+                                            : "rgba(255, 255, 255, 0.5)",
                                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                     border: "none",
                                     height: theme.spacing(6),
@@ -1011,34 +1172,40 @@ const useStyles = makeStyles((theme) => {
                                     borderRadius: 6,
                                     "& span.c-max": {
                                         color: "#027AFF",
-                                        cursor: "pointer"
+                                        cursor: "pointer",
                                     },
                                     "& fieldset": {
-                                        border: "none"
-                                    }
+                                        border: "none",
+                                    },
                                 },
                                 "& button": {
-                                    borderRadius: theme.custom.ButtonBorderRadius,
+                                    borderRadius:
+                                        theme.custom.ButtonBorderRadius,
                                     width: "100%",
                                     backgroundColor: "#66DC95",
                                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                     color: "black",
                                     textTransform: "unset",
                                     fontSize: 14,
-                                    height: theme.spacing(6)
+                                    height: theme.spacing(6),
                                 },
                             },
                             "& .collapse-3": {
                                 width: "100%",
                                 "& > div:first-child": {
-                                    flexDirection: theme.isMobile ? "row" : "column",
-                                    justifyContent: "space-between"
+                                    flexDirection: theme.isMobile
+                                        ? "row"
+                                        : "column",
+                                    justifyContent: "space-between",
                                 },
                                 "& .first": {
                                     background: "white !important",
                                 },
                                 "& .cal-in": {
-                                    background: theme.palette.mode === 'light' ? "white" : "rgba(255, 255, 255, 0.5)",
+                                    background:
+                                        theme.palette.mode === "light"
+                                            ? "white"
+                                            : "rgba(255, 255, 255, 0.5)",
                                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                     border: "none",
                                     height: theme.spacing(6),
@@ -1047,26 +1214,30 @@ const useStyles = makeStyles((theme) => {
                                     borderRadius: 6,
                                     "& span.c-max": {
                                         color: "#027AFF",
-                                        cursor: "pointer"
+                                        cursor: "pointer",
                                     },
                                     "& fieldset": {
-                                        border: "none"
-                                    }
+                                        border: "none",
+                                    },
                                 },
                                 "& button": {
-                                    borderRadius: theme.custom.ButtonBorderRadius,
+                                    borderRadius:
+                                        theme.custom.ButtonBorderRadius,
                                     width: "100%",
                                     backgroundColor: "#66DC95",
                                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                                     color: "black",
                                     textTransform: "unset",
                                     fontSize: 14,
-                                    height: theme.spacing(6)
+                                    height: theme.spacing(6),
                                 },
                                 "& button.return-btn": {
                                     color: "#fff",
-                                    backgroundColor: theme.palette.mode === 'light' ? "#4B8AEB" : "#4B8AEB",
-                                }
+                                    backgroundColor:
+                                        theme.palette.mode === "light"
+                                            ? "#4B8AEB"
+                                            : "#4B8AEB",
+                                },
                             },
                             "& .collapse-4": {
                                 flexDirection: "row",
@@ -1075,7 +1246,7 @@ const useStyles = makeStyles((theme) => {
                                 borderRadius: 10,
                                 padding: theme.spacing(1.5),
                                 "& span": {
-                                    color: "black"
+                                    color: "black",
                                 },
                                 "& button": {
                                     backgroundColor: "white",
@@ -1083,18 +1254,18 @@ const useStyles = makeStyles((theme) => {
                                     boxShadow: "none",
                                     width: "40%",
                                     textTransform: "unset",
-                                    borderRadius: theme.spacing(1)
-                                }
+                                    borderRadius: theme.spacing(1),
+                                },
                             },
                             "& .bg-green": {
                                 background: "#66DC95",
-                            }
-                        }
-                    }
+                            },
+                        },
+                    },
                 },
-            }
-        }
-    }
+            },
+        },
+    };
 });
 
 export default useStyles;
