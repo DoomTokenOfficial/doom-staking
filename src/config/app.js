@@ -147,7 +147,7 @@ export const Vaults = [
         img_url: StatusBar2,
         stake_token: "LP",
         tokenName: ["Aerdrop", "Coinflect"],
-        tokenId: ["AER", "CFLT"],
+        tokenId: ["DOOM", "DOOM"],
         status: true,
         chart: {
             id: ["CFLT", "AER2"],
@@ -155,9 +155,9 @@ export const Vaults = [
             url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
         },
-        vault: {
-            address: "0x12c27543a1c2C7113241B144A855Ab4F16BbB447",
-            abi: require("../config/abis/aer-cflt.json"),
+      vault: {
+            address: "0xc003e6e1096617654286e62ce2bdd28913c93081",
+            abi: require("../config/abis/do-stake-test.json"),
         },
         search: "Aerdrop cflt coinflect",
     },

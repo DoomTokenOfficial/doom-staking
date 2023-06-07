@@ -1138,9 +1138,9 @@ const Pool = ({
                                     style={{
                                         display: "block",
                                         // gridTemplateColumns: "repeat(6, 1fr)",
-                                        width: "100vw",
-                                        left: "0",
-                                        position: "absolute",
+                                        width: "99vw",
+                                        left: "0px",
+                                        position: "relative",
                                         
                                     }}
                                     className="item-box"
@@ -1288,8 +1288,7 @@ const Pool = ({
                                                 >
                                             STAKE/CLAIM
                                         </Button>
-                                        </Stack>
-                                                                              
+                                        </Stack>                                                                  
                                     </Stack>
                                     <Stack
                                         className="item-1"
