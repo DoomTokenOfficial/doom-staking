@@ -1354,7 +1354,7 @@ const Pool = ({
                                                             textShadow:
                                                                 "4px 2px 1px black, 6px 5px 6px black",
                                                             fontWeight: "bold",
-                                                            marginTop: "-3px",
+                                                             marginTop:"10px",
                                                             textAlign: "center",
                                                         }}
                                                     >
@@ -1372,6 +1372,7 @@ const Pool = ({
                                                             marginLeft: "-10px",
                                                             letterSpacing: "2px",
                                                             textAlign: "center",
+                                                            marginTop:"10px"
                                                         }}
                                                     >
                                                         {totalSupply
