@@ -4,7 +4,14 @@ body,
     height: 100%;
     background-color: #10141b;
 }
-
+.grid-columns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    margin-top: "20px";
+}
+.mobile-input {
+    height: 30px !important;
+}
 @font-face {
     font-family: "EternalUI";
     src: url("./fonts/EternalUi2Bold-ALOGM.ttf");
