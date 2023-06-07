@@ -1494,7 +1494,9 @@ const Pool = ({
                                                                 ? "cal-in mobile-input"
                                                                 : "cal-in disabled mobile-input"
                                                         }
-                                                        
+                                                        style={{
+                                                            width:"214px"
+                                                        }}
                                                         placeholder="0"
                                                         value={dv}
                                                         onChange={(e) =>
@@ -1577,7 +1579,9 @@ const Pool = ({
                                                                 fontFamily:
                                                                     "EternalUI",
                                                                     color:"white",
-                                                                    fontSize:"12px"
+                                                                    fontSize:"12px",
+                                                                    position:"relative",
+                                                                    left:"10px"
                                                             }}
                                                         >
                                                             {
