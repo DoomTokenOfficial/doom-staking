@@ -261,7 +261,7 @@ const Home = () => {
         GetCoinInfo();
         GetPoolStatus();
         return ()=> {
-            if(response !== null) {
+            if(response && response !== null) {
                 response.cancel();
             }
         }
