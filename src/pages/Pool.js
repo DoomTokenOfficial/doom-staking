@@ -619,7 +619,8 @@ const Pool = ({
                                                     textAlign: "center",
                                                 }}
                                             >
-                                                {lang_texts[language][11]}
+                                                {lang_texts[language][11]} $
+                                                {item.stake_token}
                                             </Typography>
                                         </Stack>
                                         <Stack>
@@ -1396,7 +1397,8 @@ const Pool = ({
                                                         textAlign: "center",
                                                     }}
                                                 >
-                                                    {lang_texts[language][11]}
+                                                    {lang_texts[language][11]} $
+                                                    {item.stake_token}
                                                 </Typography>
                                             </Stack>
                                             <Stack>
