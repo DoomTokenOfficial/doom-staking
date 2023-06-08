@@ -463,8 +463,8 @@ const Pool = ({
                                                 paddingTop: "10px",
                                             }}
                                         >
-                                            {lang_texts[language][8]} &nbsp;$
-                                            {item.stake_token}
+                                            {lang_texts[language][8]}{" "}
+                                            &nbsp;$DOOM
                                         </Typography>
                                     </Stack>
                                     <Stack
@@ -1267,8 +1267,7 @@ const Pool = ({
                                                     }}
                                                 >
                                                     {lang_texts[language][8]}{" "}
-                                                    &nbsp;$
-                                                    {item.stake_token}
+                                                    &nbsp;$DOOM
                                                 </Typography>
                                             </Stack>
                                             <Button
