@@ -60,7 +60,7 @@ const Pool = ({
     const { currency, language } = useContext(ThemeModeContext);
     const { account, chainId, library } = useWeb3React();
 
-    console.log(CoinInfo,Coin,BaseCoin, "------------------------------");
+    console.log(CoinInfo, Coin, BaseCoin, "------------------------------");
     const tablet = useMediaQuery("(min-width:1200px)");
     const mobile = useMediaQuery("(min-width:800px)");
 
@@ -194,16 +194,16 @@ const Pool = ({
                 setTimeblog(res);
                 updateTime(item.id, res);
             });
-            setAPR(Coin ,"&&", BaseCoin,toDec(APR, 0, 0));
+            setAPR(Coin, "&&", BaseCoin, toDec(APR, 0, 0));
             if (Coin && BaseCoin) {
                 const APR =
-                    (((Coin.price / BaseCoin.price) *
+                    (((Coin.usdPrice / BaseCoin.usdPrice) *
                         secsForYear *
                         rewardRate) /
                         (t_s > 0 ? t_s : 10 ** BaseDecimal)) *
                     100;
-                    console.log(APR,'00303030303003')
-                
+                console.log(APR, "00303030303003");
+
                 updateAPRs(item.id, toDec(APR, 0, 0));
             } else {
                 const APR =
@@ -540,7 +540,7 @@ const Pool = ({
                                                     letterSpacing: "1px",
                                                     marginTop: "10px",
                                                     marginLeft: "-12px",
-                                                    position:"relative"
+                                                    position: "relative",
                                                 }}
                                             >
                                                 {lang_texts[language][10]}
@@ -658,7 +658,7 @@ const Pool = ({
                                                           fontFamily:
                                                               "EternalUI",
                                                           fontSize: "18px",
-                                                          letterSpacing: "2px",
+                                                          //   letterSpacing: "2px",
                                                           borderRadius:
                                                               "unset !important",
                                                       }
@@ -672,7 +672,7 @@ const Pool = ({
                                                           fontFamily:
                                                               "EternalUI",
                                                           fontSize: "18px",
-                                                          letterSpacing: "2px",
+                                                          //   letterSpacing: "2px",
                                                           borderRadius:
                                                               "unset !important",
                                                       }
@@ -1144,7 +1144,6 @@ const Pool = ({
                                         // width: "99vw",
                                         left: "0px",
                                         position: "relative",
-                                        
                                     }}
                                     className="item-box"
                                 >
@@ -1152,18 +1151,18 @@ const Pool = ({
                                         className="item-1"
                                         style={{
                                             width: "323px",
-                                            position:"relative",
+                                            position: "relative",
                                             margin: "auto",
-                                            height:"106px",
-                                            marginBottom:"5px",
+                                            height: "106px",
+                                            marginBottom: "5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
                                         <Stack
                                             style={{
-                                                display:"grid",
-                                                gridTemplateColumns:"1fr 1fr",
-                                                marginTop:"-20px",
+                                                display: "grid",
+                                                gridTemplateColumns: "1fr 1fr",
+                                                marginTop: "-20px",
                                             }}
                                         >
                                             <Typography
@@ -1175,10 +1174,10 @@ const Pool = ({
                                                         "4px 3px 1px black, 6px 4px 1px black",
                                                     fontSize: "30px",
                                                     color: "red",
-                                                    textAlign:"right",
-                                                    left:"30px",
-                                                    position:"relative",
-                                                    
+                                                    textAlign: "right",
+                                                    left: "30px",
+                                                    position: "relative",
+
                                                     // fontWeight: "bolder",
                                                 }}
                                             >
@@ -1189,7 +1188,7 @@ const Pool = ({
                                                     : 0}
                                                 %
                                             </Typography>
-                                                                                        
+
                                             <Typography
                                                 style={{
                                                     fontFamily: "PublicFont",
@@ -1204,15 +1203,18 @@ const Pool = ({
                                                 className="sub-description"
                                             >
                                                 APY
-                                            </Typography> 
-                                            <Stack style={{
-                                                position:"relative",
-                                                top:"18px",
-                                                marginLeft:"12px"
-                                            }}>
+                                            </Typography>
+                                            <Stack
+                                                style={{
+                                                    position: "relative",
+                                                    top: "18px",
+                                                    marginLeft: "12px",
+                                                }}
+                                            >
                                                 <Typography
                                                     style={{
-                                                        fontFamily: "PublicFont",
+                                                        fontFamily:
+                                                            "PublicFont",
                                                         textShadow:
                                                             "3px 2px 2px black, 3px 2px 0px black",
                                                         fontSize: "10px",
@@ -1233,7 +1235,8 @@ const Pool = ({
                                                     variant="span"
                                                     className="value"
                                                     style={{
-                                                        fontFamily: "PublicFont",
+                                                        fontFamily:
+                                                            "PublicFont",
                                                         textShadow:
                                                             "3px 2px 2px black, 3px 2px 0px black",
                                                         fontSize: "10px",
@@ -1244,162 +1247,182 @@ const Pool = ({
                                                         paddingTop: "10px",
                                                     }}
                                                 >
-                                                    {lang_texts[language][8]} &nbsp;$
+                                                    {lang_texts[language][8]}{" "}
+                                                    &nbsp;$
                                                     {item.stake_token}
                                                 </Typography>
                                             </Stack>
-                                              <Button
-                                                onClick={() => setDisplayInfo(!displayInfo)}
+                                            <Button
+                                                onClick={() =>
+                                                    setDisplayInfo(!displayInfo)
+                                                }
                                                 variant="contained"
-                                             
                                                 disableElevation
                                                 style={
                                                     poolState
                                                         ? {
-                                                            color: "white",
-                                                            position: "absolute",
+                                                              color: "white",
+                                                              position:
+                                                                  "absolute",
 
-                                                            background: `url(${StakeClaimButtonMobile})`,
+                                                              background: `url(${StakeClaimButtonMobile})`,
 
-                                                            fontFamily: "EternalUI",
-                                                            // letterSpacing: "1px",
-                                                            borderRadius: "unset !important",
-                                                            //  width:"100%",
-                                                            left:"194px",
-                                                            top:"60px",
-                                                    // height:"10vw",
-                                                    width:"100px",
-                                                    fontSize:"11px"
-                                                        }
+                                                              fontFamily:
+                                                                  "EternalUI",
+                                                              // letterSpacing: "1px",
+                                                              borderRadius:
+                                                                  "unset !important",
+                                                              //  width:"100%",
+                                                              left: "194px",
+                                                              top: "60px",
+                                                              // height:"10vw",
+                                                              width: "100px",
+                                                              fontSize: "11px",
+                                                          }
                                                         : {
-                                                            color: "white",
-                                                            position: "relative",
+                                                              color: "white",
+                                                              position:
+                                                                  "relative",
 
-                                                            background: `url(${StakeClaimButtonMobile})`,
+                                                              background: `url(${StakeClaimButtonMobile})`,
 
-                                                            fontFamily: "EternalUI",
-                                                            // letterSpacing: "2px",
-                                                            borderRadius: "unset !important",
-                                                            //  width:"100%",
-                                                            left:"194px",
-                                                            top:"60px",
-                                                    // height:"10vw",
-                                                    width:"100px",
-                                                    fontSize:"7px"
-                                                        }
+                                                              fontFamily:
+                                                                  "EternalUI",
+                                                              // letterSpacing: "2px",
+                                                              borderRadius:
+                                                                  "unset !important",
+                                                              //  width:"100%",
+                                                              left: "194px",
+                                                              top: "60px",
+                                                              // height:"10vw",
+                                                              width: "100px",
+                                                              fontSize: "7px",
+                                                          }
                                                 }
-                                                >
-                                            STAKE/CLAIM
-                                        </Button>
-                                        </Stack>                                                                  
+                                            >
+                                                STAKE/CLAIM
+                                            </Button>
+                                        </Stack>
                                     </Stack>
                                     <Stack
                                         className="item-1"
                                         style={{
                                             width: "323px",
-                                            position:"relative",
+                                            position: "relative",
                                             margin: "auto",
-                                            height:"106px",
-                                            marginBottom:"5px",
+                                            height: "106px",
+                                            marginBottom: "5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
                                         }}
                                     >
-                                        <Stack className="item-2" spacing={0.75}>
+                                        <Stack
+                                            className="item-2"
+                                            spacing={0.75}
+                                        >
                                             <Stack
-                                                    className="help"
-                                                    direction="row"
-                                                    spacing={1}
+                                                className="help"
+                                                direction="row"
+                                                spacing={1}
+                                                style={{
+                                                    fontFamily: "StackFont",
+                                                    textShadow:
+                                                        "4px 1px 1px black, 4px 2px 1px black",
+                                                    fontSize: "20px",
+                                                    color: "red",
+                                                    // letterSpacing: "3px",
+                                                    fontWeight: "bolder",
+                                                    marginTop: "-17px",
+                                                    // marginLeft: "10px",
+                                                }}
+                                            >
+                                                <Typography
+                                                    variant="span"
+                                                    className="title"
                                                     style={{
-                                                        fontFamily: "StackFont",
+                                                        fontFamily:
+                                                            "PublicFont",
                                                         textShadow:
-                                                            "4px 1px 1px black, 4px 2px 1px black",
-                                                        fontSize: "20px",
+                                                            "black -1px 2px 2px",
+                                                        fontSize: "14px",
                                                         color: "red",
-                                                        // letterSpacing: "3px",
-                                                        fontWeight: "bolder",
-                                                        marginTop: "-17px",
-                                                        // marginLeft: "10px",
+                                                        letterSpacing: "1px",
+                                                        marginTop: "10px",
+                                                        marginLeft: "-9px",
                                                     }}
                                                 >
-                                                    <Typography
-                                                        variant="span"
-                                                        className="title"
-                                                        style={{
-                                                            fontFamily: "PublicFont",
-                                                            textShadow: "black -1px 2px 2px",
-                                                            fontSize: "14px",
-                                                            color: "red",
-                                                            letterSpacing: "1px",
-                                                            marginTop: "10px",
-                                                            marginLeft: "-9px",
-                                                        }}
-                                                    >
-                                                        {lang_texts[language][10]}
-                                                    </Typography>
-                                                </Stack>
-                                                <Stack>
-                                                    <LeftTime
-                                                        timeLeft={timeblog}
-                                                        device="laptop"
-                                                        poolState={poolState}
-                                                        loading={loading}
-                                                    />
-                                                </Stack>
-                                                <Stack>
-                                                    <Typography
-                                                        variant="span"
-                                                        className="title"
-                                                        style={{
-                                                            fontFamily: "PublicFont",
-                                                            fontSize: "12px",
-                                                            letterSpacing: "3px",
-                                                            color: "red",
-                                                            textShadow:
-                                                                "4px 2px 1px black, 6px 5px 6px black",
-                                                            fontWeight: "bold",
-                                                             marginTop:"10px",
-                                                            textAlign: "center",
-                                                        }}
-                                                    >
-                                                        {lang_texts[language][11]}
-                                                    </Typography>
-                                                </Stack>
-                                                <Stack>
-                                                    <Typography
-                                                        variant="span"
-                                                        className="sub-description"
-                                                        style={{
-                                                            textShadow: "1px 1px 1px black",
-                                                            fontFamily: "PublicFont",
-                                                            fontSize: "14px",
-                                                            marginLeft: "-10px",
-                                                            letterSpacing: "2px",
-                                                            textAlign: "center",
-                                                            marginTop:"10px"
-                                                        }}
-                                                    >
-                                                        {totalSupply
-                                                            ? numberWithCommas(totalSupply)
-                                                            : 0}{" "}
-                                                    </Typography>
-                                                </Stack>
-                                        </Stack>                                     
+                                                    {lang_texts[language][10]}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack>
+                                                <LeftTime
+                                                    timeLeft={timeblog}
+                                                    device="laptop"
+                                                    poolState={poolState}
+                                                    loading={loading}
+                                                />
+                                            </Stack>
+                                            <Stack>
+                                                <Typography
+                                                    variant="span"
+                                                    className="title"
+                                                    style={{
+                                                        fontFamily:
+                                                            "PublicFont",
+                                                        fontSize: "12px",
+                                                        letterSpacing: "3px",
+                                                        color: "red",
+                                                        textShadow:
+                                                            "4px 2px 1px black, 6px 5px 6px black",
+                                                        fontWeight: "bold",
+                                                        marginTop: "10px",
+                                                        textAlign: "center",
+                                                    }}
+                                                >
+                                                    {lang_texts[language][11]}
+                                                </Typography>
+                                            </Stack>
+                                            <Stack>
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description"
+                                                    style={{
+                                                        textShadow:
+                                                            "1px 1px 1px black",
+                                                        fontFamily:
+                                                            "PublicFont",
+                                                        fontSize: "14px",
+                                                        marginLeft: "-10px",
+                                                        letterSpacing: "2px",
+                                                        textAlign: "center",
+                                                        marginTop: "10px",
+                                                    }}
+                                                >
+                                                    {totalSupply
+                                                        ? numberWithCommas(
+                                                              totalSupply
+                                                          )
+                                                        : 0}{" "}
+                                                </Typography>
+                                            </Stack>
+                                        </Stack>
                                     </Stack>
                                     <Stack
                                         className="item-1"
                                         style={{
                                             width: "323px",
-                                            position:"relative",
+                                            position: "relative",
                                             margin: "auto",
-                                            height:"106px",
-                                            marginBottom:"5px",
+                                            height: "106px",
+                                            marginBottom: "5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
-                                            display:displayInfo?"block":"none"
-                                            ,paddingTop:"9px"
+                                            display: displayInfo
+                                                ? "block"
+                                                : "none",
+                                            paddingTop: "9px",
                                         }}
                                     >
                                         <Stack className="collapse-1">
-                                            <Stack className="sub-title pd-0 grid-columns" >
+                                            <Stack className="sub-title pd-0 grid-columns">
                                                 <Stack
                                                     className="help"
                                                     direction="row"
@@ -1473,8 +1496,7 @@ const Pool = ({
                                                 spacing={0}
                                                 mb={0}
                                             >
-                                                <Stack className="col-row-1"
-                                                >
+                                                <Stack className="col-row-1">
                                                     <OutlinedInput
                                                         disabled={
                                                             Number(
@@ -1497,7 +1519,7 @@ const Pool = ({
                                                                 : "cal-in disabled mobile-input"
                                                         }
                                                         style={{
-                                                            width:"214px"
+                                                            width: "214px",
                                                         }}
                                                         placeholder="0"
                                                         value={dv}
@@ -1511,7 +1533,6 @@ const Pool = ({
                                                             <Typography
                                                                 onClick={setMax}
                                                                 variant="span"
-
                                                                 className={
                                                                     Number(
                                                                         balance[
@@ -1548,7 +1569,7 @@ const Pool = ({
                                                                 background: `url(${depositWithdraw})`,
                                                                 width: "100px",
                                                                 height: "32px",
-                                                                left:"6px"
+                                                                left: "6px",
                                                             }}
                                                         ></LoadingButton>
                                                     ) : (
@@ -1581,10 +1602,12 @@ const Pool = ({
                                                                 height: "32px",
                                                                 fontFamily:
                                                                     "EternalUI",
-                                                                    color:"white",
-                                                                    fontSize:"12px",
-                                                                    position:"relative",
-                                                                    left:"6px"
+                                                                color: "white",
+                                                                fontSize:
+                                                                    "12px",
+                                                                position:
+                                                                    "relative",
+                                                                left: "6px",
                                                             }}
                                                         >
                                                             {
@@ -1613,7 +1636,6 @@ const Pool = ({
                                                             textShadow:
                                                                 "2px 3px 2px black",
                                                             fontSize: "12px",
-                                                            
                                                         }}
                                                     >
                                                         {
@@ -1727,8 +1749,9 @@ const Pool = ({
                                                                 left: "-3px",
                                                                 fontFamily:
                                                                     "EternalUI",
-                                                                    color:"white",
-                                                                    fontSize:"12px"
+                                                                color: "white",
+                                                                fontSize:
+                                                                    "12px",
                                                             }}
                                                             onClick={withdraw}
                                                         >
@@ -1827,113 +1850,101 @@ const Pool = ({
                                         className="item-1"
                                         style={{
                                             width: "323px",
-                                            position:"relative",
+                                            position: "relative",
                                             margin: "auto",
-                                            height:"106px",
-                                            marginBottom:"5px",
+                                            height: "106px",
+                                            marginBottom: "5px",
                                             backgroundImage: `url(${StatusBarMobile})`,
-                                            display:displayInfo?"block":"none"
-                                            ,paddingTop:"30px"
+                                            display: displayInfo
+                                                ? "block"
+                                                : "none",
+                                            paddingTop: "30px",
                                         }}
                                     >
-                                        <Stack
-                                                direction="row"
+                                        <Stack direction="row" spacing={1.25}>
+                                            <Stack
                                                 spacing={1.25}
-                                        >
-                                                <Stack
-                                                    spacing={1.25}
-                                                    className="col-row-1"
+                                                className="col-row-1"
+                                            >
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        marginLeft: "21px",
+                                                        position: "relative",
+
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "14px",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
+
+                                                        color: "red",
+                                                        fontWeight: "bolder",
+                                                    }}
                                                 >
-                                                    <Typography
-                                                        variant="span"
-                                                        className="sub-description"
-                                                        alignSelf="flex-start"
-                                                        style={{
-                                                            marginLeft: "21px",
-                                                            position:
-                                                                "relative",
-                                                         
-                                                            fontFamily:
-                                                                "EternalUI",
-                                                            fontSize: "14px",
-                                                            textShadow:
-                                                                "2px 3px 2px black",
-                                                            
-                                                            color: "red",
-                                                            fontWeight:
-                                                                "bolder",
-                                                        }}
-                                                    >
-                                                        Your Rewards
-                                                    </Typography>
-                                                </Stack>
-                                                <Stack className="col-row-2">
-                                                    <Typography
-                                                        variant="span"
-                                                        className="sub-description"
-                                                        alignSelf="flex-start"
-                                                        style={{
-                                                            marginLeft: "21px",
-                                                            color: "white",
-                                                            position:
-                                                                "relative",
-                                                            
-                                                            fontFamily:
-                                                                "EternalUI",
-                                                            fontSize: "14px",
-                                                            textShadow:
-                                                                "2px 3px 2px black",
-                                                            left:"-50px",
-                                                            fontWeight:
-                                                                "bolder",
-                                                        }}
-                                                    >
-                                                        {cb} {item.tokenId[0]}
-                                                        {/* 30000 DOOM */}
-                                                    </Typography>
-                                                </Stack>
+                                                    Your Rewards
+                                                </Typography>
+                                            </Stack>
+                                            <Stack className="col-row-2">
+                                                <Typography
+                                                    variant="span"
+                                                    className="sub-description"
+                                                    alignSelf="flex-start"
+                                                    style={{
+                                                        marginLeft: "21px",
+                                                        color: "white",
+                                                        position: "relative",
+
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "14px",
+                                                        textShadow:
+                                                            "2px 3px 2px black",
+                                                        left: "-50px",
+                                                        fontWeight: "bolder",
+                                                    }}
+                                                >
+                                                    {cb} {item.tokenId[0]}
+                                                    {/* 30000 DOOM */}
+                                                </Typography>
+                                            </Stack>
                                         </Stack>
-                                        <Stack 
+                                        <Stack
                                             style={{
-                                               alignItems:"center" ,
-                                               color: "red !important",
+                                                alignItems: "center",
+                                                color: "red !important",
                                             }}
                                         >
                                             <Stack>
-                                                    <Button
-                                                        onClick={claim}
-                                                        // className="depositWithdraw"
-                                                        variant="contained"
-                                                        className={
-                                                            Number(cb) > 0
-                                                                ? " "
-                                                                : "disabled"
-                                                        }
-                                                        style={{
-                                                            position:
-                                                                "relative",
-                                                            background: `url(${depositWithdraw})`,
-                                                            width: "132px",
-                                                            height: "32px",
-                                                            fontFamily:
-                                                                "EternalUI",
-                                                            fontSize: "12px",
-                                                            letterSpacing:
-                                                                "2px",
-                                                            top: "65%",
-                                                            // right: "21px",
-                                                            backgroundRadius:
-                                                                "unset !important",
-                                                            // left: "35%",
-                                                            color:"white"
-                                                            
-
-                                                        }}
-                                                    >
-                                                        Claim
-                                                    </Button>
-                                                    </Stack>
-                                                </Stack>
+                                                <Button
+                                                    onClick={claim}
+                                                    // className="depositWithdraw"
+                                                    variant="contained"
+                                                    className={
+                                                        Number(cb) > 0
+                                                            ? " "
+                                                            : "disabled"
+                                                    }
+                                                    style={{
+                                                        position: "relative",
+                                                        background: `url(${depositWithdraw})`,
+                                                        width: "132px",
+                                                        height: "32px",
+                                                        fontFamily: "EternalUI",
+                                                        fontSize: "12px",
+                                                        letterSpacing: "2px",
+                                                        top: "65%",
+                                                        // right: "21px",
+                                                        backgroundRadius:
+                                                            "unset !important",
+                                                        // left: "35%",
+                                                        color: "white",
+                                                    }}
+                                                >
+                                                    Claim
+                                                </Button>
+                                            </Stack>
+                                        </Stack>
                                     </Stack>
                                 </Stack>
                             </>

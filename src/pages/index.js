@@ -76,29 +76,29 @@ const Home = () => {
     };
 
     const _handleExpaned = (id, e, i) => {
-        _Expand(id);
-        console.log(id, e, i, "232323232323232");
-        let initialTop = !mobile ? 40 : 110;
-        if (!e) {
-            _Expand(id);
-        } else if (e.target.tagName === "svg" || e.target.tagName === "path") {
-            if (
-                e.target.parentElement.tagName === "BUTTON" ||
-                e.target.parentElement.parentElement.tagName === "BUTTON"
-            ) {
-                _Expand(id);
-                if (!expanded[id]) {
-                    window.scrollTo(0, initialTop + 105 * (i + 1));
-                }
-            } else {
-                return;
-            }
-        } else {
-            if (!expanded[id]) {
-                window.scrollTo(0, initialTop + 105 * (i + 1));
-            }
-            _Expand(id);
-        }
+        return _Expand(id);
+        // console.log(id, e, i, "232323232323232");
+        // let initialTop = !mobile ? 40 : 110;
+        // if (!e) {
+        //     _Expand(id);
+        // } else if (e.target.tagName === "svg" || e.target.tagName === "path") {
+        //     if (
+        //         e.target.parentElement.tagName === "BUTTON" ||
+        //         e.target.parentElement.parentElement.tagName === "BUTTON"
+        //     ) {
+        //         _Expand(id);
+        //         if (!expanded[id]) {
+        //             window.scrollTo(0, initialTop + 105 * (i + 1));
+        //         }
+        //     } else {
+        //         return;
+        //     }
+        // } else {
+        //     if (!expanded[id]) {
+        //         window.scrollTo(0, initialTop + 105 * (i + 1));
+        //     }
+        //     _Expand(id);
+        // }
     };
 
     const numberWithCommas = (x) => {
@@ -158,7 +158,7 @@ const Home = () => {
             });
         }
         const coin = coins.find((item) => item.tokenSymbol === coinId);
-    
+
         if (coin) {
             total_S = coin.usdPrice * Tval;
         } else {
@@ -176,18 +176,20 @@ const Home = () => {
     };
 
     const GetCoinInfo = async () => {
-        response =  await axios
-            .get("https://deep-index.moralis.io/api/v2/erc20/0xa594f09ad2f031a286eae64c5ab3ce05191668ae/price?chain=eth&include=percent_change&exchange=uniswapv3",
+        response = await axios
+            .get(
+                "https://deep-index.moralis.io/api/v2/erc20/0xa594f09ad2f031a286eae64c5ab3ce05191668ae/price?chain=eth&include=percent_change&exchange=uniswapv3",
                 {
-                    headers:{
-                        "accept": "application/json",
-                        "X-API-Key": "6yQovJ4FlVFcu4o6rSmnPbCsIXgpM62X9vY8xHFfB3I1d2xKmwBTCs9hM9ky3hSp"
-                    }
+                    headers: {
+                        accept: "application/json",
+                        "X-API-Key":
+                            "6yQovJ4FlVFcu4o6rSmnPbCsIXgpM62X9vY8xHFfB3I1d2xKmwBTCs9hM9ky3hSp",
+                    },
                 }
             )
             .then((res) => {
                 const data = res.data;
-                console.log(data,'123123123123123')
+                console.log(data, "123123123123123");
                 for (let i = 0; i < Vaults.length; i++) {
                     if (Object.hasOwnProperty.call(totalSupply, Vaults[i].id)) {
                         UpdatingTotalSupply(
@@ -201,7 +203,7 @@ const Home = () => {
                     }
                 }
                 setCoinInfo([data]);
-                console.log(data,'23423423')
+                console.log(data, "23423423");
                 // let CFLTINFO = data.find((item) => item.id === "CFLT");
                 // let priceptc = (
                 //     CFLTINFO["1d"]
@@ -226,9 +228,9 @@ const Home = () => {
                 //     status = "text-pink";
                 // }
                 setCoinStatus({
-                    price:data.usdPrice,
-                    status:"text-pink"
-                })
+                    price: data.usdPrice,
+                    status: "text-pink",
+                });
                 // setCoinStatus({
                 //     price: Number(CFLTINFO.price).toFixed(6),
                 //     priceptc,
@@ -249,7 +251,6 @@ const Home = () => {
                 //     }
                 // }
             });
-            
     };
 
     useEffect(() => {
@@ -260,11 +261,11 @@ const Home = () => {
     useEffect(() => {
         GetCoinInfo();
         GetPoolStatus();
-        return ()=> {
-            if(response && response !== null) {
+        return () => {
+            if (response && response !== null) {
                 response.cancel();
             }
-        }
+        };
     }, []);
 
     useEffect(() => {
@@ -376,11 +377,7 @@ const Home = () => {
                                         >
                                             {CurrencySymbol[currency]}{" "}
                                             {coinStatus.price
-                                                ?toDec(
-                                                      coinStatus.price,
-                                                      0,
-                                                      9
-                                                  ) 
+                                                ? toDec(coinStatus.price, 0, 9)
                                                 : toDec(
                                                       baseCurrency.DOOM.USD,
                                                       0,
@@ -463,7 +460,7 @@ const Home = () => {
                             <Stack
                                 style={{
                                     display: "block !important",
-                                    width:"323px"
+                                    width: "323px",
                                 }}
                                 className="state-bar"
                                 direction="row"
