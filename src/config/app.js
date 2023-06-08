@@ -52,6 +52,7 @@ export const Tokens = {
         DAPES: require("../config/abis/dapes-main.json"),
         ADREAM: require("../config/abis/adream-main.json"),
         DOOM: require("../config/abis/doom.json"),
+        DOOMLP: require("../config/abis/lp-test.json"),
     },
     address: {
         CFLT: "0x04305e84400F70B778868FD5226A6135D8Fe151D",
@@ -65,12 +66,14 @@ export const Tokens = {
         DAPES: "0x1758ADe7ef6Ef753E6BfF91BaCeB06af4404014e",
         ADREAM: "0x45c4b4b718f7e2df5c22eff8a2bb79e9090a428d",
         DOOM: "0x7792EC0c08DE9B581fb9dE6A2dbdc9c9a696f97a",
+        DOOMLP: "0x574F0D8e68754A6BF38C96d78213cfD32d72266c",
     },
 };
 
 export const Pools = {
     pools: {
         doomDoom: "0x3F89F3ebd6ee4afb09152c79bF774fBA8f57e0e0",
+        lpDoom: "0x48cF86BE78ee96e544D0b45116170B41cfd26F4D",
         cfltAer: "0x8f67C86F9002a90e3e02C28FF330a6E69c93B0A2",
         aerCflt: "0xEED3971151d94Ddc5A7A0d9563b473CbFb189DCf",
         cfltPft: "0xc566B132598E209d6C167DB67A5eee3415428718",
@@ -141,13 +144,13 @@ export const Vaults = [
         },
         search: "Aerdrop",
     },
-   
+
     {
         id: "doom_lp",
         img_url: StatusBar2,
         stake_token: "LP",
         tokenName: ["Aerdrop", "Coinflect"],
-        tokenId: ["DOOM", "DOOM"],
+        tokenId: ["DOOMLP", "DOOM"],
         status: true,
         chart: {
             id: ["DOOM", "DOOM"],
@@ -155,9 +158,9 @@ export const Vaults = [
             url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
         },
-      vault: {
-            address: "0xc003e6e1096617654286e62ce2bdd28913c93081",
-            abi: require("../config/abis/do-stake-test.json"),
+        vault: {
+            address: "0x48cF86BE78ee96e544D0b45116170B41cfd26F4D",
+            abi: require("../config/abis/lp-stake-test.json"),
         },
         search: "Aerdrop cflt coinflect",
     },
