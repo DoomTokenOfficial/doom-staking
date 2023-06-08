@@ -194,7 +194,7 @@ const Pool = ({
                 setTimeblog(res);
                 updateTime(item.id, res);
             });
-            setAPR(Coin, "&&", BaseCoin, toDec(APR, 0, 0));
+
             if (Coin && BaseCoin) {
                 const APR =
                     (((Coin.usdPrice / BaseCoin.usdPrice) *
@@ -202,6 +202,7 @@ const Pool = ({
                         rewardRate) /
                         (t_s > 0 ? t_s : 10 ** BaseDecimal)) *
                     100;
+                setAPR(toDec(APR, 0, 0));
                 console.log(APR, "00303030303003");
 
                 updateAPRs(item.id, toDec(APR, 0, 0));
@@ -475,14 +476,32 @@ const Pool = ({
                                             <Typography
                                                 variant="span"
                                                 className="value"
-                                                style={{
-                                                    fontFamily: "PublicFont",
-                                                    textShadow:
-                                                        "4px 3px 1px black, 6px 4px 1px black",
-                                                    fontSize: "27px",
-                                                    color: "red",
-                                                    // fontWeight: "bolder",
-                                                }}
+                                                style={
+                                                    Number(APR) > 10000
+                                                        ? {
+                                                              fontFamily:
+                                                                  "PublicFont",
+                                                              textShadow:
+                                                                  "4px 3px 1px black, 6px 4px 1px black",
+                                                              fontSize: "27px",
+                                                              color: "red",
+
+                                                              position:
+                                                                  "relative",
+                                                              left: "-37px",
+                                                              // fontWeight: "bolder",
+                                                          }
+                                                        : {
+                                                              fontFamily:
+                                                                  "PublicFont",
+                                                              textShadow:
+                                                                  "4px 3px 1px black, 6px 4px 1px black",
+                                                              fontSize: "27px",
+                                                              color: "red",
+
+                                                              // fontWeight: "bolder",
+                                                          }
+                                                }
                                             >
                                                 {APR
                                                     ? Number(APR) > 10000
@@ -1087,7 +1106,7 @@ const Pool = ({
                                                             fontSize: "14px",
                                                             textShadow:
                                                                 "2px 3px 2px black",
-                                                            right: "-140%",
+                                                            right: "-84px",
                                                             fontWeight:
                                                                 "bolder",
                                                         }}
@@ -1119,7 +1138,7 @@ const Pool = ({
                                                             letterSpacing:
                                                                 "2px",
                                                             top: "65%",
-                                                            right: "21px",
+                                                            right: "121px",
                                                             backgroundRadius:
                                                                 "unset !important",
                                                             // left: "35%",
@@ -1282,7 +1301,7 @@ const Pool = ({
                                                         : {
                                                               color: "white",
                                                               position:
-                                                                  "relative",
+                                                                  "absolute",
 
                                                               background: `url(${StakeClaimButtonMobile})`,
 

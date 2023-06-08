@@ -153,7 +153,7 @@ export const Vaults = [
         tokenId: ["DOOMLP", "DOOM"],
         status: true,
         chart: {
-            id: ["DOOM", "DOOM"],
+            id: ["DOOMLP", "DOOM"],
             name: "Coinflect",
             url: "https://nomics.com/images/sparkline/assets/CFLT-USD-1d.svg",
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
