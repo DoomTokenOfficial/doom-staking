@@ -1315,7 +1315,7 @@ const Pool = ({
                                                               top: "60px",
                                                               // height:"10vw",
                                                               width: "100px",
-                                                              fontSize: "7px",
+                                                              fontSize: "11px",
                                                           }
                                                 }
                                             >
