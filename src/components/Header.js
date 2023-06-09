@@ -60,15 +60,15 @@ const Header = () => {
                 method: "wallet_addEthereumChain",
                 params: [
                     {
-                        chainId: `0x${netId.toString(16)}`,
-                        chainName: "Fantom testnet",
-                        rpcUrls: ["https://rpc.testnet.fantom.network/"],
+                        chainId: `1`,
+                        chainName: "Ethereum Mainnet",
+                        rpcUrls: ["https://mainnet.infura.io/v3/"],
                         nativeCurrency: {
-                            name: "FTM",
-                            symbol: "FTM",
+                            name: "ETH",
+                            symbol: "ETH",
                             decimals: 18,
                         },
-                        blockExplorerUrls: ["https://testnet.ftmscan.com/"],
+                        blockExplorerUrls: ["https://etherscan.io/"],
                     },
                 ],
             });
