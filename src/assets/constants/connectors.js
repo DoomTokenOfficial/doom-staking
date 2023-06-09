@@ -2,7 +2,7 @@ import { InjectedConnector } from "@web3-react/injected-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 
 const POLLING_INTERVAL = 12000;
-const RPC_URL = "https://mainnet.infura.io/v3/";
+const RPC_URL = "https://mainnet.infura.io/v3/91be41b958724d2b96d6d8c77babf27d";
 // const RPC_URL = "https://data-seed-prebsc-1-s1.binance.org:8545";
 
 export const injected = new InjectedConnector({
