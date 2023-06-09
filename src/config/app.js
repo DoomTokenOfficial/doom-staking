@@ -15,7 +15,7 @@ export const Currencys = [
     "VND",
 ];
 
-export const netId = 4002;
+export const netId = 1;
 export const TotalPoolNum = 2;
 
 export const reward_test = {
@@ -65,15 +65,15 @@ export const Tokens = {
         WRAITH: "0x8690cb98496ef0f8c6417d78b5e0e29907668808",
         DAPES: "0x1758ADe7ef6Ef753E6BfF91BaCeB06af4404014e",
         ADREAM: "0x45c4b4b718f7e2df5c22eff8a2bb79e9090a428d",
-        DOOM: "0x7792EC0c08DE9B581fb9dE6A2dbdc9c9a696f97a",
-        DOOMLP: "0x574F0D8e68754A6BF38C96d78213cfD32d72266c",
+        DOOM: "0xA594F09Ad2F031A286EAe64C5aB3CE05191668ae",
+        DOOMLP: "0x131ACEd2198fAd2A2f0193236cEbd26f294fCc60",
     },
 };
 
 export const Pools = {
     pools: {
-        doomDoom: "0x3F89F3ebd6ee4afb09152c79bF774fBA8f57e0e0",
-        lpDoom: "0xc658d31489C7BfA3a7FbE8B67e5F41F4F41464eF",
+        doomDoom: "0x23f785b5eEA4aE436f686d40C9C608da68cED1Bc",
+        lpDoom: "0x0eB38d5Ad506CC1dAdBdfD6CA8d5e420f3D872Fa",
         cfltAer: "0x8f67C86F9002a90e3e02C28FF330a6E69c93B0A2",
         aerCflt: "0xEED3971151d94Ddc5A7A0d9563b473CbFb189DCf",
         cfltPft: "0xc566B132598E209d6C167DB67A5eee3415428718",
@@ -139,7 +139,7 @@ export const Vaults = [
             nomicsUrl: "https://nomics.com/assets/aer2-aerdrop",
         },
         vault: {
-            address: "0xc003e6e1096617654286e62ce2bdd28913c93081",
+            address: "0x23f785b5eEA4aE436f686d40C9C608da68cED1Bc",
             abi: require("../config/abis/do-stake-test.json"),
         },
         search: "Aerdrop",
@@ -159,7 +159,7 @@ export const Vaults = [
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
         },
         vault: {
-            address: "0xc658d31489C7BfA3a7FbE8B67e5F41F4F41464eF",
+            address: "0x0eB38d5Ad506CC1dAdBdfD6CA8d5e420f3D872Fa",
             abi: require("../config/abis/lp-stake-test.json"),
         },
         search: "Aerdrop cflt coinflect",
