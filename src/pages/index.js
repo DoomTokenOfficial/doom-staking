@@ -26,7 +26,7 @@ import { lang_texts, Filters } from "../assets/constants/language";
 import ChartBox from "./chart";
 
 const web3 = new Web3(
-    new Web3.providers.HttpProvider("https://rpc.testnet.fantom.network/")
+    new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/")
 );
 let countable = 0;
 
