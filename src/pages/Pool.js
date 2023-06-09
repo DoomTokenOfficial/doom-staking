@@ -419,12 +419,13 @@ const Pool = ({
                                         backgroundImage: `url(${item.img_url})`,
                                         padding: "20.7px 40px",
                                         display: "grid",
+                                        backgroundSize: "100% 100%",
                                         gridTemplateColumns: "repeat(6, 1fr)",
                                     }}
                                     className="item-box"
                                 >
                                     <Stack
-                                        className="item-1"
+                                        className="item-1 stake_earn_box"
                                         style={{
                                             marginLeft: "-18px",
                                         }}
@@ -475,7 +476,7 @@ const Pool = ({
                                         <Stack>
                                             <Typography
                                                 variant="span"
-                                                className="value"
+                                                className="value apy-percent"
                                                 style={
                                                     Number(APR) > 10000
                                                         ? {
@@ -574,7 +575,7 @@ const Pool = ({
                                             />
                                             <Typography
                                                 variant="span"
-                                                className="description"
+                                                className="description time_labels"
                                                 style={{
                                                     // letterSpacing: "38px",
                                                     marginLeft: "7px",

@@ -34,6 +34,7 @@ const LeftTime = ({ timeLeft, device, poolState, loading }) => {
                 if (device === "laptop") {
                     return (
                         <Stack
+                            className="time_details"
                             direction="row"
                             style={{
                                 letterSpacing: "3.9px",
