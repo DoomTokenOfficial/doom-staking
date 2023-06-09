@@ -73,7 +73,7 @@ export const Tokens = {
 export const Pools = {
     pools: {
         doomDoom: "0x3F89F3ebd6ee4afb09152c79bF774fBA8f57e0e0",
-        lpDoom: "0x48cF86BE78ee96e544D0b45116170B41cfd26F4D",
+        lpDoom: "0xC1cF998D2b52266740E7e635B2bA25485f29688D",
         cfltAer: "0x8f67C86F9002a90e3e02C28FF330a6E69c93B0A2",
         aerCflt: "0xEED3971151d94Ddc5A7A0d9563b473CbFb189DCf",
         cfltPft: "0xc566B132598E209d6C167DB67A5eee3415428718",
@@ -159,7 +159,7 @@ export const Vaults = [
             nomicsUrl: "https://nomics.com/assets/cflt-coinflect",
         },
         vault: {
-            address: "0x48cF86BE78ee96e544D0b45116170B41cfd26F4D",
+            address: "0xC1cF998D2b52266740E7e635B2bA25485f29688D",
             abi: require("../config/abis/lp-stake-test.json"),
         },
         search: "Aerdrop cflt coinflect",
